@@ -190,6 +190,7 @@ function ComparisonCard({
           muted
           loop
           playsInline
+          preload="none"
           className={cn(
             "h-full w-full object-cover transition-all duration-700",
             !isNew && "saturate-[0.3] opacity-70",

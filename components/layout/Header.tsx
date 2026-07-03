@@ -283,8 +283,6 @@ export function Header() {
           <TarshaLogo
             variant="wordmark"
             wordmarkStyle="allura"
-            byline="BY ROSWELL IT"
-            bylineClassName="hidden sm:flex"
             theme="light"
             size={scrolled ? "md" : "lg"}
             className="transition-all duration-300"

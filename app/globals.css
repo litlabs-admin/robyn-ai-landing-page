@@ -43,8 +43,8 @@ body {
 .hero-display {
   font-family: var(--font-satoshi), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   font-weight: 600;
-  font-size: clamp(2.5rem, 5.6vw, 5rem);
-  line-height: 1.08;
+  font-size: clamp(2rem, 7vw, 5rem);
+  line-height: 1.12;
   letter-spacing: -0.032em;
 }
 

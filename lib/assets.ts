@@ -3,8 +3,6 @@ export const assets = {
   featurePhone: "/assets/feature-phone.webp",
   oldWayVideo: "/assets/old-way.mp4",
   newWayVideo: "/assets/new-way.mp4",
-  insuranceAudio: "/assets/insurance.mp3",
-  realEstateAudio: "/assets/real-estate.mp3",
   lawFirmAudio: "/assets/law-firm-conversation.mp3",
   restaurantAudio: "/assets/restaurant-conversation.mp3",
   realEstateConvAudio: "/assets/real-estate-conversation.mp3",

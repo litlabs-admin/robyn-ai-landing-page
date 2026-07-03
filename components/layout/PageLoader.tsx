@@ -18,11 +18,10 @@ export function PageLoader() {
   const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
-    // Lock scroll while the curtain is up.
-    document.body.style.overflow = "hidden";
-
-    const minHold = 900; // never less than this so the brand moment lands
-    const maxHold = 2400; // hard cap so we never block forever
+    // Scroll stays unlocked — the curtain is purely visual and must never
+    // block interaction while it fades out.
+    const minHold = 150; // just enough for the brand flash to register
+    const maxHold = 600; // hard cap so we never block forever
     const start = performance.now();
 
     let unmounted = false;
@@ -33,9 +32,8 @@ export function PageLoader() {
       const wait = Math.max(0, minHold - elapsed);
       setTimeout(() => {
         setExiting(true);
-        document.body.style.overflow = "";
         // Allow exit animation to play before unmounting
-        setTimeout(() => setDone(true), 500);
+        setTimeout(() => setDone(true), 220);
       }, wait);
     };
 
@@ -51,7 +49,6 @@ export function PageLoader() {
       unmounted = true;
       window.removeEventListener("load", finish);
       clearTimeout(maxTimer);
-      document.body.style.overflow = "";
     };
   }, []);
 
@@ -62,7 +59,7 @@ export function PageLoader() {
         <motion.div
           initial={false}
           animate={exiting ? { opacity: 0 } : { opacity: 1 }}
-          transition={{ duration: 0.55, ease: EASE }}
+          transition={{ duration: 0.22, ease: EASE }}
           className="fixed inset-0 z-[200] flex items-center justify-center bg-bg"
           aria-busy={!exiting}
           role="status"
@@ -90,7 +87,7 @@ export function PageLoader() {
                   ? { opacity: 0, scale: 0.96 }
                   : { opacity: 1, scale: 1 }
               }
-              transition={{ duration: 0.6, ease: EASE }}
+              transition={{ duration: 0.25, ease: EASE }}
               className="relative px-2 py-1"
             >
               <TarshaLogo
@@ -125,7 +122,7 @@ export function PageLoader() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={exiting ? { opacity: 0 } : { opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.25, ease: EASE }}
+              transition={{ duration: 0.25, delay: 0.08, ease: EASE }}
               className="mt-5 flex items-center gap-1.5"
             >
               <span className="text-[12px] font-medium tracking-[0.08em] text-ink-muted">
@@ -198,7 +195,7 @@ function ProgressHairline({ exiting }: { exiting: boolean }) {
         initial={{ scaleX: 0 }}
         animate={exiting ? { scaleX: 1 } : { scaleX: 0.92 }}
         transition={{
-          duration: exiting ? 0.4 : 1.8,
+          duration: exiting ? 0.2 : 0.5,
           ease: exiting ? "easeOut" : [0.22, 1, 0.36, 1],
         }}
         style={{ transformOrigin: "left center" }}

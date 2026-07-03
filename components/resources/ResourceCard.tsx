@@ -36,12 +36,13 @@ export function ResourceCard({ article, index = 0 }: { article: ArticleCardData;
           {/* Image */}
           <div className="relative h-[200px] w-full overflow-hidden bg-surface-muted">
             {!imgError ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={article.imageUrl}
                 alt={article.title}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 onError={() => setImgError(true)}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
             ) : (
               <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-surface-muted to-border/30">
