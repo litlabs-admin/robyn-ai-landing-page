@@ -282,7 +282,7 @@ export function Header() {
         >
           <TarshaLogo
             variant="wordmark"
-            wordmarkStyle="allura"
+            wordmarkStyle="robyn-brodine"
             theme="light"
             size={scrolled ? "md" : "lg"}
             className="transition-all duration-300"

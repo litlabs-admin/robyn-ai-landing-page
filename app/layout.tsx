@@ -1,7 +1,19 @@
 import "./globals.css";
 import { LenisProvider } from "@/components/animations/LenisProvider";
 import { PageLoader } from "@/components/layout/PageLoader";
-import { allura, inter, satoshi } from "@/lib/fonts";
+import {
+  allura,
+  bricolage,
+  familjen,
+  inter,
+  manrope,
+  outfit,
+  satoshi,
+  sora,
+  spaceGrotesk,
+  syne,
+  unbounded,
+} from "@/lib/fonts";
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
@@ -58,7 +70,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${satoshi.variable} ${allura.variable}`}>
+    <html
+      lang="en"
+      className={[
+        inter.variable,
+        satoshi.variable,
+        allura.variable,
+        spaceGrotesk.variable,
+        sora.variable,
+        manrope.variable,
+        outfit.variable,
+        syne.variable,
+        bricolage.variable,
+        unbounded.variable,
+        familjen.variable,
+      ].join(" ")}
+    >
       <head>
         <script
           type="application/ld+json"

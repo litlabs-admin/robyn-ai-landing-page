@@ -154,7 +154,7 @@ function FeatureCard({
     <motion.div
       initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
       className={cn(
         "group flex flex-col items-center text-center lg:text-left",
@@ -185,7 +185,7 @@ function PhoneShowcase() {
     <motion.div
       initial={{ opacity: 0, y: 40, scale: 0.94 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       className="relative mx-auto w-full max-w-[320px] md:max-w-[360px]"
     >
@@ -218,78 +218,11 @@ function PhoneShowcase() {
       <Image
         src={assets.featurePhone}
         alt="Tarsha AI receptionist answering a call in progress, displayed on a smartphone"
-        width={720}
-        height={1480}
+        width={868}
+        height={1150}
         sizes="(min-width: 1024px) 360px, 320px"
         className="relative h-auto w-full select-none drop-shadow-[0_24px_48px_rgba(17,17,17,0.18)]"
       />
-
-      {/* Floating status pills */}
-      <FloatingPill
-        className="left-[-2rem] top-[20%]"
-        delay={0.6}
-        floatDelay={0}
-      >
-        <PillDot color="bg-emerald-500" />
-        <span>Call connected</span>
-      </FloatingPill>
-
-      <FloatingPill
-        className="right-[-2rem] top-[42%] hidden sm:flex"
-        delay={0.9}
-        floatDelay={1.2}
-      >
-        <PillDot color="bg-accent" />
-        <span>Booking confirmed</span>
-      </FloatingPill>
-
-      <FloatingPill
-        className="left-[-2rem] bottom-[5%] hidden sm:flex"
-        delay={1.2}
-        floatDelay={2.4}
-      >
-        <PillDot color="bg-ink" />
-        <span>Voicemail saved</span>
-      </FloatingPill>
-    </motion.div>
-  );
-}
-
-function PillDot({ color }: { color: string }) {
-  return <span className={cn("h-1.5 w-1.5 rounded-full", color)} />;
-}
-
-function FloatingPill({
-  children,
-  className,
-  delay = 0,
-  floatDelay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-  floatDelay?: number;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
-      className={cn("absolute z-10", className)}
-    >
-      <motion.div
-        animate={{ y: [0, -4, 0] }}
-        transition={{
-          duration: 3.6,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: floatDelay,
-        }}
-        className="flex items-center gap-2 rounded-full border border-border bg-surface/90 px-3 py-1.5 text-[12px] font-medium text-ink shadow-soft backdrop-blur-md"
-      >
-        {children}
-      </motion.div>
     </motion.div>
   );
 }

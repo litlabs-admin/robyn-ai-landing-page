@@ -216,7 +216,7 @@ function IndustryCard({
       aria-label={`Play Tarsha demo for ${industry.label}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: EASE, delay: 0.04 * index }}
       whileHover={{ y: -2 }}
       whileTap={{ y: 0, scale: 0.99 }}

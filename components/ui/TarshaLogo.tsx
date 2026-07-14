@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/cn";
+import { RobynWordmark } from "@/components/ui/RobynWordmark";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -16,7 +17,17 @@ export type WordmarkStyle =
   | "serif-split"       // Playfair roman + Inter bold               , old-world meets tech
   | "cedarville"        // Cedarville Cursive + Inter bold           , handwritten warmth
   | "smith-style"       // Space Grotesk, clean geometric grotesque, inspired by Smith.ai
-  | "allura";           // Allura refined signature script (active logo font)
+  | "allura"            // Allura refined signature script
+  // ── "Robyn AI" wordmark candidates (compare at /logo-preview) ────────────────
+  | "robyn-brodine"     // Brodine outlined SVG logotype (active logo)
+  | "robyn"             // Space Grotesk    , distinctive grotesque
+  | "robyn-sora"        // Sora             , clean futuristic geometric
+  | "robyn-manrope"     // Manrope          , warm premium SaaS
+  | "robyn-outfit"      // Outfit           , ultra-clean geometric
+  | "robyn-syne"        // Syne             , artsy futuristic display
+  | "robyn-bricolage"   // Bricolage Grotesque, characterful editorial
+  | "robyn-unbounded"   // Unbounded        , bold statement display
+  | "robyn-familjen";   // Familjen Grotesk , quirky compact grotesque
 
 type Variant = "full" | "icon" | "wordmark";
 type Size    = "sm" | "md" | "lg";
@@ -62,6 +73,7 @@ export function TarshaLogo({
           textClass={TEXT_CLASS[size]}
           theme={theme}
           wordmarkStyle={wordmarkStyle}
+          size={size}
         />
       )}
     </div>
@@ -128,9 +140,11 @@ function TarshaWordmark({
   textClass,
   theme,
   wordmarkStyle,
-}: SubProps & { wordmarkStyle: WordmarkStyle }) {
+  size,
+}: SubProps & { wordmarkStyle: WordmarkStyle; size: Size }) {
   const props: SubProps = { textClass, theme };
   switch (wordmarkStyle) {
+    case "robyn-brodine":    return <RobynWordmark size={size} theme={theme} />;
     case "uppercase-badge":  return <WordmarkUppercaseBadge  {...props} />;
     case "mono-split":       return <WordmarkMonoSplit        {...props} />;
     case "accent-letter":    return <WordmarkAccentLetter     {...props} />;
@@ -141,7 +155,11 @@ function TarshaWordmark({
     case "cedarville":       return <WordmarkCedarville       {...props} />;
     case "smith-style":      return <WordmarkSmithStyle       {...props} />;
     case "allura":           return <WordmarkAllura           {...props} />;
-    default:                 return <WordmarkWeightContrast   {...props} />;
+    default:
+      if (wordmarkStyle.startsWith("robyn")) {
+        return <RobynMark {...props} tune={ROBYN_FONTS[wordmarkStyle]} />;
+      }
+      return <WordmarkWeightContrast {...props} />;
   }
 }
 
@@ -468,6 +486,80 @@ function WordmarkAllura({ textClass, theme }: SubProps) {
       }}
     >
       Tarsha.ai
+    </span>
+  );
+}
+
+// ─── "Robyn AI" wordmark ──────────────────────────────────────────────────────
+// A single treatment applied across a set of premium display faces so the
+// comparison at /logo-preview is purely about the typeface.
+//
+// Restraint keeps it premium: "Robyn" in a bold ink/white core, "AI" set as a
+// lighter, smaller tracked qualifier that recedes gracefully. One ink, no colour
+// trick — the letterforms do the work, strong enough to stand alone with no icon.
+
+interface RobynTune {
+  fontClass:    string;  // Tailwind font-family utility for this face
+  nameWeight:   number;  // weight of "Robyn"
+  aiWeight:     number;  // weight of "AI"
+  nameTracking: string;  // letter-spacing on "Robyn"
+  aiSize:       string;  // font-size of "AI" relative to the name (em)
+  aiTracking:   string;  // letter-spacing on "AI"
+  aiGap:        string;  // space before "AI" (em)
+  uniform?:     boolean; // render "AI" identically to "Robyn" (one solid wordmark)
+}
+
+// Per-face tuning — heavier/wider faces (Unbounded, Syne) get lighter weights
+// and smaller "AI" so every candidate reads with the same optical balance.
+const ROBYN_FONTS: Record<string, RobynTune> = {
+  "robyn":           { fontClass: "font-space-grotesk", nameWeight: 700, aiWeight: 700, nameTracking: "-0.03em", aiSize: "1em",    aiTracking: "-0.03em", aiGap: "0.28em", uniform: true },
+  "robyn-sora":      { fontClass: "font-sora",          nameWeight: 700, aiWeight: 500, nameTracking: "-0.02em", aiSize: "0.60em", aiTracking: "0.08em",  aiGap: "0.44em" },
+  "robyn-manrope":   { fontClass: "font-manrope",       nameWeight: 800, aiWeight: 600, nameTracking: "-0.03em", aiSize: "0.60em", aiTracking: "0.10em",  aiGap: "0.44em" },
+  "robyn-outfit":    { fontClass: "font-outfit",        nameWeight: 700, aiWeight: 500, nameTracking: "-0.02em", aiSize: "0.60em", aiTracking: "0.10em",  aiGap: "0.44em" },
+  "robyn-syne":      { fontClass: "font-syne",          nameWeight: 700, aiWeight: 600, nameTracking: "-0.01em", aiSize: "0.55em", aiTracking: "0.06em",  aiGap: "0.40em" },
+  "robyn-bricolage": { fontClass: "font-bricolage",     nameWeight: 700, aiWeight: 500, nameTracking: "-0.02em", aiSize: "0.60em", aiTracking: "0.08em",  aiGap: "0.42em" },
+  "robyn-unbounded": { fontClass: "font-unbounded",     nameWeight: 600, aiWeight: 400, nameTracking: "-0.02em", aiSize: "0.50em", aiTracking: "0.04em",  aiGap: "0.46em" },
+  "robyn-familjen":  { fontClass: "font-familjen",      nameWeight: 700, aiWeight: 500, nameTracking: "-0.02em", aiSize: "0.60em", aiTracking: "0.09em",  aiGap: "0.42em" },
+};
+
+function RobynMark({ textClass, theme, tune }: SubProps & { tune: RobynTune }) {
+  const t         = tune ?? ROBYN_FONTS["robyn"];
+  const nameColor = theme === "dark" ? "rgba(255,255,255,1)"   : "var(--ink)";
+  const aiColor   = theme === "dark" ? "rgba(255,255,255,0.6)" : "var(--ink-muted)";
+
+  // Uniform: "Robyn AI" as one solid wordmark, "AI" set exactly like "Robyn".
+  if (t.uniform) {
+    return (
+      <span
+        className={cn(t.fontClass, "leading-none select-none", textClass)}
+        style={{ fontWeight: t.nameWeight, letterSpacing: t.nameTracking, color: nameColor }}
+      >
+        Robyn&nbsp;AI
+      </span>
+    );
+  }
+
+  return (
+    <span
+      className={cn(t.fontClass, "leading-none select-none inline-flex items-baseline", textClass)}
+    >
+      {/* "Robyn" — bold, the distinctive core of the wordmark */}
+      <span style={{ fontWeight: t.nameWeight, letterSpacing: t.nameTracking, color: nameColor }}>
+        Robyn
+      </span>
+
+      {/* "AI" — lighter, smaller, tracked qualifier that recedes gracefully */}
+      <span
+        style={{
+          fontWeight:    t.aiWeight,
+          fontSize:      t.aiSize,
+          letterSpacing: t.aiTracking,
+          color:         aiColor,
+          marginLeft:    t.aiGap,
+        }}
+      >
+        AI
+      </span>
     </span>
   );
 }

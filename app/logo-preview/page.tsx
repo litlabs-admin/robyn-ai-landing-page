@@ -9,60 +9,49 @@ const STYLES: {
   description: string;
 }[] = [
   {
-    id:          "weight-contrast",
-    label:       "A, Weight Contrast",
-    description: "Extrabold 'tarsha' + featherweight '.ai'. Clean hierarchy with no colour gimmick, works at every size and context. Safe default.",
+    id:          "robyn-brodine",
+    label:       "0, Brodine  ★ current",
+    description: "The approved logotype — Brodine, a commercial geometric sans with distinctive knife-cut terminals. Shipped as an outlined SVG path (artwork, not a webfont), so it scales crisply and recolours for light/dark. This is the mark now live in the header, footer and loader.",
   },
   {
-    id:          "uppercase-badge",
-    label:       "B, Uppercase + Badge",
-    description: "Wide-tracked TARSHA stamped with a yellow '.ai' pill. Authority and modernity together, law firm trust meets AI energy.",
+    id:          "robyn",
+    label:       "1, Space Grotesk",
+    description: "Distinctive geometric grotesque. Two-story 'a', notched joins and a crisp straight-tailed 'y' read as considered tech/AI, not a default sans. Highly legible at every size.",
   },
   {
-    id:          "mono-split",
-    label:       "C, Mono Split",
-    description: "Inter (body font) only, semibold 'tarsha' fades into a quieter '.ai'. Clinical precision, SaaS/fintech feel. No display warmth.",
+    id:          "robyn-sora",
+    label:       "2, Sora",
+    description: "Geometric sans built 'for a brighter digital future'. Neutral, futuristic, unmistakably AI. The clean, safe choice — a little less character than Space Grotesk.",
   },
   {
-    id:          "accent-letter",
-    label:       "D, Accent Letter",
-    description: "The opening 't' glows gold. Personality-first and approachable, resonates with SMBs in hospitality, real estate, and services.",
+    id:          "robyn-manrope",
+    label:       "3, Manrope",
+    description: "Semi-rounded modern sans. Premium SaaS feel with a touch of warmth — plays to Robyn's human side while staying professional.",
   },
   {
-    id:          "superscript-ai",
-    label:       "E, Superscript .ai",
-    description: "'.ai' floats as a tiny superscript qualifier above the name. Editorial luxury, strong fit for law, finance, insurance verticals.",
-  },
-  // ── Premium serif / script ──────────────────────────────────────────────────
-  {
-    id:          "playfair-italic",
-    label:       "F, Playfair Italic  ✦ new",
-    description: "Playfair Display bold italic for 'tarsha', sweeping ink-stroke curves. '.ai' steps back in light Inter. Magazine-masthead authority.",
+    id:          "robyn-outfit",
+    label:       "4, Outfit",
+    description: "Ultra-clean geometric sans with near-perfect even colour. Maximum legibility and polish; the most minimal, least quirky option.",
   },
   {
-    id:          "cormorant",
-    label:       "G, Cormorant  ✦ new",
-    description: "Cormorant Garamond italic, gossamer strokes and generous kerns give the name a calligraphic grace without being a script font. Whisper luxury.",
+    id:          "robyn-syne",
+    label:       "5, Syne",
+    description: "Artsy, futuristic display with unusual proportions. Extremely memorable as a standalone mark — the boldest personality here, higher risk, higher reward.",
   },
   {
-    id:          "serif-split",
-    label:       "H, Serif Split  ✦ new",
-    description: "Playfair Display roman 'tarsha' + golden dot + Inter bold 'ai'. Old-world craft meets precision tech in a single seamless wordmark.",
+    id:          "robyn-bricolage",
+    label:       "6, Bricolage Grotesque",
+    description: "Characterful editorial grotesque, fresh and on-trend. Complements the warm cream-and-gold aesthetic while feeling distinctly modern.",
   },
   {
-    id:          "cedarville",
-    label:       "I, Cedarville Cursive  ✦ new",
-    description: "Genuine handwritten script for 'tarsha', flowing ink-pen warmth on the cream/yellow theme. Golden dot + Inter bold 'ai' snaps it back to tech. Especially warm and approachable for SMBs.",
+    id:          "robyn-unbounded",
+    label:       "7, Unbounded",
+    description: "Bold geometric display. Maximum distinctiveness and presence — a statement wordmark that's strongest at larger sizes.",
   },
   {
-    id:          "smith-style",
-    label:       "J, Smith-style (Space Grotesk)  ✦",
-    description: "Inspired by Smith.ai's clean premium wordmark. Space Grotesk weight 500, slightly distinctive letterforms (two-story 'a', notched joins) that feel crafted, not default. One ink, one gold dot. Pure restraint.",
-  },
-  {
-    id:          "allura",
-    label:       "K, Allura  ✦",
-    description: "Allura, a refined signature script. Elegant and graceful, rendered larger so it stays clearly visible despite its delicate strokes. Deep warm ink on cream, white on dark.",
+    id:          "robyn-familjen",
+    label:       "8, Familjen Grotesk",
+    description: "Compact, quirky-but-clean grotesque. Premium and slightly unexpected without shouting — a refined middle ground.",
   },
 ];
 
@@ -75,10 +64,10 @@ export default function LogoPreviewPage() {
       <div className="sticky top-0 z-10 flex items-center justify-between border-b border-[#DDD8C8] bg-[#F4F2EC]/95 backdrop-blur-sm px-6 py-4">
         <div>
           <h1 className="font-display text-[18px] font-bold tracking-tight text-[#18130A]">
-            Wordmark Preview, tarsha.ai
+            Wordmark Preview, Robyn AI
           </h1>
           <p className="text-[12px] text-[#7A6420] mt-0.5">
-            5 typographic styles · light + dark · 3 sizes each, pick one to ship
+            8 premium fonts · light + dark · 3 sizes each, pick one to ship
           </p>
         </div>
         <Link
@@ -156,7 +145,7 @@ export default function LogoPreviewPage() {
               <code className="rounded bg-[#EAD870]/40 px-1 py-0.5 font-mono text-[11px] text-[#18130A]">
                 wordmarkStyle="{id}"
               </code>{" "}
-              in Header.tsx and Footer.tsx
+              in Header.tsx, Footer.tsx and PageLoader.tsx
             </p>
           </section>
         ))}
@@ -164,9 +153,9 @@ export default function LogoPreviewPage() {
 
       {/* Footer note */}
       <div className="border-t border-[#DDD8C8] px-6 py-6 text-center text-[12px] text-[#7A6420]">
-        All styles use Plus Jakarta Sans (display) or Inter (sans), no external font needed.
-        Both fonts are already loaded in{" "}
-        <code className="font-mono text-[11px]">lib/fonts.ts</code>.
+        All candidate fonts are Google-hosted and already loaded via next/font in{" "}
+        <code className="font-mono text-[11px]">lib/fonts.ts</code>. The live logo
+        currently ships <code className="font-mono text-[11px]">robyn</code> (Space Grotesk).
       </div>
     </div>
   );

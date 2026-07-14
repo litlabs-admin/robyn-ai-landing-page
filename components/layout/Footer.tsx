@@ -80,7 +80,7 @@ export function Footer() {
               >
                 <TarshaLogo
                   variant="wordmark"
-                  wordmarkStyle="allura"
+                  wordmarkStyle="robyn-brodine"
                   theme="dark"
                   size="lg"
                 />

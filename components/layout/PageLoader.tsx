@@ -92,7 +92,7 @@ export function PageLoader() {
             >
               <TarshaLogo
                 variant="wordmark"
-                wordmarkStyle="allura"
+                wordmarkStyle="robyn-brodine"
                 theme="light"
                 size="lg"
               />

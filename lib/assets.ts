@@ -14,7 +14,7 @@ export const assets = {
 } as const;
 
 export const brand = {
-  name: "tarsha.ai",
+  name: "Robyn AI",
   tagline: "AI receptionist for small businesses",
   phone: "(833) 827-7421",
   phoneDisplay: "(833) TARSHA-1",
