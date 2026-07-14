@@ -17,6 +17,6 @@ export const brand = {
   name: "Robyn AI",
   tagline: "AI receptionist for small businesses",
   phone: "(833) 827-7421",
-  phoneDisplay: "(833) TARSHA-1",
+  phoneDisplay: "(833) ROBYN-AI",
   bookDemoUrl: "https://cal.com/vandan-mandloi/30min?user=vandan-mandloi",
 } as const;

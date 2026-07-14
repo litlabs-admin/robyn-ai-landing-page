@@ -234,7 +234,7 @@ function MockNaturalChat() {
             className="h-1.5 w-1.5 rounded-full bg-ink/40"
           />
         ))}
-        <span className="ml-1 text-[11px] text-ink-muted">Tarsha AI is typing…</span>
+        <span className="ml-1 text-[11px] text-ink-muted">Robyn AI is typing…</span>
       </div>
     </div>
   );
@@ -301,7 +301,7 @@ function MockUpdateBadge() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "Our team was spending 40% of their time answering the same 10 questions over and over, hours, pricing, insurance. Tarsha handles all of it instantly now. Patient satisfaction scores went up, and so did our productivity.",
+      "Our team was spending 40% of their time answering the same 10 questions over and over, hours, pricing, insurance. Robyn handles all of it instantly now. Patient satisfaction scores went up, and so did our productivity.",
     author: "Dr. Rachel K.",
     role: "Practice Manager",
     company: "Sunrise Dental",
@@ -309,7 +309,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "People called constantly asking if we were open or what was on the menu. Tarsha handles those instantly in English and Spanish. Our phone is quiet, and my staff are actually cooking and serving, not answering the same question for the hundredth time.",
+      "People called constantly asking if we were open or what was on the menu. Robyn handles those instantly in English and Spanish. Our phone is quiet, and my staff are actually cooking and serving, not answering the same question for the hundredth time.",
     author: "Carlos M.",
     role: "Owner",
     company: "The Local Table",
@@ -317,7 +317,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Tenants call at 10 PM asking about maintenance procedures or lease terms. Tarsha answers accurately every time with the right information. We've had zero complaints about unreturned calls since we made the switch six months ago.",
+      "Tenants call at 10 PM asking about maintenance procedures or lease terms. Robyn answers accurately every time with the right information. We've had zero complaints about unreturned calls since we made the switch six months ago.",
     author: "Lisa P.",
     role: "Operations Lead",
     company: "Metro Property Group",
@@ -335,13 +335,13 @@ const steps = [
   {
     title: "A caller asks a question",
     description:
-      "Any question, at any time, in any language. Tarsha AI understands natural speech, no menus, no prompts, no frustrating hold music.",
+      "Any question, at any time, in any language. Robyn AI understands natural speech, no menus, no prompts, no frustrating hold music.",
     Illustration: IllusCallerAsking,
   },
   {
     title: "Instant, accurate answer",
     description:
-      "Tarsha responds with exactly the right information from your knowledge base. If a question needs a human, it escalates immediately with full context.",
+      "Robyn responds with exactly the right information from your knowledge base. If a question needs a human, it escalates immediately with full context.",
     Illustration: IllusInstantAnswer,
   },
 ];
@@ -351,7 +351,7 @@ const benefits: Benefit[] = [
     icon: Brain,
     title: "Custom knowledge base",
     description:
-      "Train Tarsha on your exact answers, your tone, and your business, not generic responses.",
+      "Train Robyn on your exact answers, your tone, and your business, not generic responses.",
     MockUI: MockKnowledgeBase,
     wide: true,
   },
@@ -366,7 +366,7 @@ const benefits: Benefit[] = [
     icon: ArrowUpRight,
     title: "Smart escalation",
     description:
-      "When a question needs a human, Tarsha hands off seamlessly, with a full context summary attached.",
+      "When a question needs a human, Robyn hands off seamlessly, with a full context summary attached.",
     MockUI: MockEscalation,
   },
   {
@@ -406,7 +406,7 @@ export default function AnswerQuestionsPage() {
           titleBefore="Train once. Answer "
           titleHighlight="every question"
           titleAfter=" forever."
-          subtitle="Upload your FAQ and business info. Tarsha AI gives every caller an instant, accurate answer, no hold music, no waiting, no staff needed."
+          subtitle="Upload your FAQ and business info. Robyn AI gives every caller an instant, accurate answer, no hold music, no waiting, no staff needed."
           MockUI={MockQAConversation}
         />
         <SolutionTestimonials
@@ -418,7 +418,7 @@ export default function AnswerQuestionsPage() {
           heading="The same 10 questions shouldn't take 2 hours a day"
           paragraphs={[
             "Most businesses answer the same handful of questions on every call, hours, pricing, services, location. These are necessary calls, but they consume time your staff could be spending on higher-value work.",
-            "Tarsha AI learns your business inside and out. Upload your FAQ, policies, and service details once, and it will answer any version of those questions instantly, accurately, and around the clock, in any language. When something genuinely requires a human, Tarsha escalates immediately with full context.",
+            "Robyn AI learns your business inside and out. Upload your FAQ, policies, and service details once, and it will answer any version of those questions instantly, accurately, and around the clock, in any language. When something genuinely requires a human, Robyn escalates immediately with full context.",
           ]}
           Illustration={IllusIntroRepeatQuestions}
         />

@@ -242,7 +242,7 @@ function HeroSetupMock() {
             <div className="mb-4 flex items-center gap-2">
               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-accent text-[14px]">T</div>
               <div>
-                <p className="text-[10px] font-bold text-ink leading-none">Tarsha AI</p>
+                <p className="text-[10px] font-bold text-ink leading-none">Robyn AI</p>
                 <p className="text-[8px] text-ink-muted">Setup wizard</p>
               </div>
               <div className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-green-100">
@@ -358,7 +358,7 @@ const quickStartSteps = [
     step: "01",
     icon: Phone,
     title: "Forward your calls",
-    description: "Dial a simple code from your phone to forward calls to your Tarsha number. Takes under 2 minutes on any carrier, AT&T, Verizon, T-Mobile, or landline.",
+    description: "Dial a simple code from your phone to forward calls to your Robyn number. Takes under 2 minutes on any carrier, AT&T, Verizon, T-Mobile, or landline.",
     time: "~2 min",
     Illustration: IllusForwarding,
   },
@@ -366,7 +366,7 @@ const quickStartSteps = [
     step: "02",
     icon: Mic,
     title: "Set your greeting",
-    description: "Tell Tarsha your business name and pick a voice. Your customized greeting goes live instantly, no recording required.",
+    description: "Tell Robyn your business name and pick a voice. Your customized greeting goes live instantly, no recording required.",
     time: "~3 min",
     Illustration: IllusGreeting,
   },
@@ -399,7 +399,7 @@ const categories = [
   {
     icon: Mic,
     title: "Greeting & Scripts",
-    description: "Customize what Tarsha says to your callers",
+    description: "Customize what Robyn says to your callers",
     color: { bg: "#d1fae5", text: "#065f46", accent: "#10b981" },
     guideCount: 6,
     guides: [
@@ -414,7 +414,7 @@ const categories = [
   {
     icon: Layers,
     title: "Integrations",
-    description: "Connect Tarsha to your CRM, email, and calendar",
+    description: "Connect Robyn to your CRM, email, and calendar",
     color: { bg: "#ede9fe", text: "#4c1d95", accent: "#8b5cf6" },
     guideCount: 9,
     guides: [
@@ -429,7 +429,7 @@ const categories = [
   {
     icon: Settings,
     title: "Advanced Features",
-    description: "Unlock the full power of Tarsha AI",
+    description: "Unlock the full power of Robyn AI",
     color: { bg: "#fef3c7", text: "#92400e", accent: "#f59e0b" },
     guideCount: 7,
     guides: [
@@ -815,7 +815,7 @@ export default function SetupGuidesPage() {
                   Visit help center <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="mailto:hello@tarsha.ai"
+                  href="mailto:hello@robyn.ai"
                   className="inline-flex items-center gap-2 rounded-xl border border-border bg-bg px-5 py-3 text-[14px] font-medium text-ink transition-colors hover:bg-surface-muted"
                 >
                   Email support

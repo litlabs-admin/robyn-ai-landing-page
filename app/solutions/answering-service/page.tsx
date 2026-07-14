@@ -51,12 +51,12 @@ function IllusActiveCall() {
           transition={{ duration: 1.6, repeat: Infinity }}
           className="h-1.5 w-1.5 rounded-full bg-green-500 shadow-[0_0_0_3px_rgba(34,197,94,0.2)]"
         />
-        <span className="text-[12px] font-medium text-ink">Call active · Tarsha AI</span>
+        <span className="text-[12px] font-medium text-ink">Call active · Robyn AI</span>
         <span className="ml-auto tabular-nums text-[11px] text-ink-muted">0:18</span>
       </div>
       <div className="rounded-xl border border-border bg-surface p-3 text-[12px] leading-relaxed text-ink">
         "Thank you for calling{" "}
-        <span className="font-semibold">[Your Business]</span>. This is Tarsha, how can I help
+        <span className="font-semibold">[Your Business]</span>. This is Robyn, how can I help
         you today?"
       </div>
     </div>
@@ -149,7 +149,7 @@ function MockGreeting() {
       </p>
       <p className="mt-2 text-[14px] leading-relaxed text-ink">
         "Thank you for calling{" "}
-        <span className="font-semibold">[Your Business]</span>. This is Tarsha, how can I help
+        <span className="font-semibold">[Your Business]</span>. This is Robyn, how can I help
         you today?"
       </p>
       <div className="mt-3 flex items-center gap-2">
@@ -237,7 +237,7 @@ function MockSpamBlock() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "Before Tarsha, I was missing 6–8 calls every week while on job sites. Each one was potentially $400–800 in business. Now I come home to a clean list of leads every evening. It paid for itself in week two.",
+      "Before Robyn, I was missing 6–8 calls every week while on job sites. Each one was potentially $400–800 in business. Now I come home to a clean list of leads every evening. It paid for itself in week two.",
     author: "Marcus T.",
     role: "Owner",
     company: "Premier Plumbing",
@@ -245,7 +245,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Our front desk was drowning in calls. Tarsha answers, takes complete messages, and now our staff actually have time to focus on patients in the office. It's genuinely transformed how our practice runs day to day.",
+      "Our front desk was drowning in calls. Robyn answers, takes complete messages, and now our staff actually have time to focus on patients in the office. It's genuinely transformed how our practice runs day to day.",
     author: "Dr. Priya S.",
     role: "Practice Manager",
     company: "Lakewood Family Medicine",
@@ -253,7 +253,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "I was losing clients to competitors simply because my phone went to voicemail. Tarsha is the first thing anyone reaches now, professional, on-brand, and it never misses a call. My close rate went up almost immediately.",
+      "I was losing clients to competitors simply because my phone went to voicemail. Robyn is the first thing anyone reaches now, professional, on-brand, and it never misses a call. My close rate went up almost immediately.",
     author: "Chris R.",
     role: "Independent Broker",
     company: "All-State Insurance",
@@ -269,9 +269,9 @@ const steps = [
     Illustration: IllusIncomingCall,
   },
   {
-    title: "Tarsha AI handles it professionally",
+    title: "Robyn AI handles it professionally",
     description:
-      "Your caller hears a warm greeting in your business name. Tarsha captures their name, phone number, and the reason for calling.",
+      "Your caller hears a warm greeting in your business name. Robyn captures their name, phone number, and the reason for calling.",
     Illustration: IllusActiveCall,
   },
   {
@@ -302,7 +302,7 @@ const benefits: Benefit[] = [
     icon: UserCheck,
     title: "Lead qualification",
     description:
-      "Tarsha asks the right questions so you know exactly which callbacks to prioritize.",
+      "Robyn asks the right questions so you know exactly which callbacks to prioritize.",
     MockUI: MockLeadQual,
   },
   {
@@ -341,7 +341,7 @@ export default function AnsweringServicePage() {
           eyebrow="Answering Service"
           titleBefore="The business phone line that "
           titleHighlight="never sleeps"
-          subtitle="Tarsha AI picks up every call, captures the details, and delivers a clean summary to your inbox, in seconds, 24/7, no staff required."
+          subtitle="Robyn AI picks up every call, captures the details, and delivers a clean summary to your inbox, in seconds, 24/7, no staff required."
           MockUI={MockPhoneCall}
         />
         <SolutionTestimonials
@@ -353,7 +353,7 @@ export default function AnsweringServicePage() {
           heading="Your phone line should never be a liability"
           paragraphs={[
             "Every missed call is a missed opportunity. For most small businesses, phone calls are how new clients make first contact, and if that call goes to voicemail, there's a good chance they're calling your competitor next.",
-            "Tarsha AI answers every single call within 2 seconds, 24 hours a day, 365 days a year. It greets callers in your business name, captures every detail, and sends you a clean summary the moment the call ends. No hold music. No voicemail. No missed leads.",
+            "Robyn AI answers every single call within 2 seconds, 24 hours a day, 365 days a year. It greets callers in your business name, captures every detail, and sends you a clean summary the moment the call ends. No hold music. No voicemail. No missed leads.",
           ]}
           Illustration={IllusIntroMissedCalls}
         />

@@ -20,7 +20,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 function IllusStep1Intake() {
   const lines = [
     { speaker: "Caller", text: "Hi, I'm looking to get some legal advice about a contract dispute" },
-    { speaker: "Tarsha AI", text: "Happy to connect you with the right attorney. May I get your full name and best contact number?" },
+    { speaker: "Robyn AI", text: "Happy to connect you with the right attorney. May I get your full name and best contact number?" },
   ];
   return (
     <div className="space-y-2.5">
@@ -35,7 +35,7 @@ function IllusStep1Intake() {
         >
           <span
             className={`mt-0.5 w-16 shrink-0 text-[11px] font-semibold ${
-              speaker === "Tarsha AI" ? "text-accent-ink/70" : "text-ink-muted"
+              speaker === "Robyn AI" ? "text-accent-ink/70" : "text-ink-muted"
             }`}
           >
             {speaker}
@@ -137,7 +137,7 @@ function IllusIntroIntake() {
         className="rounded-xl border border-accent/30 bg-accent/10 p-3.5"
       >
         <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-ink-muted">
-          With Tarsha intake
+          With Robyn intake
         </p>
         {["Name ✓", "Contact ✓", "Reason ✓", "Context ✓"].map((item) => (
           <p key={item} className="text-[12px] font-medium text-ink">{item}</p>
@@ -256,7 +256,7 @@ function MockIntakeSummary() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "Before Tarsha, every new client meeting started with 10 minutes of 'let me get your details.' Now those details are already in the intake summary, collected during the first call. We get right to work immediately. Clients notice and appreciate it.",
+      "Before Robyn, every new client meeting started with 10 minutes of 'let me get your details.' Now those details are already in the intake summary, collected during the first call. We get right to work immediately. Clients notice and appreciate it.",
     author: "Olivia K.",
     role: "Senior Attorney",
     company: "Keller & Park Family Law",
@@ -264,7 +264,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "We're a therapy practice. Intake is sensitive and important. Tarsha collects the basics professionally, name, contact, reason for seeking services, insurance, without being clinical or robotic. It actually does it better than some staff I've had.",
+      "We're a therapy practice. Intake is sensitive and important. Robyn collects the basics professionally, name, contact, reason for seeking services, insurance, without being clinical or robotic. It actually does it better than some staff I've had.",
     author: "Dr. Marcus A.",
     role: "Clinical Director",
     company: "Waverly Counseling Center",
@@ -272,7 +272,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Insurance intake used to take 15 minutes per new client call. Now Tarsha collects coverage type, current provider, timeline, and contact details in the first call. My agents spend that 15 minutes selling, not form-filling.",
+      "Insurance intake used to take 15 minutes per new client call. Now Robyn collects coverage type, current provider, timeline, and contact details in the first call. My agents spend that 15 minutes selling, not form-filling.",
     author: "Brenda S.",
     role: "Agency Principal",
     company: "Suncoast Insurance",
@@ -284,7 +284,7 @@ const steps = [
   {
     title: "Natural intake conversation",
     description:
-      "Tarsha collects intake details through normal conversation, not a robotic form-filling exercise. Callers feel heard, not interrogated, and provide more accurate information.",
+      "Robyn collects intake details through normal conversation, not a robotic form-filling exercise. Callers feel heard, not interrogated, and provide more accurate information.",
     Illustration: IllusStep1Intake,
   },
   {
@@ -314,7 +314,7 @@ const benefits: Benefit[] = [
     icon: UserCheck,
     title: "Custom intake fields",
     description:
-      "Configure Tarsha to collect exactly what your business needs, matter type for law, insurance details for healthcare, whatever your intake process requires.",
+      "Configure Robyn to collect exactly what your business needs, matter type for law, insurance details for healthcare, whatever your intake process requires.",
     MockUI: MockCustomFields,
   },
   {
@@ -360,7 +360,7 @@ export default function ClientIntakePage() {
           eyebrow="Client Intake"
           titleBefore="First meetings start "
           titleHighlight="fully informed"
-          subtitle="Tarsha AI collects every detail from a new caller's first contact, name, contact info, reason for calling, and relevant context, so your team walks into every conversation already prepared."
+          subtitle="Robyn AI collects every detail from a new caller's first contact, name, contact info, reason for calling, and relevant context, so your team walks into every conversation already prepared."
           MockUI={MockClientIntakeForm}
         />
         <SolutionTestimonials
@@ -372,7 +372,7 @@ export default function ClientIntakePage() {
           heading="Your team shouldn't learn who a client is after they've already arrived"
           paragraphs={[
             "The first meeting with a new client should feel prepared and professional. But when intake happens during the meeting itself, scrambling for contact details, asking why they're there, learning their history on the fly, it undermines trust before you've said anything meaningful.",
-            "Tarsha AI handles intake in the first call. Name, contact information, reason for reaching out, specific details relevant to your business, all collected naturally through conversation and delivered as a structured summary before your team makes contact. Every first impression is prepared.",
+            "Robyn AI handles intake in the first call. Name, contact information, reason for reaching out, specific details relevant to your business, all collected naturally through conversation and delivered as a structured summary before your team makes contact. Every first impression is prepared.",
           ]}
           Illustration={IllusIntroIntake}
         />

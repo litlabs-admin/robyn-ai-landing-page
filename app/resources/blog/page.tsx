@@ -50,9 +50,9 @@ const articles: ArticleCardData[] = [
     category: "Customer Stories",
     categoryColor: CATEGORY_COLORS["Customer Stories"],
     title: "How a Plumber in Austin Doubled His Bookings with AI Phone Answering",
-    excerpt: "Jake Morales was losing $2,000+ per month in missed calls while on job sites. Six weeks after switching to Tarsha AI, his call conversion rate had doubled and he'd hired a second technician.",
+    excerpt: "Jake Morales was losing $2,000+ per month in missed calls while on job sites. Six weeks after switching to Robyn AI, his call conversion rate had doubled and he'd hired a second technician.",
     imageUrl: "https://picsum.photos/seed/plumber-bookings/800/450",
-    authorName: "Tarsha Team",
+    authorName: "Robyn Team",
     authorAvatar: "https://i.pravatar.cc/150?img=60",
     date: "May 9, 2025",
     readTime: "4 min read",
@@ -62,7 +62,7 @@ const articles: ArticleCardData[] = [
     category: "Guides",
     categoryColor: CATEGORY_COLORS["Guides"],
     title: "Call Forwarding 101: Setting It Up the Right Way",
-    excerpt: "A step-by-step walkthrough for every major carrier, AT&T, Verizon, T-Mobile, and VoIP providers. Get your calls routing to Tarsha AI in under 10 minutes.",
+    excerpt: "A step-by-step walkthrough for every major carrier, AT&T, Verizon, T-Mobile, and VoIP providers. Get your calls routing to Robyn AI in under 10 minutes.",
     imageUrl: "https://picsum.photos/seed/call-forwarding/800/450",
     authorName: "Dev Team",
     authorAvatar: "https://i.pravatar.cc/150?img=53",
@@ -86,7 +86,7 @@ const articles: ArticleCardData[] = [
     category: "Call Management",
     categoryColor: CATEGORY_COLORS["Call Management"],
     title: "The 5 Types of Calls Every Small Business Gets (And How to Handle Each)",
-    excerpt: "New leads, existing clients, vendors, solicitors, and wrong numbers, each needs a different response. Here's how Tarsha AI handles them all so you don't have to.",
+    excerpt: "New leads, existing clients, vendors, solicitors, and wrong numbers, each needs a different response. Here's how Robyn AI handles them all so you don't have to.",
     imageUrl: "https://picsum.photos/seed/call-types/800/450",
     authorName: "Marcus Bell",
     authorAvatar: "https://i.pravatar.cc/150?img=15",
@@ -100,7 +100,7 @@ const articles: ArticleCardData[] = [
     title: "How Law Firms Are Using AI to Never Miss a Client Call",
     excerpt: "New client intake is the lifeblood of any law practice. We spoke with 12 attorneys about how AI phone answering transformed their intake process and reduced after-hours anxiety.",
     imageUrl: "https://picsum.photos/seed/law-firm-calls/800/450",
-    authorName: "Tarsha Team",
+    authorName: "Robyn Team",
     authorAvatar: "https://i.pravatar.cc/150?img=60",
     date: "Apr 24, 2025",
     readTime: "6 min read",
@@ -158,9 +158,9 @@ const articles: ArticleCardData[] = [
     category: "Industry Insights",
     categoryColor: CATEGORY_COLORS["Industry Insights"],
     title: "Restaurant Reservation Management with AI Phone Answering",
-    excerpt: "Front-of-house staff shouldn't be tethered to a phone during the dinner rush. See how restaurants are using Tarsha AI to handle reservations, hours inquiries, and dietary questions automatically.",
+    excerpt: "Front-of-house staff shouldn't be tethered to a phone during the dinner rush. See how restaurants are using Robyn AI to handle reservations, hours inquiries, and dietary questions automatically.",
     imageUrl: "https://picsum.photos/seed/restaurant-ai/800/450",
-    authorName: "Tarsha Team",
+    authorName: "Robyn Team",
     authorAvatar: "https://i.pravatar.cc/150?img=60",
     date: "Apr 2, 2025",
     readTime: "5 min read",
@@ -199,7 +199,7 @@ export default function BlogPage() {
               className="mb-5 text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-muted"
             >
               <span className="mr-2 inline-block h-1.5 w-1.5 translate-y-[-1px] rounded-full bg-accent align-middle" />
-              The Tarsha Blog
+              The Robyn Blog
             </motion.p>
 
             <motion.h1

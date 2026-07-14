@@ -19,33 +19,33 @@ const faqs: FAQItem[] = [
   {
     question: "What is an AI voice receptionist?",
     answer:
-      "Tarsha AI is a voice receptionist that answers business calls, talks naturally with customers, books appointments, and handles inquiries 24/7. It helps businesses reduce missed calls, save staff time, and improve customer response speed.",
+      "Robyn AI is a voice receptionist that answers business calls, talks naturally with customers, books appointments, and handles inquiries 24/7. It helps businesses reduce missed calls, save staff time, and improve customer response speed.",
   },
   {
-    question: "How can Tarsha AI help my business avoid missed calls?",
+    question: "How can Robyn AI help my business avoid missed calls?",
     answer:
-      "Tarsha AI answers every call instantly, even after business hours, so potential customers never reach voicemail. This helps businesses capture more leads and prevent lost revenue from unanswered calls.",
+      "Robyn AI answers every call instantly, even after business hours, so potential customers never reach voicemail. This helps businesses capture more leads and prevent lost revenue from unanswered calls.",
   },
   {
-    question: "Can Tarsha AI book appointments automatically?",
+    question: "Can Robyn AI book appointments automatically?",
     answer:
-      "Yes. Tarsha AI can schedule appointments, collect customer details, and send confirmations during live phone calls. Businesses save time by automating repetitive booking and intake tasks.",
+      "Yes. Robyn AI can schedule appointments, collect customer details, and send confirmations during live phone calls. Businesses save time by automating repetitive booking and intake tasks.",
   },
   {
-    question: "Which businesses benefit most from Tarsha AI?",
+    question: "Which businesses benefit most from Robyn AI?",
     answer:
-      "Tarsha AI is ideal for clinics, law firms, restaurants, real estate agencies, HVAC companies, and service businesses that receive frequent phone inquiries. It helps automate customer communication while improving response quality.",
+      "Robyn AI is ideal for clinics, law firms, restaurants, real estate agencies, HVAC companies, and service businesses that receive frequent phone inquiries. It helps automate customer communication while improving response quality.",
   },
   {
-    question: "Can Tarsha AI integrate with my CRM or scheduling tools?",
+    question: "Can Robyn AI integrate with my CRM or scheduling tools?",
     answer:
-      "Yes. Tarsha AI connects with CRMs, calendars, Slack, Zapier, and other tools using APIs and webhooks. Businesses can automate workflows and keep customer data synced across systems.",
+      "Yes. Robyn AI connects with CRMs, calendars, Slack, Zapier, and other tools using APIs and webhooks. Businesses can automate workflows and keep customer data synced across systems.",
   },
   {
     question:
-      "Why choose Tarsha AI over traditional answering services or IVR systems?",
+      "Why choose Robyn AI over traditional answering services or IVR systems?",
     answer:
-      "Unlike IVR menus or scripted answering services, Tarsha AI holds real conversations with callers. Businesses get a more professional customer experience at a lower operational cost.",
+      "Unlike IVR menus or scripted answering services, Robyn AI holds real conversations with callers. Businesses get a more professional customer experience at a lower operational cost.",
   },
 ];
 
@@ -65,7 +65,7 @@ const faqJsonLd = {
 };
 
 export function FAQ() {
-  // Single-active hover-to-expand (mirrors the Why Tarsha BenefitRow pattern).
+  // Single-active hover-to-expand (mirrors the Why Robyn BenefitRow pattern).
   // First row is open by default, gives crawlers an above-the-fold answer.
   const [activeIndex, setActiveIndex] = useState<number>(-1);
 
@@ -103,7 +103,7 @@ export function FAQ() {
             <ScrollReveal y={16} duration={0.7} delay={0.1}>
               <p className="mt-5 mx-auto max-w-md text-[17px] leading-[1.7] text-ink-muted md:text-[18px] lg:mx-0">
                 Quick answers to the questions teams ask before going live with{" "}
-                <span className="text-accent font-semibold">Tarsha AI</span>.
+                <span className="text-accent font-semibold">Robyn AI</span>.
                 Can&apos;t find what you&apos;re looking for?
               </p>
             </ScrollReveal>
@@ -111,7 +111,7 @@ export function FAQ() {
             {/* Contact card */}
             <ScrollReveal y={14} duration={0.7} delay={0.15}>
               <a
-                href="mailto:hello@tarsha.ai"
+                href="mailto:hello@robyn.ai"
                 className="group/contact mt-7 inline-flex items-center gap-4 rounded-2xl border border-border bg-surface px-5 py-4 shadow-soft transition-shadow duration-300 hover:shadow-lift"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-ink">

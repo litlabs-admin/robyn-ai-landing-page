@@ -29,15 +29,15 @@ const categories = [
   {
     icon: Zap,
     title: "Getting Started",
-    description: "New to Tarsha? Start here.",
+    description: "New to Robyn? Start here.",
     color: { bg: "#fef3c7", text: "#92400e", border: "#fde68a" },
     articleCount: 12,
     articles: [
-      { title: "What is Tarsha AI?", popular: true },
+      { title: "What is Robyn AI?", popular: true },
       { title: "How to sign up for free", popular: true },
       { title: "Your first call: what to expect" },
       { title: "Setting up your business profile" },
-      { title: "How Tarsha learns your business" },
+      { title: "How Robyn learns your business" },
     ],
   },
   {
@@ -114,20 +114,20 @@ const categories = [
 
 const faqs = [
   {
-    q: "Does Tarsha really pick up within 2 seconds?",
-    a: "Yes, our average answer time is under 1.8 seconds. Your callers will never hear more than two rings before Tarsha picks up, 24 hours a day, 365 days a year.",
+    q: "Does Robyn really pick up within 2 seconds?",
+    a: "Yes, our average answer time is under 1.8 seconds. Your callers will never hear more than two rings before Robyn picks up, 24 hours a day, 365 days a year.",
   },
   {
     q: "Do I need any special equipment or tech skills?",
-    a: "None. If you have a smartphone or landline, you can use Tarsha. Setup takes under 10 minutes and requires only dialing a forwarding code from your phone.",
+    a: "None. If you have a smartphone or landline, you can use Robyn. Setup takes under 10 minutes and requires only dialing a forwarding code from your phone.",
   },
   {
-    q: "Can Tarsha book appointments directly?",
-    a: "Yes, Tarsha can offer available slots, confirm appointments, and sync with Google Calendar. You can define your availability and it will only offer times you've approved.",
+    q: "Can Robyn book appointments directly?",
+    a: "Yes, Robyn can offer available slots, confirm appointments, and sync with Google Calendar. You can define your availability and it will only offer times you've approved.",
   },
   {
     q: "What happens to my existing phone number?",
-    a: "Nothing changes. You keep your number and callers continue dialing it. Call forwarding redirects calls to Tarsha behind the scenes. You can turn it off at any time.",
+    a: "Nothing changes. You keep your number and callers continue dialing it. Call forwarding redirects calls to Robyn behind the scenes. You can turn it off at any time.",
   },
   {
     q: "Is there a long-term contract?",
@@ -506,7 +506,7 @@ export default function HelpCenterPage() {
                   title: "Send an email",
                   desc: "Drop us a detailed question and we'll reply with a full step-by-step answer, usually within 2 hours.",
                   cta: "Email support",
-                  href: "mailto:hello@tarsha.ai",
+                  href: "mailto:hello@robyn.ai",
                 },
               ].map((card, i) => (
                 <motion.div

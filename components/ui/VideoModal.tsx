@@ -23,7 +23,7 @@ export function VideoModal({
   onClose,
   videoSrc,
   poster,
-  title = "Tarsha AI product demo",
+  title = "Robyn AI product demo",
 }: VideoModalProps) {
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -121,7 +121,7 @@ export function VideoModal({
                       Demo video coming soon
                     </p>
                     <p className="max-w-xs text-sm text-white/60">
-                      We&apos;re recording a fresh walkthrough of Tarsha AI in
+                      We&apos;re recording a fresh walkthrough of Robyn AI in
                       action. Check back shortly.
                     </p>
                   </div>

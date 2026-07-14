@@ -60,7 +60,7 @@ function IllusStep1Appt() {
 function IllusStep2Appt() {
   const lines = [
     { speaker: "Caller", text: "I'd like to book a consultation for next week" },
-    { speaker: "Tarsha AI", text: "I have Thursday at 10 AM or Friday at 2 PM available. Which works for you?" },
+    { speaker: "Robyn AI", text: "I have Thursday at 10 AM or Friday at 2 PM available. Which works for you?" },
   ];
   return (
     <div className="space-y-2.5">
@@ -75,7 +75,7 @@ function IllusStep2Appt() {
         >
           <span
             className={`mt-0.5 w-16 shrink-0 text-[11px] font-semibold ${
-              speaker === "Tarsha AI" ? "text-accent-ink/70" : "text-ink-muted"
+              speaker === "Robyn AI" ? "text-accent-ink/70" : "text-ink-muted"
             }`}
           >
             {speaker}
@@ -299,7 +299,7 @@ function MockNoShowStats() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "My front desk was spending 3 hours a day just booking appointments over the phone. Tarsha does it all automatically now, the calendar stays full, my team stays focused, and patients actually say scheduling has never been easier.",
+      "My front desk was spending 3 hours a day just booking appointments over the phone. Robyn does it all automatically now, the calendar stays full, my team stays focused, and patients actually say scheduling has never been easier.",
     author: "Dr. Amy C.",
     role: "Practice Owner",
     company: "Westside Chiropractic",
@@ -307,7 +307,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "We do high-volume appointment booking, hundreds a week. Before Tarsha we needed two dedicated staff members just to manage the phone schedule. Now it's fully automated, double-bookings are zero, and our no-show rate dropped 55% with the reminders.",
+      "We do high-volume appointment booking, hundreds a week. Before Robyn we needed two dedicated staff members just to manage the phone schedule. Now it's fully automated, double-bookings are zero, and our no-show rate dropped 55% with the reminders.",
     author: "Mark F.",
     role: "Operations Director",
     company: "FitLife Studios Network",
@@ -315,7 +315,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "New clients call wanting to book a consultation. Old system was: take a message, call back, play phone tag, finally book. With Tarsha they call, get asked two questions, pick a time, and hang up confirmed. Our conversion from call to consultation went from 60% to 94%.",
+      "New clients call wanting to book a consultation. Old system was: take a message, call back, play phone tag, finally book. With Robyn they call, get asked two questions, pick a time, and hang up confirmed. Our conversion from call to consultation went from 60% to 94%.",
     author: "Sophie H.",
     role: "Managing Partner",
     company: "Halston Law Group",
@@ -327,13 +327,13 @@ const steps = [
   {
     title: "Live availability checked instantly",
     description:
-      "Tarsha reads your real-time calendar, Google Calendar, Outlook, Acuity, Calendly. No outdated slots, no double-bookings, ever.",
+      "Robyn reads your real-time calendar, Google Calendar, Outlook, Acuity, Calendly. No outdated slots, no double-bookings, ever.",
     Illustration: IllusStep1Appt,
   },
   {
     title: "Booking conversation handled",
     description:
-      "Tarsha offers available slots, qualifies the appointment type, collects the caller's details, and confirms the time, entirely within the phone call.",
+      "Robyn offers available slots, qualifies the appointment type, collects the caller's details, and confirms the time, entirely within the phone call.",
     Illustration: IllusStep2Appt,
   },
   {
@@ -403,7 +403,7 @@ export default function AppointmentTakingPage() {
           eyebrow="Appointment Taking"
           titleBefore="Book appointments "
           titleHighlight="without lifting a finger"
-          subtitle="Tarsha AI handles the entire booking conversation in real time, checking availability, offering slots, confirming the appointment, and sending reminders automatically."
+          subtitle="Robyn AI handles the entire booking conversation in real time, checking availability, offering slots, confirming the appointment, and sending reminders automatically."
           MockUI={MockAppointmentFlow}
         />
         <SolutionTestimonials
@@ -415,7 +415,7 @@ export default function AppointmentTakingPage() {
           heading="Every booking call takes 3–8 minutes of someone's time. It doesn't have to."
           paragraphs={[
             "Booking an appointment over the phone is deceptively expensive. A staff member stops what they're doing, checks the calendar, offers times, waits for the caller to decide, confirms details, hangs up, and logs it. Multiply that by 20 bookings a day and you've spent 2 hours on pure scheduling.",
-            "Tarsha AI handles every step of the booking call automatically. It checks your live calendar, offers available slots, confirms the booking, and sends reminders that reduce no-shows, all within the call, with no human involvement required.",
+            "Robyn AI handles every step of the booking call automatically. It checks your live calendar, offers available slots, confirms the booking, and sends reminders that reduce no-shows, all within the call, with no human involvement required.",
           ]}
           Illustration={IllusIntroAppointment}
         />

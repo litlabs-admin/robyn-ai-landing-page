@@ -18,7 +18,7 @@ export function MockAfterHoursCall() {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="rounded-full border border-accent/30 bg-accent/15 px-2.5 py-1 text-[11px] font-semibold text-ink"
         >
-          Tarsha on duty
+          Robyn on duty
         </motion.span>
       </div>
 

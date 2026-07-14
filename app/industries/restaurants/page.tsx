@@ -20,7 +20,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 function IllusStep1Restaurant() {
   const messages = [
     { speaker: "Caller", text: "Do you have a table for 4 on Saturday at 7?" },
-    { speaker: "Tarsha AI", text: "Yes! I can book you for Saturday the 22nd at 7 PM. May I get your name?" },
+    { speaker: "Robyn AI", text: "Yes! I can book you for Saturday the 22nd at 7 PM. May I get your name?" },
   ];
   return (
     <div className="space-y-3">
@@ -35,7 +35,7 @@ function IllusStep1Restaurant() {
         >
           <span
             className={`mt-0.5 w-16 shrink-0 text-[11px] font-semibold ${
-              speaker === "Tarsha AI" ? "text-accent-ink/70" : "text-ink-muted"
+              speaker === "Robyn AI" ? "text-accent-ink/70" : "text-ink-muted"
             }`}
           >
             {speaker}
@@ -88,17 +88,17 @@ function IllusStep3Restaurant() {
     {
       label: "English",
       caller: "Are you open Sunday?",
-      tarsha: "Yes, we're open Sunday 11 AM to 9 PM!",
+      robyn: "Yes, we're open Sunday 11 AM to 9 PM!",
     },
     {
       label: "Español",
       caller: "¿Abren el domingo?",
-      tarsha: "¡Sí, abrimos el domingo de 11 a 21 h!",
+      robyn: "¡Sí, abrimos el domingo de 11 a 21 h!",
     },
   ];
   return (
     <div className="space-y-3">
-      {pairs.map(({ label, caller, tarsha }, i) => (
+      {pairs.map(({ label, caller, robyn }, i) => (
         <motion.div
           key={label}
           initial={{ opacity: 0, y: 8 }}
@@ -115,8 +115,8 @@ function IllusStep3Restaurant() {
             <p className="text-[12px] text-ink">{caller}</p>
           </div>
           <div className="flex items-start gap-2">
-            <span className="w-14 shrink-0 text-[10px] font-semibold text-accent-ink/70">Tarsha</span>
-            <p className="text-[12px] text-ink">{tarsha}</p>
+            <span className="w-14 shrink-0 text-[10px] font-semibold text-accent-ink/70">Robyn</span>
+            <p className="text-[12px] text-ink">{robyn}</p>
           </div>
         </motion.div>
       ))}
@@ -236,12 +236,12 @@ function MockReservationFlow() {
 
 function MockBilingualRestaurant() {
   const pairs = [
-    { caller: "Are you open Sunday?", tarsha: "Yes, we're open Sunday 11 AM to 9 PM!", lang: "EN" },
-    { caller: "¿Abren el domingo?", tarsha: "¡Sí, abrimos el domingo de 11 a 21 h!", lang: "ES" },
+    { caller: "Are you open Sunday?", robyn: "Yes, we're open Sunday 11 AM to 9 PM!", lang: "EN" },
+    { caller: "¿Abren el domingo?", robyn: "¡Sí, abrimos el domingo de 11 a 21 h!", lang: "ES" },
   ];
   return (
     <div className="mt-4 space-y-3">
-      {pairs.map(({ caller, tarsha, lang }, i) => (
+      {pairs.map(({ caller, robyn, lang }, i) => (
         <motion.div
           key={lang}
           initial={{ opacity: 0, y: 6 }}
@@ -257,8 +257,8 @@ function MockBilingualRestaurant() {
             </span>
           </div>
           <p className="text-[12px] text-ink">{caller}</p>
-          <p className="text-[11px] text-ink-muted">Tarsha:</p>
-          <p className="text-[12px] text-ink">{tarsha}</p>
+          <p className="text-[11px] text-ink-muted">Robyn:</p>
+          <p className="text-[12px] text-ink">{robyn}</p>
         </motion.div>
       ))}
     </div>
@@ -286,7 +286,7 @@ function MockPeakOverflow() {
           className="h-1.5 w-1.5 shrink-0 rounded-full bg-green-500"
         />
         <p className="text-[12px] font-medium text-ink">
-          All calls answered by Tarsha · no hold time
+          All calls answered by Robyn · no hold time
         </p>
       </div>
     </div>
@@ -298,7 +298,7 @@ function MockPeakOverflow() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "We get 80 calls a day asking if we're open, what's on the menu, and if we do takeout. My staff was spending more time on the phone than on the floor. Tarsha handles every single one instantly. I estimated we saved 2.5 hours of staff time every single day.",
+      "We get 80 calls a day asking if we're open, what's on the menu, and if we do takeout. My staff was spending more time on the phone than on the floor. Robyn handles every single one instantly. I estimated we saved 2.5 hours of staff time every single day.",
     author: "Tony V.",
     role: "Owner",
     company: "Russo's Trattoria",
@@ -306,7 +306,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Half our customers speak Spanish. We couldn't always find bilingual staff for every shift. Tarsha answers in whichever language the caller uses, automatically. Our Spanish-speaking regulars love it, and our Yelp reviews even mention the phone experience now.",
+      "Half our customers speak Spanish. We couldn't always find bilingual staff for every shift. Robyn answers in whichever language the caller uses, automatically. Our Spanish-speaking regulars love it, and our Yelp reviews even mention the phone experience now.",
     author: "Rosa M.",
     role: "Owner & Head Chef",
     company: "La Cocina de Rosa",
@@ -314,7 +314,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Friday and Saturday evenings we're overwhelmed. The phone rings constantly for reservations and we physically can't answer. Tarsha takes every reservation call, confirms the booking, and texts a confirmation. We went from turning people away to being fully booked.",
+      "Friday and Saturday evenings we're overwhelmed. The phone rings constantly for reservations and we physically can't answer. Robyn takes every reservation call, confirms the booking, and texts a confirmation. We went from turning people away to being fully booked.",
     author: "James K.",
     role: "General Manager",
     company: "The Copper Pan",
@@ -326,19 +326,19 @@ const steps = [
   {
     title: "Questions answered instantly",
     description:
-      "Hours, menu, dietary options, parking, directions, Tarsha knows your restaurant inside and out and answers any question in seconds, without pulling anyone from the floor.",
+      "Hours, menu, dietary options, parking, directions, Robyn knows your restaurant inside and out and answers any question in seconds, without pulling anyone from the floor.",
     Illustration: IllusStep1Restaurant,
   },
   {
     title: "Reservations taken automatically",
     description:
-      "Callers can book a table directly over the phone. Tarsha checks availability, confirms the reservation, and sends a reminder, all within the call.",
+      "Callers can book a table directly over the phone. Robyn checks availability, confirms the reservation, and sends a reminder, all within the call.",
     Illustration: IllusStep2Restaurant,
   },
   {
     title: "Bilingual from the first word",
     description:
-      "English and Spanish speakers both get the same fast, natural experience. Tarsha detects the language automatically and responds without any prompts or menus.",
+      "English and Spanish speakers both get the same fast, natural experience. Robyn detects the language automatically and responds without any prompts or menus.",
     Illustration: IllusStep3Restaurant,
   },
 ];
@@ -356,21 +356,21 @@ const benefits: Benefit[] = [
     icon: Clock,
     title: "Reservation taking",
     description:
-      "Book tables directly over the phone. Tarsha confirms reservations and sends reminders, reducing no-shows automatically.",
+      "Book tables directly over the phone. Robyn confirms reservations and sends reminders, reducing no-shows automatically.",
     MockUI: MockReservationFlow,
   },
   {
     icon: Globe,
     title: "English & Spanish",
     description:
-      "Tarsha switches languages automatically based on how the caller speaks, no button presses, no separate number needed.",
+      "Robyn switches languages automatically based on how the caller speaks, no button presses, no separate number needed.",
     MockUI: MockBilingualRestaurant,
   },
   {
     icon: PhoneForwarded,
     title: "Peak-hour overflow",
     description:
-      "When the restaurant is slammed and the phone won't stop ringing, Tarsha handles overflow calls so nothing falls through the cracks.",
+      "When the restaurant is slammed and the phone won't stop ringing, Robyn handles overflow calls so nothing falls through the cracks.",
     MockUI: MockPeakOverflow,
     wide: true,
   },
@@ -402,7 +402,7 @@ export default function RestaurantsPage() {
           eyebrow="Restaurants & Cafes"
           titleBefore="Answer every table question "
           titleHighlight="without leaving the kitchen"
-          subtitle="Tarsha AI handles reservations, menu questions, and hours inquiries so your staff can focus on food and service, in English and Spanish, 24/7."
+          subtitle="Robyn AI handles reservations, menu questions, and hours inquiries so your staff can focus on food and service, in English and Spanish, 24/7."
           MockUI={MockRestaurantReservation}
         />
         <SolutionTestimonials
@@ -414,7 +414,7 @@ export default function RestaurantsPage() {
           heading="Your staff should be serving, not answering phones"
           paragraphs={[
             "Restaurant phones ring all day, the same questions, over and over. Are you open? Do you have gluten-free options? Can I make a reservation for Saturday? Every time a staff member picks up that phone, they're not taking an order, running food, or serving a table.",
-            "Tarsha AI answers every call instantly, reservations, menu questions, dietary info, hours, directions. In English and Spanish. It takes bookings directly into your calendar and handles peak-hour overflow when your line is ringing off the hook.",
+            "Robyn AI answers every call instantly, reservations, menu questions, dietary info, hours, directions. In English and Spanish. It takes bookings directly into your calendar and handles peak-hour overflow when your line is ringing off the hook.",
           ]}
           Illustration={IllusIntroRestaurant}
         />
@@ -428,7 +428,7 @@ export default function RestaurantsPage() {
           benefits={benefits}
         />
         <SolutionIndustries
-          eyebrow="Who else uses Tarsha"
+          eyebrow="Who else uses Robyn"
           heading="Built for every kind of food and hospitality business"
           industries={industries}
         />

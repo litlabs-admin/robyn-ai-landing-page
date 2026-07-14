@@ -17,39 +17,39 @@ import {
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tarsha.ai"),
+  metadataBase: new URL("https://robyn.ai"),
   icons: {
     icon: { url: "/assets/favicon.svg", type: "image/svg+xml" },
     shortcut: "/assets/favicon.svg",
     apple: "/assets/favicon.svg",
   },
   title: {
-    default: "Tarsha AI, AI receptionist that answers calls 24/7",
-    template: "%s · Tarsha AI",
+    default: "Robyn AI, AI receptionist that answers calls 24/7",
+    template: "%s · Robyn AI",
   },
   description:
-    "Tarsha AI is the answering service that keeps your phone covered, qualifying leads, booking appointments, and handling customer calls 24/7 with a natural, human-like voice.",
+    "Robyn AI is the answering service that keeps your phone covered, qualifying leads, booking appointments, and handling customer calls 24/7 with a natural, human-like voice.",
   keywords: [
     "AI receptionist",
     "AI answering service",
     "Voice AI",
-    "Tarsha AI",
+    "Robyn AI",
     "SMB phone service",
     "Missed call recovery",
   ],
   openGraph: {
-    title: "Tarsha AI, AI receptionist that answers calls 24/7",
+    title: "Robyn AI, AI receptionist that answers calls 24/7",
     description:
-      "Never miss another customer call. Tarsha AI answers instantly, qualifies leads, and books appointments, all with a natural, human-like voice.",
-    url: "https://tarsha.ai",
-    siteName: "Tarsha AI",
+      "Never miss another customer call. Robyn AI answers instantly, qualifies leads, and books appointments, all with a natural, human-like voice.",
+    url: "https://robyn.ai",
+    siteName: "Robyn AI",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tarsha AI, AI receptionist for small businesses",
+    title: "Robyn AI, AI receptionist for small businesses",
     description:
-      "Never miss another customer call. Tarsha AI answers instantly and books appointments 24/7.",
+      "Never miss another customer call. Robyn AI answers instantly and books appointments 24/7.",
   },
   robots: { index: true, follow: true },
   other: {
@@ -93,8 +93,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Tarsha AI",
-              url: "https://tarsha.ai",
+              name: "Robyn AI",
+              url: "https://robyn.ai",
               description:
                 "AI voice receptionist for small businesses, answers calls 24/7, qualifies leads, books appointments.",
             }),

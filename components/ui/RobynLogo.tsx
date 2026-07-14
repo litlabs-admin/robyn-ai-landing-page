@@ -6,11 +6,11 @@ import { RobynWordmark } from "@/components/ui/RobynWordmark";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 export type WordmarkStyle =
-  | "weight-contrast"   // extrabold "tarsha" + featherweight ".ai" , versatile default
-  | "uppercase-badge"   // TARSHA + yellow pill badge ".ai"          , authority/trust
+  | "weight-contrast"   // extrabold "robyn" + featherweight ".ai" , versatile default
+  | "uppercase-badge"   // ROBYN + yellow pill badge ".ai"          , authority/trust
   | "mono-split"        // Inter-only semibold/normal tonal split    , clean SaaS
   | "accent-letter"     // golden "t" opener                        , warm/approachable
-  | "superscript-ai"    // extrabold "tarsha" + superscript ".ai"   , editorial precision
+  | "superscript-ai"    // extrabold "robyn" + superscript ".ai"   , editorial precision
   // ── Premium serif / script styles ──────────────────────────────────────────
   | "playfair-italic"   // Playfair Display bold italic              , masthead luxury
   | "cormorant"         // Cormorant Garamond italic                 , whisper elegance
@@ -33,7 +33,7 @@ type Variant = "full" | "icon" | "wordmark";
 type Size    = "sm" | "md" | "lg";
 type Theme   = "light" | "dark";
 
-interface TarshaLogoProps {
+interface RobynLogoProps {
   variant?:       Variant;
   size?:          Size;
   theme?:         Theme;
@@ -56,7 +56,7 @@ const BYLINE_CLASS: Record<Size, string> = { sm: "text-[6px]", md: "text-[7px]",
 
 // ─── Root component ───────────────────────────────────────────────────────────
 
-export function TarshaLogo({
+export function RobynLogo({
   variant       = "full",
   size          = "md",
   theme         = "light",
@@ -64,12 +64,12 @@ export function TarshaLogo({
   byline,
   bylineClassName,
   className,
-}: TarshaLogoProps) {
+}: RobynLogoProps) {
   const mark = (
     <div className="flex items-center gap-2.5">
-      {variant !== "wordmark" && <TarshaIcon size={ICON_PX[size]} />}
+      {variant !== "wordmark" && <RobynIcon size={ICON_PX[size]} />}
       {variant !== "icon" && (
-        <TarshaWordmark
+        <RobynLogoWordmark
           textClass={TEXT_CLASS[size]}
           theme={theme}
           wordmarkStyle={wordmarkStyle}
@@ -112,7 +112,7 @@ export function TarshaLogo({
 
 // ─── Icon mark (kept for backward-compat / future use) ───────────────────────
 
-export function TarshaIcon({ size = 36, className }: { size?: number; className?: string }) {
+export function RobynIcon({ size = 36, className }: { size?: number; className?: string }) {
   return (
     <svg
       width={size}
@@ -136,7 +136,7 @@ export function TarshaIcon({ size = 36, className }: { size?: number; className?
 
 // ─── Wordmark dispatcher ──────────────────────────────────────────────────────
 
-function TarshaWordmark({
+function RobynLogoWordmark({
   textClass,
   theme,
   wordmarkStyle,
@@ -164,7 +164,7 @@ function TarshaWordmark({
 }
 
 // ─── Style A: weight-contrast ─────────────────────────────────────────────────
-// Extrabold "tarsha" + featherweight ".ai", the weight gap creates hierarchy
+// Extrabold "robyn" + featherweight ".ai", the weight gap creates hierarchy
 // without any colour trick. Works everywhere.
 
 function WordmarkWeightContrast({ textClass, theme }: SubProps) {
@@ -174,7 +174,7 @@ function WordmarkWeightContrast({ textClass, theme }: SubProps) {
         className={theme === "dark" ? "text-white" : "text-ink"}
         style={{ fontWeight: 800, letterSpacing: "-0.04em" }}
       >
-        tarsha
+        robyn
       </span>
       <span
         className={theme === "dark" ? "text-white/50" : "text-ink-faint"}
@@ -187,7 +187,7 @@ function WordmarkWeightContrast({ textClass, theme }: SubProps) {
 }
 
 // ─── Style B: uppercase-badge ─────────────────────────────────────────────────
-// "TARSHA" tracked wide + ".ai" in a compact yellow pill.
+// "ROBYN" tracked wide + ".ai" in a compact yellow pill.
 // Authority and modernity in one mark, premium trust signal for SMBs.
 
 function WordmarkUppercaseBadge({ textClass, theme }: SubProps) {
@@ -199,7 +199,7 @@ function WordmarkUppercaseBadge({ textClass, theme }: SubProps) {
         className={cn("font-bold uppercase", theme === "dark" ? "text-white" : "text-ink")}
         style={{ letterSpacing: "0.10em" }}
       >
-        TARSHA
+        ROBYN
       </span>
       <span
         className="font-sans font-semibold bg-accent text-accent-ink rounded px-1"
@@ -212,7 +212,7 @@ function WordmarkUppercaseBadge({ textClass, theme }: SubProps) {
 }
 
 // ─── Style C: mono-split ──────────────────────────────────────────────────────
-// Inter (body font) only, no display typeface. Semibold "tarsha" bleeds
+// Inter (body font) only, no display typeface. Semibold "robyn" bleeds
 // into a quieter ".ai". Clinical precision, SaaS / fintech energy.
 
 function WordmarkMonoSplit({ textClass, theme }: SubProps) {
@@ -222,7 +222,7 @@ function WordmarkMonoSplit({ textClass, theme }: SubProps) {
         className={theme === "dark" ? "text-white" : "text-ink"}
         style={{ fontWeight: 600, letterSpacing: "-0.025em" }}
       >
-        tarsha
+        robyn
       </span>
       <span
         className={theme === "dark" ? "text-white/55" : "text-ink-muted"}
@@ -267,7 +267,7 @@ function WordmarkSuperscriptAi({ textClass, theme }: SubProps) {
         className={theme === "dark" ? "text-white" : "text-ink"}
         style={{ fontWeight: 800, letterSpacing: "-0.04em" }}
       >
-        tarsha
+        robyn
       </span>
       <span
         className={theme === "dark" ? "text-white/50" : "text-ink-faint"}
@@ -285,7 +285,7 @@ function WordmarkSuperscriptAi({ textClass, theme }: SubProps) {
 }
 
 // ─── Style F: playfair-italic ─────────────────────────────────────────────────
-// "tarsha" in Playfair Display bold italic, sweeping ink-stroke curves give the
+// "robyn" in Playfair Display bold italic, sweeping ink-stroke curves give the
 // wordmark a magazine-masthead authority. ".ai" steps back in light Inter roman
 // so the contrast is extreme: lush italic vs. neutral sans. Smooth and premium.
 
@@ -296,7 +296,7 @@ function WordmarkPlayfairItalic({ textClass, theme }: SubProps) {
         className={cn("font-playfair", theme === "dark" ? "text-white" : "text-ink")}
         style={{ fontWeight: 700, fontStyle: "italic", letterSpacing: "-0.02em" }}
       >
-        tarsha
+        robyn
       </span>
       <span
         className={cn("font-sans", theme === "dark" ? "text-white/45" : "text-ink-faint")}
@@ -310,7 +310,7 @@ function WordmarkPlayfairItalic({ textClass, theme }: SubProps) {
 
 // ─── Style G: cormorant ───────────────────────────────────────────────────────
 // Cormorant Garamond italic throughout, gossamer strokes and generous kerns
-// give "tarsha" a calligraphic grace without being an actual script. ".ai" in
+// give "robyn" a calligraphic grace without being an actual script. ".ai" in
 // light roman creates a soft counterpoint. Luxury without effort.
 
 function WordmarkCormorant({ textClass, theme }: SubProps) {
@@ -320,7 +320,7 @@ function WordmarkCormorant({ textClass, theme }: SubProps) {
         className={theme === "dark" ? "text-white" : "text-ink"}
         style={{ fontWeight: 500, fontStyle: "italic", letterSpacing: "-0.01em" }}
       >
-        tarsha
+        robyn
       </span>
       <span
         className={theme === "dark" ? "text-white/50" : "text-ink-faint"}
@@ -333,7 +333,7 @@ function WordmarkCormorant({ textClass, theme }: SubProps) {
 }
 
 // ─── Style H: serif-split ─────────────────────────────────────────────────────
-// "tarsha" in Playfair Display upright roman, classical stroke contrast grounds
+// "robyn" in Playfair Display upright roman, classical stroke contrast grounds
 // the name. Then ".ai" jumps hard into Inter bold with a golden dot as the
 // separator. Old-world craft meets precision tech. Subtle yet unmistakable.
 
@@ -346,7 +346,7 @@ function WordmarkSerifSplit({ textClass, theme }: SubProps) {
         className={cn("font-playfair", theme === "dark" ? "text-white" : "text-ink")}
         style={{ fontWeight: 400, letterSpacing: "-0.02em" }}
       >
-        tarsha
+        robyn
       </span>
       <span style={{ color: dotColor, fontWeight: 700 }}>.</span>
       <span
@@ -360,7 +360,7 @@ function WordmarkSerifSplit({ textClass, theme }: SubProps) {
 }
 
 // ─── Style I: cedarville ──────────────────────────────────────────────────────
-// Cedarville Cursive (weight 400, the only available weight) for "tarsha" ,
+// Cedarville Cursive (weight 400, the only available weight) for "robyn" ,
 // a genuine flowing handwritten script with ink-pen warmth. Because the cursive
 // naturally renders slightly smaller optically, we nudge the font-size up 15%.
 // The yellow dot + Inter bold "ai" snaps the warmth of the handwriting back to
@@ -383,7 +383,7 @@ function WordmarkCedarville({ textClass, theme }: SubProps) {
         className={cn("font-cedarville", theme === "dark" ? "text-white" : "text-ink")}
         style={{ fontSize: "1.15em", letterSpacing: "0.01em" }}
       >
-        tarsha
+        robyn
       </span>
 
       {/* Branded yellow dot, the bridge between handwritten and digital */}
@@ -419,7 +419,7 @@ function WordmarkCedarville({ textClass, theme }: SubProps) {
 // considered, premium type choice rather than a default.
 //
 // Key decisions:
-//  • "tarsha" weight 500 (medium), authoritative but not aggressive
+//  • "robyn" weight 500 (medium), authoritative but not aggressive
 //  • letter-spacing -0.022em, tighter than the default, feels crafted
 //  • yellow SVG dot as period, consistent brand micro-detail
 //  • "ai" weight 400, slightly smaller (0.88em), recedes gracefully
@@ -437,12 +437,12 @@ function WordmarkSmithStyle({ textClass, theme }: SubProps) {
     <span
       className={cn("leading-none select-none inline-flex items-baseline", textClass)}
     >
-      {/* "tarsha", Space Grotesk medium, distinctive yet refined */}
+      {/* "robyn", Space Grotesk medium, distinctive yet refined */}
       <span
         className="font-space-grotesk"
         style={{ fontWeight: 500, letterSpacing: "-0.022em", color: nameColor }}
       >
-        tarsha
+        robyn
       </span>
 
       {/* Brand-yellow dot, the only colour accent, keeps it clean */}
@@ -485,7 +485,7 @@ function WordmarkAllura({ textClass, theme }: SubProps) {
         paintOrder:       "stroke fill",
       }}
     >
-      Tarsha.ai
+      Robyn AI
     </span>
   );
 }

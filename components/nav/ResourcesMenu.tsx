@@ -79,7 +79,7 @@ export function ResourcesMenu({ visible }: { visible: boolean }) {
               </div>
               <p className="text-[13px] font-semibold text-ink">Customer stories</p>
               <p className="mt-1 text-[12px] leading-relaxed text-ink-muted">
-                See how businesses use Tarsha AI to handle calls 24/7
+                See how businesses use Robyn AI to handle calls 24/7
               </p>
               <Link
                 href="/resources/customer-stories"

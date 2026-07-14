@@ -22,7 +22,7 @@ export function MockBilingualCall() {
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
             className="h-2 w-2 rounded-full bg-green-500 shadow-[0_0_0_4px_rgba(34,197,94,0.18)]"
           />
-          <span className="text-[13px] font-medium text-ink">Tarsha AI · Live</span>
+          <span className="text-[13px] font-medium text-ink">Robyn AI · Live</span>
         </div>
         <div className="flex items-center gap-1.5">
           <span className="rounded-full border border-border bg-surface-muted px-2 py-0.5 text-[11px] font-medium text-ink">

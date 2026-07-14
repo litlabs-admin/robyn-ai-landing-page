@@ -3,7 +3,7 @@
 import { ResourcesMenu } from "@/components/nav/ResourcesMenu";
 import { SolutionsMenu } from "@/components/nav/SolutionsMenu";
 import { Button } from "@/components/ui/Button";
-import { TarshaLogo } from "@/components/ui/TarshaLogo";
+import { RobynLogo } from "@/components/ui/RobynLogo";
 import { brand } from "@/lib/assets";
 import { cn } from "@/lib/cn";
 import {
@@ -280,7 +280,7 @@ export function Header() {
           className="focus-ring rounded-md"
           aria-label={`${brand.name} home`}
         >
-          <TarshaLogo
+          <RobynLogo
             variant="wordmark"
             wordmarkStyle="robyn-brodine"
             theme="light"

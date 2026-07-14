@@ -289,7 +289,7 @@ function MockCallLog() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "Client intake was consuming 3 hours of my paralegal's day. Calls coming in during depositions, court appearances, consultations, all going to voicemail. Tarsha now answers every single one, gathers intake info, and routes correctly. We haven't missed a new client inquiry in four months.",
+      "Client intake was consuming 3 hours of my paralegal's day. Calls coming in during depositions, court appearances, consultations, all going to voicemail. Robyn now answers every single one, gathers intake info, and routes correctly. We haven't missed a new client inquiry in four months.",
     author: "Rebecca M.",
     role: "Managing Partner",
     company: "Morrison & Associates",
@@ -297,7 +297,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "In family law, callers are often in distress. They need to feel heard immediately. Tarsha greets them warmly, captures their situation professionally, and gets the right person on the line fast. Three clients told me this was the reason they chose our firm.",
+      "In family law, callers are often in distress. They need to feel heard immediately. Robyn greets them warmly, captures their situation professionally, and gets the right person on the line fast. Three clients told me this was the reason they chose our firm.",
     author: "Daniel H.",
     role: "Principal Attorney",
     company: "Hargrove Family Law",
@@ -305,7 +305,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "We do criminal defense, calls come at all hours, often urgent. Tarsha screens and routes them immediately. Emergency calls reach someone. Routine inquiries are captured and queued. I haven't missed a single urgent call since we switched.",
+      "We do criminal defense, calls come at all hours, often urgent. Robyn screens and routes them immediately. Emergency calls reach someone. Routine inquiries are captured and queued. I haven't missed a single urgent call since we switched.",
     author: "Marcus J.",
     role: "Partner",
     company: "Jensen Criminal Defense",
@@ -317,19 +317,19 @@ const steps = [
   {
     title: "Every call answered, professionally",
     description:
-      "Tarsha answers in your firm's name within 2 seconds, day, night, and weekends. Callers in distress hear a warm, professional voice immediately, not a voicemail prompt.",
+      "Robyn answers in your firm's name within 2 seconds, day, night, and weekends. Callers in distress hear a warm, professional voice immediately, not a voicemail prompt.",
     Illustration: IllusStep1LawFirm,
   },
   {
     title: "Precise intake captured",
     description:
-      "Tarsha collects the caller's name, contact details, matter type, and urgency level, everything your team needs to prepare for a callback or consultation.",
+      "Robyn collects the caller's name, contact details, matter type, and urgency level, everything your team needs to prepare for a callback or consultation.",
     Illustration: IllusStep2LawFirm,
   },
   {
     title: "Routed to the right attorney",
     description:
-      "Family law, criminal defense, estate planning, Tarsha routes each caller to the right practice area instantly, with a full summary so whoever picks up is already briefed.",
+      "Family law, criminal defense, estate planning, Robyn routes each caller to the right practice area instantly, with a full summary so whoever picks up is already briefed.",
     Illustration: IllusStep3LawFirm,
   },
 ];
@@ -354,14 +354,14 @@ const benefits: Benefit[] = [
     icon: Clock,
     title: "After-hours coverage",
     description:
-      "Your firm never goes dark. Tarsha handles evening and weekend calls with the same professionalism, routing urgent matters to your on-call line.",
+      "Your firm never goes dark. Robyn handles evening and weekend calls with the same professionalism, routing urgent matters to your on-call line.",
     MockUI: MockAfterHoursLaw,
   },
   {
     icon: ShieldCheck,
     title: "Confidential handling",
     description:
-      "Callers are never asked to leave sensitive details in a voicemail. Tarsha handles intake conversations with appropriate discretion.",
+      "Callers are never asked to leave sensitive details in a voicemail. Robyn handles intake conversations with appropriate discretion.",
     MockUI: MockCallLog,
     wide: true,
   },
@@ -393,7 +393,7 @@ export default function LawFirmsPage() {
           eyebrow="Law Firms"
           titleBefore="Never let a potential client "
           titleHighlight="reach your voicemail"
-          subtitle="Tarsha AI handles every call to your firm with discretion and professionalism, capturing intake details, routing to the right attorney, and covering after-hours without compromising your reputation."
+          subtitle="Robyn AI handles every call to your firm with discretion and professionalism, capturing intake details, routing to the right attorney, and covering after-hours without compromising your reputation."
           MockUI={MockLegalIntake}
         />
         <SolutionTestimonials
@@ -405,7 +405,7 @@ export default function LawFirmsPage() {
           heading="Missed calls cost law firms clients, and reputation"
           paragraphs={[
             "When someone calls a law firm, they're often in a stressful situation. They need to feel heard. If that call goes to voicemail, they call the next firm on the list, and your chance at that client is gone. For high-stakes referral businesses like law, first impressions are everything.",
-            "Tarsha AI answers every call professionally in your firm's name, captures accurate intake information, and routes callers to the right attorney or team. Urgent matters are escalated immediately. After-hours calls are handled with the same professionalism as business-hours calls, and every interaction is logged with full context.",
+            "Robyn AI answers every call professionally in your firm's name, captures accurate intake information, and routes callers to the right attorney or team. Urgent matters are escalated immediately. After-hours calls are handled with the same professionalism as business-hours calls, and every interaction is logged with full context.",
           ]}
           Illustration={IllusIntroLawFirm}
         />
@@ -419,7 +419,7 @@ export default function LawFirmsPage() {
           benefits={benefits}
         />
         <SolutionIndustries
-          eyebrow="Who else uses Tarsha"
+          eyebrow="Who else uses Robyn"
           heading="Built for any professional services firm"
           industries={industries}
         />

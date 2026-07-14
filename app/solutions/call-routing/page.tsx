@@ -196,7 +196,7 @@ function MockInstantTransfer() {
         {(
           [
             { emoji: "📞", label: "Caller", bg: "bg-surface" },
-            { emoji: "✨", label: "Tarsha AI", bg: "bg-accent/15 border-accent/30" },
+            { emoji: "✨", label: "Robyn AI", bg: "bg-accent/15 border-accent/30" },
             { emoji: "👤", label: "Your team", bg: "bg-surface" },
           ] as const
         ).map(({ emoji, label, bg }, i) => (
@@ -311,7 +311,7 @@ function MockVoicemailFallback() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "We have sales, support, and billing, and callers used to end up in the wrong place constantly. Tarsha figures out exactly what they need and routes them perfectly every time. My team has stopped dreading the phone.",
+      "We have sales, support, and billing, and callers used to end up in the wrong place constantly. Robyn figures out exactly what they need and routes them perfectly every time. My team has stopped dreading the phone.",
     author: "Tom B.",
     role: "Operations Manager",
     company: "Greenfield Business Services",
@@ -319,7 +319,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "With 4 locations and different teams, routing was a nightmare before Tarsha. Now new patients go to one team, billing to another, urgent calls get escalated immediately. It works so smoothly that patients actually comment on it.",
+      "With 4 locations and different teams, routing was a nightmare before Robyn. Now new patients go to one team, billing to another, urgent calls get escalated immediately. It works so smoothly that patients actually comment on it.",
     author: "Amanda S.",
     role: "Practice Administrator",
     company: "ClearSmile Dental Group",
@@ -327,7 +327,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "We practice in three areas of law. Before Tarsha, clients calling about litigation would end up with our family law team by mistake. That doesn't happen anymore. Every call gets where it needs to go, in under a second.",
+      "We practice in three areas of law. Before Robyn, clients calling about litigation would end up with our family law team by mistake. That doesn't happen anymore. Every call gets where it needs to go, in under a second.",
     author: "James W.",
     role: "Managing Partner",
     company: "Whitfield Legal",
@@ -339,13 +339,13 @@ const steps = [
   {
     title: "A call comes in",
     description:
-      "Tarsha AI answers immediately with a warm, professional greeting in your business name, day, night, or weekend.",
+      "Robyn AI answers immediately with a warm, professional greeting in your business name, day, night, or weekend.",
     Illustration: IllusCallGreeting,
   },
   {
     title: "AI qualifies the need",
     description:
-      "Through natural conversation, Tarsha understands whether the caller needs billing, support, sales, or something else entirely.",
+      "Through natural conversation, Robyn understands whether the caller needs billing, support, sales, or something else entirely.",
     Illustration: IllusAIQualifying,
   },
   {
@@ -383,7 +383,7 @@ const benefits: Benefit[] = [
     icon: Voicemail,
     title: "Voicemail fallback",
     description:
-      "If no one picks up, Tarsha takes a message with full context and delivers a transcript to your inbox.",
+      "If no one picks up, Robyn takes a message with full context and delivers a transcript to your inbox.",
     MockUI: MockVoicemailFallback,
     wide: true,
   },
@@ -415,7 +415,7 @@ export default function CallRoutingPage() {
           eyebrow="Call Routing"
           titleBefore="Every call goes "
           titleHighlight="exactly where it needs to"
-          subtitle="Tarsha AI greets every caller, understands their need, and routes them to the right person or team, instantly, every time, 24/7."
+          subtitle="Robyn AI greets every caller, understands their need, and routes them to the right person or team, instantly, every time, 24/7."
           MockUI={MockRouteFlow}
         />
         <SolutionTestimonials
@@ -427,7 +427,7 @@ export default function CallRoutingPage() {
           heading="The wrong person picking up costs everyone time"
           paragraphs={[
             "When callers reach the wrong department, they have to explain their situation twice, and your team wastes time transferring calls they shouldn't have taken. Multiply that across a full week and the hidden cost is significant.",
-            "Tarsha AI answers every call, listens to understand what the caller actually needs, and routes them to exactly the right person in under a second, with a brief handoff summary so whoever answers is already informed. No phone trees, no confusion, no wasted time.",
+            "Robyn AI answers every call, listens to understand what the caller actually needs, and routes them to exactly the right person in under a second, with a brief handoff summary so whoever answers is already informed. No phone trees, no confusion, no wasted time.",
           ]}
           Illustration={IllusIntroWrongRoute}
         />

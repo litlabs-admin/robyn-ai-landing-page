@@ -41,7 +41,7 @@ export function ProblemVsSolution() {
             >
               Missed calls cost you.
               <br />
-              <span className="text-accent">Tarsha AI</span>{" "}
+              <span className="text-accent">Robyn AI</span>{" "}
               <span className="text-ink-muted">pays you back.</span>
             </h2>
           </ScrollReveal>
@@ -69,9 +69,9 @@ export function ProblemVsSolution() {
           />
           <ComparisonCard
             variant="new"
-            label="The Tarsha AI way"
+            label="The Robyn AI way"
             title="Answered, qualified, and booked."
-            description={<><span className="text-accent font-semibold">Tarsha AI</span> picks up on the first ring, captures the details that matter, and books the next step before the caller is off the phone.</>}
+            description={<><span className="text-accent font-semibold">Robyn AI</span> picks up on the first ring, captures the details that matter, and books the next step before the caller is off the phone.</>}
             stats={[
               { icon: Zap, text: "Answers in under 0.4 seconds" },
               { icon: BadgeCheck, text: "Up to 38% lift in booked calls" },

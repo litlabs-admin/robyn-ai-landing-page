@@ -325,7 +325,7 @@ function MockPriorityCallback() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "February through April, my phone never stops. Every year I missed consultations because I was heads-down in returns. Tarsha books every appointment automatically, and I haven't lost a single new client to voicemail in two tax seasons.",
+      "February through April, my phone never stops. Every year I missed consultations because I was heads-down in returns. Robyn books every appointment automatically, and I haven't lost a single new client to voicemail in two tax seasons.",
     author: "Paul N.",
     role: "CPA & Partner",
     company: "Nordstrom Tax Advisory",
@@ -333,7 +333,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "We get the same questions every season, deadlines, document requirements, extension options. Tarsha answers them all instantly and confidently. My team is focused on work that actually requires their expertise, not answering 'when's the last day to file?'",
+      "We get the same questions every season, deadlines, document requirements, extension options. Robyn answers them all instantly and confidently. My team is focused on work that actually requires their expertise, not answering 'when's the last day to file?'",
     author: "Diana C.",
     role: "Managing Partner",
     company: "Chen & Clarke CPAs",
@@ -341,7 +341,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "I'm a solo practitioner. I can't answer calls while I'm with a client. Tarsha is my front office, it books consultations, answers questions, and never lets a new business owner feel ignored. My client list grew 40% this year, partly because I was available every time someone tried to reach me.",
+      "I'm a solo practitioner. I can't answer calls while I'm with a client. Robyn is my front office, it books consultations, answers questions, and never lets a new business owner feel ignored. My client list grew 40% this year, partly because I was available every time someone tried to reach me.",
     author: "Thomas B.",
     role: "Independent CPA",
     company: "Blanchard Accounting",
@@ -353,19 +353,19 @@ const steps = [
   {
     title: "Consultations booked automatically",
     description:
-      "New clients can book a consultation while you're deep in a tax return. Tarsha checks your calendar in real time and locks in the appointment, no interruptions, no callbacks needed.",
+      "New clients can book a consultation while you're deep in a tax return. Robyn checks your calendar in real time and locks in the appointment, no interruptions, no callbacks needed.",
     Illustration: IllusStep1Accountants,
   },
   {
     title: "Deadline and FAQ questions answered",
     description:
-      "Filing deadlines, extension rules, required documents, business entity differences, Tarsha answers these instantly so callers get information without tying up your team.",
+      "Filing deadlines, extension rules, required documents, business entity differences, Robyn answers these instantly so callers get information without tying up your team.",
     Illustration: IllusStep2Accountants,
   },
   {
     title: "Peak season overflow handled",
     description:
-      "When calls stack up during tax season, Tarsha handles every one professionally. Priority callers are flagged for immediate callbacks. New inquiries are queued and ready for your team.",
+      "When calls stack up during tax season, Robyn handles every one professionally. Priority callers are flagged for immediate callbacks. New inquiries are queued and ready for your team.",
     Illustration: IllusStep3Accountants,
   },
 ];
@@ -397,7 +397,7 @@ const benefits: Benefit[] = [
     icon: Layers,
     title: "Priority callback queue",
     description:
-      "Not all calls are equal. Tarsha flags urgent callers, high-value leads, and time-sensitive inquiries for priority callbacks.",
+      "Not all calls are equal. Robyn flags urgent callers, high-value leads, and time-sensitive inquiries for priority callbacks.",
     MockUI: MockPriorityCallback,
     wide: true,
   },
@@ -429,7 +429,7 @@ export default function AccountantsPage() {
           eyebrow="Accountants & CPA Firms"
           titleBefore="Keep your calendar full "
           titleHighlight="through every tax season"
-          subtitle="Tarsha AI handles appointment scheduling, client FAQs, and overflow calls year-round, so you can focus on the work, not the phone."
+          subtitle="Robyn AI handles appointment scheduling, client FAQs, and overflow calls year-round, so you can focus on the work, not the phone."
           MockUI={MockAccountantBooking}
         />
         <SolutionTestimonials
@@ -441,7 +441,7 @@ export default function AccountantsPage() {
           heading="Tax season floods your phone, off-season dries it up. Neither should cost you clients."
           paragraphs={[
             "For accounting firms, the phone is feast or famine. During tax season, calls come in faster than anyone can handle. Off-season, you're chasing appointment requests that slipped through. Either way, the result is the same: potential clients who couldn't reach you and went elsewhere.",
-            "Tarsha AI manages your phone intelligently year-round. During peak season it handles overflow instantly so no call is missed. Off-season it books consultations, answers deadlines questions, and keeps your pipeline moving. One consistent, professional voice, whatever the volume.",
+            "Robyn AI manages your phone intelligently year-round. During peak season it handles overflow instantly so no call is missed. Off-season it books consultations, answers deadlines questions, and keeps your pipeline moving. One consistent, professional voice, whatever the volume.",
           ]}
           Illustration={IllusIntroAccountants}
         />

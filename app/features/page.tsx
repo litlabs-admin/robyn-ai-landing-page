@@ -204,7 +204,7 @@ function MockTransfer() {
       {(
         [
           { emoji: "📞", label: "Caller", bg: "bg-surface" },
-          { emoji: "✨", label: "Tarsha AI", bg: "bg-accent/15 border-accent/30" },
+          { emoji: "✨", label: "Robyn AI", bg: "bg-accent/15 border-accent/30" },
           { emoji: "👤", label: "Your team", bg: "bg-surface" },
         ] as const
       ).map(({ emoji, label, bg }, i) => (
@@ -251,7 +251,7 @@ function MockAfterHours() {
               transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
               className="h-1.5 w-1.5 rounded-full bg-green-500 shadow-[0_0_0_3px_rgba(34,197,94,0.2)]"
             />
-            <span className="text-[12px] text-ink-muted">Tarsha AI is active</span>
+            <span className="text-[12px] text-ink-muted">Robyn AI is active</span>
           </div>
         </div>
       </div>
@@ -307,7 +307,7 @@ function MockRecording() {
         </div>
         <div className="rounded-lg bg-surface-muted/80 px-3 py-2.5">
           <p className="text-[12px] italic leading-relaxed text-ink/70">
-            "Thank you for calling. I'm Tarsha, your virtual receptionist. How can I help you
+            "Thank you for calling. I'm Robyn, your virtual receptionist. How can I help you
             today?"
           </p>
         </div>
@@ -375,7 +375,7 @@ export default function FeaturesPage() {
                   transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
                   className="mr-1 inline-block h-1.5 w-1.5 rounded-full bg-accent"
                 />
-                <span className="text-ink-muted">Everything Tarsha AI does</span>
+                <span className="text-ink-muted">Everything Robyn AI does</span>
               </Eyebrow>
             </ScrollReveal>
             <ScrollReveal y={22} duration={0.95} delay={0.07} amount={0.3}>
@@ -386,7 +386,7 @@ export default function FeaturesPage() {
             </ScrollReveal>
             <ScrollReveal y={16} duration={0.85} delay={0.14} amount={0.3}>
               <p className="mx-auto mt-5 max-w-xl text-[16px] leading-relaxed text-ink-muted">
-                From answering calls to booking appointments and transferring to your team, Tarsha
+                From answering calls to booking appointments and transferring to your team, Robyn
                 AI handles it all, 24/7, in any language.
               </p>
             </ScrollReveal>
@@ -429,7 +429,7 @@ export default function FeaturesPage() {
             <BentoCard
               icon={<MessageSquareText className="h-4 w-4 text-ink/60" strokeWidth={1.5} />}
               title="Answer questions"
-              desc="Train Tarsha AI on your FAQ so customers get instant, accurate answers, no hold music, no waiting."
+              desc="Train Robyn AI on your FAQ so customers get instant, accurate answers, no hold music, no waiting."
               delay={0.08}
             >
               <MockChat />
@@ -460,7 +460,7 @@ export default function FeaturesPage() {
             <BentoCard
               icon={<Moon className="h-4 w-4 text-ink/60" strokeWidth={1.5} />}
               title="After hours calls"
-              desc="Tarsha AI never sleeps. Callers get help around the clock, even on weekends and holidays."
+              desc="Robyn AI never sleeps. Callers get help around the clock, even on weekends and holidays."
               delay={0.14}
             >
               <MockAfterHours />

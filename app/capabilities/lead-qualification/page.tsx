@@ -20,9 +20,9 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 function IllusStep1LeadQual() {
   const lines = [
     { speaker: "Caller", text: "I'm looking for HVAC installation for my new office" },
-    { speaker: "Tarsha AI", text: "Great! Roughly what's your budget for this project?" },
+    { speaker: "Robyn AI", text: "Great! Roughly what's your budget for this project?" },
     { speaker: "Caller", text: "Around $15,000" },
-    { speaker: "Tarsha AI", text: "And are you the decision maker on this project, or is there a procurement team involved?" },
+    { speaker: "Robyn AI", text: "And are you the decision maker on this project, or is there a procurement team involved?" },
   ];
   return (
     <div className="space-y-2.5">
@@ -37,7 +37,7 @@ function IllusStep1LeadQual() {
         >
           <span
             className={`mt-0.5 w-16 shrink-0 text-[11px] font-semibold ${
-              speaker === "Tarsha AI" ? "text-accent-ink/70" : "text-ink-muted"
+              speaker === "Robyn AI" ? "text-accent-ink/70" : "text-ink-muted"
             }`}
           >
             {speaker}
@@ -312,7 +312,7 @@ function MockConversionStats() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "We were spending 40% of our sales team's time calling back leads that were never going to convert. Tarsha asks the right questions before they even reach us. Now we only call back qualified leads, our close rate doubled in 90 days.",
+      "We were spending 40% of our sales team's time calling back leads that were never going to convert. Robyn asks the right questions before they even reach us. Now we only call back qualified leads, our close rate doubled in 90 days.",
     author: "Nathan R.",
     role: "Head of Sales",
     company: "Vantage Solutions",
@@ -320,7 +320,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "As a solo broker I can't spend three hours a day returning calls only to discover the caller was just browsing. Tarsha qualifies every inquiry, budget confirmed, timeline clear, decision maker on the line. I work smarter now, not harder.",
+      "As a solo broker I can't spend three hours a day returning calls only to discover the caller was just browsing. Robyn qualifies every inquiry, budget confirmed, timeline clear, decision maker on the line. I work smarter now, not harder.",
     author: "Patricia L.",
     role: "Independent Broker",
     company: "Landmark Real Estate",
@@ -328,7 +328,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Our team used to treat every inbound the same. Now Tarsha flags hot leads, the ones with budget, urgency, and clear intent, and we respond to those within minutes. Our revenue per call went up significantly because we prioritize correctly.",
+      "Our team used to treat every inbound the same. Now Robyn flags hot leads, the ones with budget, urgency, and clear intent, and we respond to those within minutes. Our revenue per call went up significantly because we prioritize correctly.",
     author: "Mike S.",
     role: "VP of Sales",
     company: "Clearfield Technologies",
@@ -340,7 +340,7 @@ const steps = [
   {
     title: "Natural qualifying conversation",
     description:
-      "Tarsha asks your custom qualifying questions through natural conversation, budget, timeline, decision-maker status, specific needs. No scripts that feel like a quiz, just a helpful exchange.",
+      "Robyn asks your custom qualifying questions through natural conversation, budget, timeline, decision-maker status, specific needs. No scripts that feel like a quiz, just a helpful exchange.",
     Illustration: IllusStep1LeadQual,
   },
   {
@@ -362,7 +362,7 @@ const benefits: Benefit[] = [
     icon: UserCheck,
     title: "Custom qualification questions",
     description:
-      "Define the exact questions Tarsha asks for your business, budget, timeline, company size, decision authority. Any criteria that matters to you.",
+      "Define the exact questions Robyn asks for your business, budget, timeline, company size, decision authority. Any criteria that matters to you.",
     MockUI: MockQualifyingScript,
     wide: true,
   },
@@ -416,7 +416,7 @@ export default function LeadQualificationPage() {
           eyebrow="Lead Qualification"
           titleBefore="Know which leads are "
           titleHighlight="worth calling back first"
-          subtitle="Tarsha AI qualifies every caller with the right questions, scoring leads by budget, intent, and urgency so your team spends time on opportunities, not tire-kickers."
+          subtitle="Robyn AI qualifies every caller with the right questions, scoring leads by budget, intent, and urgency so your team spends time on opportunities, not tire-kickers."
           MockUI={MockLeadQualScore}
         />
         <SolutionTestimonials
@@ -427,8 +427,8 @@ export default function LeadQualificationPage() {
           eyebrow="The capability"
           heading="Not every caller is worth the same callback time"
           paragraphs={[
-            "Most businesses treat every inbound call the same, log it, call it back, discover it wasn't a real opportunity. That's expensive. A serious buyer with budget and urgency should reach you within minutes. Someone just browsing can wait, or be handled fully by Tarsha.",
-            "Tarsha AI qualifies callers through natural conversation. It asks the right questions for your business, identifies intent and urgency, and scores each lead. You receive a prioritized summary, hot, warm, or routine, so your team knows exactly who to call back first and why.",
+            "Most businesses treat every inbound call the same, log it, call it back, discover it wasn't a real opportunity. That's expensive. A serious buyer with budget and urgency should reach you within minutes. Someone just browsing can wait, or be handled fully by Robyn.",
+            "Robyn AI qualifies callers through natural conversation. It asks the right questions for your business, identifies intent and urgency, and scores each lead. You receive a prioritized summary, hot, warm, or routine, so your team knows exactly who to call back first and why.",
           ]}
           Illustration={IllusIntroLeadQual}
         />

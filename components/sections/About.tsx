@@ -12,8 +12,8 @@ import {
 import { Fragment, useMemo, useRef } from "react";
 
 const PARAGRAPHS: string[] = [
-  "Tarsha AI helps businesses **never miss another customer call**. Powered by real-time Voice AI, Tarsha AI answers instantly, qualifies leads, and books appointments, all with a **natural, human-like voice**.",
-  "Built for SMBs that can't justify full-time reception staff, Tarsha AI replaces voicemail dead ends with **intelligent conversations** that scale customer support **without scaling headcount**.",
+  "Robyn AI helps businesses **never miss another customer call**. Powered by real-time Voice AI, Robyn AI answers instantly, qualifies leads, and books appointments, all with a **natural, human-like voice**.",
+  "Built for SMBs that can't justify full-time reception staff, Robyn AI replaces voicemail dead ends with **intelligent conversations** that scale customer support **without scaling headcount**.",
 ];
 
 // Scroll progress window for the reveal.
@@ -119,7 +119,7 @@ export function About() {
               id="about-heading"
               className="font-display font-semibold tracking-[-0.025em] text-ink text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05]"
             >
-              Why we built <span className="text-accent">Tarsha AI</span>.
+              Why we built <span className="text-accent">Robyn AI</span>.
             </h2>
           </motion.div>
 

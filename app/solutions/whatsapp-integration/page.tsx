@@ -30,7 +30,7 @@ function IllusWhatsAppIncoming() {
       {/* Typing indicator */}
       <div className="mt-3 flex justify-end">
         <div className="flex items-center gap-2 rounded-2xl rounded-tr-sm bg-[#DCF8C6] px-3.5 py-2.5 shadow-sm">
-          <span className="text-[12px] text-[#555]">Tarsha AI is typing</span>
+          <span className="text-[12px] text-[#555]">Robyn AI is typing</span>
           <div className="flex items-end gap-[3px]">
             {[0, 0.15, 0.3].map((delay, i) => (
               <motion.span
@@ -190,7 +190,7 @@ function MockInstantResponse() {
         </div>
       </div>
       <div className="flex items-center justify-between rounded-xl border border-accent/30 bg-accent/10 px-3.5 py-2.5">
-        <span className="text-[13px] text-ink">Tarsha replied</span>
+        <span className="text-[13px] text-ink">Robyn replied</span>
         <span className="text-[13px] font-bold text-ink">&lt; 1 second</span>
       </div>
     </div>
@@ -280,7 +280,7 @@ function MockWhatsAppHandoff() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "Our customers are young and they don't call, they message. Since adding Tarsha to our WhatsApp, we've seen booking requests triple. It answers instantly, books them in, and sends a confirmation, all without us touching a phone.",
+      "Our customers are young and they don't call, they message. Since adding Robyn to our WhatsApp, we've seen booking requests triple. It answers instantly, books them in, and sends a confirmation, all without us touching a phone.",
     author: "Priya K.",
     role: "Owner",
     company: "Bloom Beauty Studio",
@@ -288,7 +288,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "We get a huge volume of 'are you open?' and 'what's on the menu?' messages on WhatsApp. Tarsha handles all of them in English and Spanish, 24/7. Our team went from juggling messages all day to focusing entirely on food and service.",
+      "We get a huge volume of 'are you open?' and 'what's on the menu?' messages on WhatsApp. Robyn handles all of them in English and Spanish, 24/7. Our team went from juggling messages all day to focusing entirely on food and service.",
     author: "Michael O.",
     role: "Owner",
     company: "The Golden Fork",
@@ -296,7 +296,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Buyers send WhatsApp messages at all hours asking about listings. Tarsha answers every single one, qualifies the lead, and schedules viewings automatically. I've closed two deals from leads that came in at 11 PM, deals I would have missed before.",
+      "Buyers send WhatsApp messages at all hours asking about listings. Robyn answers every single one, qualifies the lead, and schedules viewings automatically. I've closed two deals from leads that came in at 11 PM, deals I would have missed before.",
     author: "Rachel S.",
     role: "Senior Agent",
     company: "Horizon Real Estate",
@@ -308,13 +308,13 @@ const steps = [
   {
     title: "Customer messages your WhatsApp",
     description:
-      "No forms, no phone calls, no waiting. The customer sends a message and Tarsha AI responds instantly, 24/7, in English or Spanish, with the same professional experience every time.",
+      "No forms, no phone calls, no waiting. The customer sends a message and Robyn AI responds instantly, 24/7, in English or Spanish, with the same professional experience every time.",
     Illustration: IllusWhatsAppIncoming,
   },
   {
     title: "Full conversation handled",
     description:
-      "Tarsha understands intent, answers questions from your knowledge base, and books appointments, all within the WhatsApp thread. No switching apps, no friction.",
+      "Robyn understands intent, answers questions from your knowledge base, and books appointments, all within the WhatsApp thread. No switching apps, no friction.",
     Illustration: IllusWhatsAppHandles,
   },
   {
@@ -338,21 +338,21 @@ const benefits: Benefit[] = [
     icon: CalendarCheck,
     title: "Bookings inside the chat",
     description:
-      "Customers never leave WhatsApp. Tarsha checks availability, offers slots, confirms the booking, and sends reminders, entirely in-thread.",
+      "Customers never leave WhatsApp. Robyn checks availability, offers slots, confirms the booking, and sends reminders, entirely in-thread.",
     MockUI: MockInChatBooking,
   },
   {
     icon: Globe,
     title: "English & Spanish",
     description:
-      "Tarsha responds in the customer's language automatically, no language selection needed, no separate number required.",
+      "Robyn responds in the customer's language automatically, no language selection needed, no separate number required.",
     MockUI: MockWhatsAppBilingual,
   },
   {
     icon: ArrowUpRight,
     title: "Seamless human handoff",
     description:
-      "When a conversation needs a human, Tarsha hands it off instantly, with the complete message history and a context summary so your team picks up without missing a beat.",
+      "When a conversation needs a human, Robyn hands it off instantly, with the complete message history and a context summary so your team picks up without missing a beat.",
     MockUI: MockWhatsAppHandoff,
     wide: true,
   },
@@ -384,7 +384,7 @@ export default function WhatsAppIntegrationPage() {
           eyebrow="WhatsApp Integration"
           titleBefore="Your AI receptionist, "
           titleHighlight="now on WhatsApp"
-          subtitle="Tarsha AI handles customer conversations on WhatsApp, answering questions, booking appointments, and routing inquiries automatically. Same intelligence as the phone, in the chat."
+          subtitle="Robyn AI handles customer conversations on WhatsApp, answering questions, booking appointments, and routing inquiries automatically. Same intelligence as the phone, in the chat."
           MockUI={MockWhatsAppChat}
         />
         <SolutionTestimonials
@@ -396,7 +396,7 @@ export default function WhatsAppIntegrationPage() {
           heading="Customers prefer to message. Most businesses aren't ready."
           paragraphs={[
             "WhatsApp has over 2 billion users. For a growing number of customers, especially younger and international audiences, messaging is the default way they reach out. Businesses that only offer phone support are invisible to this segment.",
-            "Tarsha AI connects to your WhatsApp Business account and handles conversations automatically. Questions get instant answers. Appointments get booked in the thread. Leads get qualified. Complex issues get escalated to your team with full context. Same intelligence as the phone, now in the chat.",
+            "Robyn AI connects to your WhatsApp Business account and handles conversations automatically. Questions get instant answers. Appointments get booked in the thread. Leads get qualified. Complex issues get escalated to your team with full context. Same intelligence as the phone, now in the chat.",
           ]}
           Illustration={IllusIntroWhatsAppGap}
         />

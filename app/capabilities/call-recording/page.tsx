@@ -335,7 +335,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "We're in healthcare. Every patient interaction needs to be documentable. Tarsha records calls in a HIPAA-compliant way and makes them instantly accessible to my team. It's the most useful compliance tool I've added in five years.",
+      "We're in healthcare. Every patient interaction needs to be documentable. Robyn records calls in a HIPAA-compliant way and makes them instantly accessible to my team. It's the most useful compliance tool I've added in five years.",
     author: "Dr. Kevin L.",
     role: "Practice Administrator",
     company: "Northern Shore Medical",
@@ -423,7 +423,7 @@ export default function CallRecordingPage() {
           eyebrow="Call Recording"
           titleBefore="Every conversation "
           titleHighlight="on record"
-          subtitle="Tarsha AI records every call and pairs it with a full transcript, searchable, organized, and accessible whenever you need to verify a detail, train a team member, or resolve a dispute."
+          subtitle="Robyn AI records every call and pairs it with a full transcript, searchable, organized, and accessible whenever you need to verify a detail, train a team member, or resolve a dispute."
           MockUI={MockCallRecording}
         />
         <SolutionTestimonials
@@ -435,7 +435,7 @@ export default function CallRecordingPage() {
           heading="The most useful business conversations aren't written down, but they should be"
           paragraphs={[
             "Most critical business conversations happen on the phone, quotes accepted, commitments made, details agreed. But unless someone is taking perfect notes, the details fade. When there's a dispute, a question, or a training opportunity, the recording is the only source of truth.",
-            "Tarsha AI records every call and pairs it with a full, searchable transcript. Your entire call history is organized, instantly accessible, and protected. Review a call in the car. Train a new hire with a real example. Resolve a dispute in minutes.",
+            "Robyn AI records every call and pairs it with a full, searchable transcript. Your entire call history is organized, instantly accessible, and protected. Review a call in the car. Train a new hire with a real example. Resolve a dispute in minutes.",
           ]}
           Illustration={IllusIntroCallRecording}
         />

@@ -167,7 +167,7 @@ function IllusIntroTranscription() {
         transition={{ delay: 0.24, duration: 0.4, ease: EASE }}
         className="flex items-center justify-center gap-2 rounded-xl border border-border bg-surface px-3.5 py-2.5"
       >
-        <span className="text-[12px] font-semibold text-ink">5× faster to process voicemails with Tarsha</span>
+        <span className="text-[12px] font-semibold text-ink">5× faster to process voicemails with Robyn</span>
       </motion.div>
     </div>
   );
@@ -304,7 +304,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "We're a medical office. Accurate transcription is non-negotiable, patient names, medication questions, callback numbers. Tarsha gets everything right and flags anything that sounds urgent. Our nurses review the inbox in the morning instead of listening through recordings.",
+      "We're a medical office. Accurate transcription is non-negotiable, patient names, medication questions, callback numbers. Robyn gets everything right and flags anything that sounds urgent. Our nurses review the inbox in the morning instead of listening through recordings.",
     author: "Dr. Wendy P.",
     role: "Practice Director",
     company: "Lakeside Family Medicine",
@@ -324,13 +324,13 @@ const steps = [
   {
     title: "Caller leaves a message",
     description:
-      "When your line is unavailable, Tarsha records the voicemail with the same professional greeting, no awkward system prompts, just a seamless experience for the caller.",
+      "When your line is unavailable, Robyn records the voicemail with the same professional greeting, no awkward system prompts, just a seamless experience for the caller.",
     Illustration: IllusStep1Trans,
   },
   {
     title: "Transcribed instantly, automatically",
     description:
-      "The moment the call ends, Tarsha transcribes the message with high accuracy. Caller name, phone number, and key details are extracted automatically, no manual review needed.",
+      "The moment the call ends, Robyn transcribes the message with high accuracy. Caller name, phone number, and key details are extracted automatically, no manual review needed.",
     Illustration: IllusStep2Trans,
   },
   {
@@ -400,7 +400,7 @@ export default function VoicemailTranscriptionPage() {
           eyebrow="Voicemail Transcription"
           titleBefore="Read every voicemail "
           titleHighlight="in seconds, not minutes"
-          subtitle="Tarsha AI transcribes every voicemail instantly and delivers a clean, searchable text summary to your inbox, so you never have to listen to a message to understand what it says."
+          subtitle="Robyn AI transcribes every voicemail instantly and delivers a clean, searchable text summary to your inbox, so you never have to listen to a message to understand what it says."
           MockUI={MockVoicemailInbox}
         />
         <SolutionTestimonials
@@ -412,7 +412,7 @@ export default function VoicemailTranscriptionPage() {
           heading="Listening to voicemails is a surprisingly expensive habit"
           paragraphs={[
             "The average voicemail takes 90 seconds to listen to and requires you to replay it twice to catch the callback number. Multiply that by 15 messages a day and you've spent 45 minutes just reviewing voicemails, before you've returned a single call. That's a recurring daily tax on everyone's time.",
-            "Tarsha AI transcribes every voicemail instantly, with high accuracy. You get a text version of the message, the caller's number extracted automatically, and an urgency assessment, delivered to your inbox the moment the call ends. Reading is 5× faster than listening.",
+            "Robyn AI transcribes every voicemail instantly, with high accuracy. You get a text version of the message, the caller's number extracted automatically, and an urgency assessment, delivered to your inbox the moment the call ends. Reading is 5× faster than listening.",
           ]}
           Illustration={IllusIntroTranscription}
         />

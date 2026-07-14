@@ -23,7 +23,7 @@ export function MockWhatsAppChat() {
           ✨
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-white text-[13px] font-semibold leading-none">Tarsha AI</p>
+          <p className="text-white text-[13px] font-semibold leading-none">Robyn AI</p>
           <p className="text-white/70 text-[10px] mt-0.5">online</p>
         </div>
         <motion.span

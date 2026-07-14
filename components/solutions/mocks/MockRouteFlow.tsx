@@ -50,7 +50,7 @@ export function MockRouteFlow() {
       >
         <span className="text-[18px]">✨</span>
         <div>
-          <p className="text-[11px] text-ink-muted">Tarsha AI qualifying</p>
+          <p className="text-[11px] text-ink-muted">Robyn AI qualifying</p>
           <p className="text-[13px] font-medium text-ink">"How can I help you today?"</p>
         </div>
       </motion.div>

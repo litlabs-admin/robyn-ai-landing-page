@@ -21,7 +21,7 @@ const allTestimonials: Testimonial[] = [
   // ── Initial 3 ──────────────────────────────────────────────────────────────
   {
     quote:
-      "Working with Tarsha AI was a game-changer. Our customers actually compliment our phone service now, something we never heard before.",
+      "Working with Robyn AI was a game-changer. Our customers actually compliment our phone service now, something we never heard before.",
     name: "Will Sinclair",
     role: "Sales Director",
     company: "Sales Geek",
@@ -29,7 +29,7 @@ const allTestimonials: Testimonial[] = [
   },
   {
     quote:
-      "I was losing jobs to competitors who answered faster. Now Tarsha AI picks up every call, captures the job details, and I follow up when I'm free.",
+      "I was losing jobs to competitors who answered faster. Now Robyn AI picks up every call, captures the job details, and I follow up when I'm free.",
     name: "Calum Maguire",
     role: "Director",
     company: "RACAM Security & Communications Ltd",
@@ -37,7 +37,7 @@ const allTestimonials: Testimonial[] = [
   },
   {
     quote:
-      "Clients call at all hours for policy questions. Tarsha AI is professional, never makes a caller feel ignored. My client retention has visibly improved.",
+      "Clients call at all hours for policy questions. Robyn AI is professional, never makes a caller feel ignored. My client retention has visibly improved.",
     name: "Jim Craig",
     role: "Managing Director",
     company: "RoswellIt",
@@ -46,7 +46,7 @@ const allTestimonials: Testimonial[] = [
   // ── Extra 3 (hidden behind See More) ───────────────────────────────────────
   {
     quote:
-      "Reservation calls were killing us during dinner service. Tarsha AI handles every booking now, our staff focuses entirely on the guests already in the restaurant.",
+      "Reservation calls were killing us during dinner service. Robyn AI handles every booking now, our staff focuses entirely on the guests already in the restaurant.",
     name: "Marcus Thompson",
     role: "Owner",
     company: "Thompson's Bistro",
@@ -54,7 +54,7 @@ const allTestimonials: Testimonial[] = [
   },
   {
     quote:
-      "Missed calls during depositions cost us clients. Tarsha AI qualifies every lead within seconds. We've signed four new clients from calls we would have otherwise lost.",
+      "Missed calls during depositions cost us clients. Robyn AI qualifies every lead within seconds. We've signed four new clients from calls we would have otherwise lost.",
     name: "Ryan Patel",
     role: "Managing Attorney",
     company: "Patel Law Office",
@@ -62,7 +62,7 @@ const allTestimonials: Testimonial[] = [
   },
   {
     quote:
-      "When I'm on a job site I can't pick up the phone. Tarsha AI captures every service request with all the details I need, no more playing phone tag with customers.",
+      "When I'm on a job site I can't pick up the phone. Robyn AI captures every service request with all the details I need, no more playing phone tag with customers.",
     name: "Kevin Brooks",
     role: "Owner",
     company: "Brooks Electric",

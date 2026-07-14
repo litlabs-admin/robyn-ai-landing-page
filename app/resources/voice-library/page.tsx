@@ -44,7 +44,7 @@ const voices: Voice[] = [
     accent: "Glaswegian",
     personality: "Perfect for professional service businesses",
     personalityTag: "Professional",
-    sampleText: "Thank you for calling. This is Ailsa with Tarsha AI, I'm here to help. How can I assist you today?",
+    sampleText: "Thank you for calling. This is Ailsa with Robyn AI, I'm here to help. How can I assist you today?",
     waveHeights: [3,5,8,12,7,14,9,16,11,8,14,6,10,13,7,5,9,12,8,4],
   },
   {
@@ -77,7 +77,7 @@ const voices: Voice[] = [
     accent: "Aberdonian (Doric)",
     personality: "Commanding, authoritative, and clear",
     personalityTag: "Confident",
-    sampleText: "You've reached Tarsha AI. I'm Angus, I can take a message or help answer your questions right now.",
+    sampleText: "You've reached Robyn AI. I'm Angus, I can take a message or help answer your questions right now.",
     waveHeights: [6,10,14,9,12,7,15,11,8,13,6,10,14,8,5,11,9,13,7,5],
   },
   {
@@ -630,7 +630,7 @@ export default function VoiceLibraryPage() {
                 <span className="text-accent">proud of</span>.
               </h2>
               <p className="mx-auto mt-4 max-w-md text-[16px] leading-relaxed text-white/60">
-                Every Tarsha plan includes full access to the voice library, every Scottish accent, ready to go.
+                Every Robyn plan includes full access to the voice library, every Scottish accent, ready to go.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <a

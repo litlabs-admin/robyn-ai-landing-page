@@ -1,6 +1,6 @@
 "use client";
 
-import { TarshaLogo, type WordmarkStyle } from "@/components/ui/TarshaLogo";
+import { RobynLogo, type WordmarkStyle } from "@/components/ui/RobynLogo";
 import Link from "next/link";
 
 const STYLES: {
@@ -105,7 +105,7 @@ export default function LogoPreviewPage() {
                       <span className="w-5 shrink-0 text-[11px] font-medium text-[#7A6420]">
                         {size}
                       </span>
-                      <TarshaLogo
+                      <RobynLogo
                         variant="wordmark"
                         wordmarkStyle={id}
                         size={size}
@@ -127,7 +127,7 @@ export default function LogoPreviewPage() {
                       <span className="w-5 shrink-0 text-[11px] font-medium text-[#4A3C10]">
                         {size}
                       </span>
-                      <TarshaLogo
+                      <RobynLogo
                         variant="wordmark"
                         wordmarkStyle={id}
                         size={size}
@@ -155,7 +155,7 @@ export default function LogoPreviewPage() {
       <div className="border-t border-[#DDD8C8] px-6 py-6 text-center text-[12px] text-[#7A6420]">
         All candidate fonts are Google-hosted and already loaded via next/font in{" "}
         <code className="font-mono text-[11px]">lib/fonts.ts</code>. The live logo
-        currently ships <code className="font-mono text-[11px]">robyn</code> (Space Grotesk).
+        currently ships <code className="font-mono text-[11px]">robyn-brodine</code> (outlined Brodine SVG).
       </div>
     </div>
   );

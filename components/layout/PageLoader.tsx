@@ -1,6 +1,6 @@
 "use client";
 
-import { TarshaLogo } from "@/components/ui/TarshaLogo";
+import { RobynLogo } from "@/components/ui/RobynLogo";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -63,7 +63,7 @@ export function PageLoader() {
           className="fixed inset-0 z-[200] flex items-center justify-center bg-bg"
           aria-busy={!exiting}
           role="status"
-          aria-label="Loading Tarsha AI"
+          aria-label="Loading Robyn AI"
         >
           {/* Soft lime aura behind the centerpiece */}
           <div
@@ -90,7 +90,7 @@ export function PageLoader() {
               transition={{ duration: 0.25, ease: EASE }}
               className="relative px-2 py-1"
             >
-              <TarshaLogo
+              <RobynLogo
                 variant="wordmark"
                 wordmarkStyle="robyn-brodine"
                 theme="light"

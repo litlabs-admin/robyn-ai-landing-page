@@ -3,7 +3,7 @@
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { TarshaLogo } from "@/components/ui/TarshaLogo";
+import { RobynLogo } from "@/components/ui/RobynLogo";
 import { brand } from "@/lib/assets";
 import { cn } from "@/lib/cn";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
@@ -39,7 +39,7 @@ const columns = [
       { label: "About", href: "#about" },
       { label: "Careers", href: "#" },
       { label: "Blog", href: "#" },
-      { label: "Contact", href: "mailto:hello@tarsha.ai" },
+      { label: "Contact", href: "mailto:hello@robyn.ai" },
     ],
   },
   {
@@ -78,7 +78,7 @@ export function Footer() {
                 className="inline-block focus-ring rounded-md"
                 aria-label={`${brand.name} home`}
               >
-                <TarshaLogo
+                <RobynLogo
                   variant="wordmark"
                   wordmarkStyle="robyn-brodine"
                   theme="dark"
@@ -149,7 +149,7 @@ export function Footer() {
       {/* Bottom legal bar */}
       <Container>
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-7 text-[12.5px] text-white/45 md:flex-row">
-          <p>© {new Date().getFullYear()} <span className="text-accent font-semibold whitespace-nowrap">Tarsha AI</span> · Voice AI for SMBs · All rights reserved.</p>
+          <p>© {new Date().getFullYear()} <span className="text-accent font-semibold whitespace-nowrap">Robyn AI</span> · Voice AI for SMBs · All rights reserved.</p>
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_0_3px_rgba(52,211,153,0.18)]" />
@@ -183,7 +183,7 @@ function FinalCTA() {
               .
             </h2>
             <p className="mt-6 max-w-xl text-[17px] leading-[1.7] text-white/65 md:text-[18px]">
-              Spin up <span className="text-accent font-semibold">Tarsha AI</span> in under a day. Live phone coverage, 24/7, with a
+              Spin up <span className="text-accent font-semibold">Robyn AI</span> in under a day. Live phone coverage, 24/7, with a
               voice your customers will actually thank you for.
             </p>
             <div className="mt-9 flex flex-row flex-wrap items-center justify-center gap-3">
@@ -267,7 +267,7 @@ function BrandWordmark() {
             mixBlendMode: "difference",
           }}
         >
-          tarsha ai
+          robyn ai
         </span>
       </motion.div>
 

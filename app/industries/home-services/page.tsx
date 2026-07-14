@@ -48,7 +48,7 @@ function IllusStep1HomeServices() {
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           className="h-2 w-2 rounded-full bg-green-500 shadow-[0_0_0_4px_rgba(34,197,94,0.15)]"
         />
-        <span className="text-[12px] font-medium text-ink">Answered · Tarsha AI</span>
+        <span className="text-[12px] font-medium text-ink">Answered · Robyn AI</span>
         <span className="ml-auto rounded-full border border-green-200 bg-green-50 px-2 py-0.5 text-[10px] font-semibold text-green-700">
           &lt; 2s
         </span>
@@ -316,7 +316,7 @@ function MockJobQueue() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "Plumbing emergencies don't wait. I was missing 5–6 calls a week while under a sink or in a crawlspace. Tarsha answers everything, determines urgency, routes to whoever's closest, and I get a summary when I surface. My revenue went up 30% the first year.",
+      "Plumbing emergencies don't wait. I was missing 5–6 calls a week while under a sink or in a crawlspace. Robyn answers everything, determines urgency, routes to whoever's closest, and I get a summary when I surface. My revenue went up 30% the first year.",
     author: "Greg H.",
     role: "Owner",
     company: "Harbor Plumbing & Drains",
@@ -324,7 +324,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "I have four HVAC technicians in the field. Before Tarsha, calls were going to the wrong person or to voicemail while the guys were on rooftops. Now every call is answered, triaged by urgency, and dispatched to the right technician automatically. Dispatch chaos is gone.",
+      "I have four HVAC technicians in the field. Before Robyn, calls were going to the wrong person or to voicemail while the guys were on rooftops. Now every call is answered, triaged by urgency, and dispatched to the right technician automatically. Dispatch chaos is gone.",
     author: "Nina T.",
     role: "Operations Manager",
     company: "CoolBreeze HVAC",
@@ -332,7 +332,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Electricians in the field, phone ringing off the hook. Tarsha handles it all, new jobs, existing job questions, emergency calls. The emergency calls reach whoever is available. The routine bookings go on the schedule. I don't miss anything anymore.",
+      "Electricians in the field, phone ringing off the hook. Robyn handles it all, new jobs, existing job questions, emergency calls. The emergency calls reach whoever is available. The routine bookings go on the schedule. I don't miss anything anymore.",
     author: "Derek S.",
     role: "Owner",
     company: "Spark Electrical Services",
@@ -344,13 +344,13 @@ const steps = [
   {
     title: "Every call answered in the field",
     description:
-      "Whether your technicians are on a roof, under a sink, or in a basement, every call is answered within 2 seconds by Tarsha AI with your business name and professional tone.",
+      "Whether your technicians are on a roof, under a sink, or in a basement, every call is answered within 2 seconds by Robyn AI with your business name and professional tone.",
     Illustration: IllusStep1HomeServices,
   },
   {
     title: "Urgency detected and dispatched",
     description:
-      "Burst pipes, electrical hazards, no heat in winter, Tarsha identifies genuine emergencies and routes them to whoever is available immediately. Routine calls are handled differently.",
+      "Burst pipes, electrical hazards, no heat in winter, Robyn identifies genuine emergencies and routes them to whoever is available immediately. Routine calls are handled differently.",
     Illustration: IllusStep2HomeServices,
   },
   {
@@ -374,14 +374,14 @@ const benefits: Benefit[] = [
     icon: Clock,
     title: "After-hours emergency coverage",
     description:
-      "Home emergencies happen at 11 PM on Sundays. Tarsha answers and dispatches around the clock, urgent calls reach your on-call tech immediately.",
+      "Home emergencies happen at 11 PM on Sundays. Robyn answers and dispatches around the clock, urgent calls reach your on-call tech immediately.",
     MockUI: MockAfterHoursDispatch,
   },
   {
     icon: Route,
     title: "Smart technician routing",
     description:
-      "Tarsha routes to the closest available technician based on job type, location, and availability, no dispatcher needed.",
+      "Robyn routes to the closest available technician based on job type, location, and availability, no dispatcher needed.",
     MockUI: MockUrgencyTriage,
   },
   {
@@ -420,7 +420,7 @@ export default function HomeServicesPage() {
           eyebrow="Home Services"
           titleBefore="Answer every emergency call "
           titleHighlight="even when you're on the job"
-          subtitle="Tarsha AI answers calls from job sites, dispatches to the right technician, and captures every new booking request, so nothing falls through the cracks while your team is in the field."
+          subtitle="Robyn AI answers calls from job sites, dispatches to the right technician, and captures every new booking request, so nothing falls through the cracks while your team is in the field."
           MockUI={MockDispatchBoard}
         />
         <SolutionTestimonials
@@ -432,7 +432,7 @@ export default function HomeServicesPage() {
           heading="Your best technicians are always the least available to answer the phone"
           paragraphs={[
             "Home service businesses live on the phone. New jobs, emergency calls, existing customer questions, all coming in while your team is on ladders, under sinks, and in attics. The person most qualified to help is the last person who can pick up.",
-            "Tarsha AI answers every call within 2 seconds, triages urgency, dispatches to the right technician, and books new jobs directly into your schedule. Emergencies reach the field immediately. Routine calls are captured cleanly. You come off the job to a clear inbox, not a list of missed opportunities.",
+            "Robyn AI answers every call within 2 seconds, triages urgency, dispatches to the right technician, and books new jobs directly into your schedule. Emergencies reach the field immediately. Routine calls are captured cleanly. You come off the job to a clear inbox, not a list of missed opportunities.",
           ]}
           Illustration={IllusIntroHomeServices}
         />
@@ -450,7 +450,7 @@ export default function HomeServicesPage() {
           heading="Built for every home service trade"
           industries={industries}
         />
-        <SolutionCTA heading="Stay in the field. Let Tarsha keep the calls covered." />
+        <SolutionCTA heading="Stay in the field. Let Robyn keep the calls covered." />
       </main>
       <Footer />
     </>

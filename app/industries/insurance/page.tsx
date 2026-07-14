@@ -268,7 +268,7 @@ function MockClaimLog() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "A client had a car accident at 11 PM on a Sunday. Tarsha answered, captured all the details, and immediately routed to our emergency line. The client told me it was the most reassuring experience they'd ever had with an insurance company. That's the kind of service that earns referrals.",
+      "A client had a car accident at 11 PM on a Sunday. Robyn answered, captured all the details, and immediately routed to our emergency line. The client told me it was the most reassuring experience they'd ever had with an insurance company. That's the kind of service that earns referrals.",
     author: "Patricia K.",
     role: "Agency Owner",
     company: "Keystone Insurance Partners",
@@ -276,7 +276,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "We were losing quote requests constantly, callers going to voicemail during busy periods and never calling back. Tarsha answers every single one, captures the prospect's details and coverage needs, and queues them for callbacks. Our conversion rate went up 28% in 60 days.",
+      "We were losing quote requests constantly, callers going to voicemail during busy periods and never calling back. Robyn answers every single one, captures the prospect's details and coverage needs, and queues them for callbacks. Our conversion rate went up 28% in 60 days.",
     author: "Brian M.",
     role: "Principal Broker",
     company: "Meridian Insurance Group",
@@ -284,7 +284,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Commercial and personal lines need to go to completely different teams. Calls were being mixed up constantly. Tarsha identifies the caller's needs in the first 30 seconds and routes them perfectly. Zero misdirected calls since day one.",
+      "Commercial and personal lines need to go to completely different teams. Calls were being mixed up constantly. Robyn identifies the caller's needs in the first 30 seconds and routes them perfectly. Zero misdirected calls since day one.",
     author: "Sandra L.",
     role: "Operations Manager",
     company: "Pacific Shield Insurance",
@@ -302,13 +302,13 @@ const steps = [
   {
     title: "Every detail accurately captured",
     description:
-      "Policy number, incident details, contact information, urgency level, Tarsha collects everything your claims team needs before they pick up the phone.",
+      "Policy number, incident details, contact information, urgency level, Robyn collects everything your claims team needs before they pick up the phone.",
     Illustration: IllusStep2Insurance,
   },
   {
     title: "Routed to the right team",
     description:
-      "Auto, home, commercial, life, Tarsha routes each caller to the right specialist instantly, with a complete summary so your agent is already prepared.",
+      "Auto, home, commercial, life, Robyn routes each caller to the right specialist instantly, with a complete summary so your agent is already prepared.",
     Illustration: IllusStep3Insurance,
   },
 ];
@@ -326,7 +326,7 @@ const benefits: Benefit[] = [
     icon: Clock,
     title: "24/7 emergency response",
     description:
-      "Accidents don't happen during business hours. Tarsha answers urgent claim calls around the clock and escalates immediately.",
+      "Accidents don't happen during business hours. Robyn answers urgent claim calls around the clock and escalates immediately.",
     MockUI: MockUrgentClaim,
   },
   {
@@ -372,7 +372,7 @@ export default function InsurancePage() {
           eyebrow="Insurance Agencies"
           titleBefore="Every claim call "
           titleHighlight="answered immediately"
-          subtitle="Tarsha AI handles first-notice calls, routes to the right agent, and captures every quote request, with the professionalism and accuracy that insurance clients expect, 24/7."
+          subtitle="Robyn AI handles first-notice calls, routes to the right agent, and captures every quote request, with the professionalism and accuracy that insurance clients expect, 24/7."
           MockUI={MockInsuranceClaim}
         />
         <SolutionTestimonials
@@ -384,7 +384,7 @@ export default function InsurancePage() {
           heading="Insurance clients call when something goes wrong, they can't wait"
           paragraphs={[
             "A burst pipe at midnight. A fender bender during rush hour. A business break-in on a Saturday. Insurance clients call in moments of stress, and if they reach voicemail, you haven't just missed a call. You've damaged trust at the worst possible moment.",
-            "Tarsha AI answers every call instantly, with calm professionalism. First-notice calls are documented and escalated appropriately. Quote requests are captured in full. Existing clients are routed to the right agent. Your agency stays responsive around the clock, without adding headcount.",
+            "Robyn AI answers every call instantly, with calm professionalism. First-notice calls are documented and escalated appropriately. Quote requests are captured in full. Existing clients are routed to the right agent. Your agency stays responsive around the clock, without adding headcount.",
           ]}
           Illustration={IllusIntroInsurance}
         />

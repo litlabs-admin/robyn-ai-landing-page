@@ -37,7 +37,7 @@ const features: Feature[] = [
   {
     icon: CalendarCheck,
     title: "Book appointments",
-    body: <>Send callers a one-tap link to your calendar, or let <span className="text-accent font-semibold">Tarsha AI</span> confirm a time directly. Bookings show up on autopilot.</>,
+    body: <>Send callers a one-tap link to your calendar, or let <span className="text-accent font-semibold">Robyn AI</span> confirm a time directly. Bookings show up on autopilot.</>,
     side: "right",
     position: "top",
   },
@@ -51,7 +51,7 @@ const features: Feature[] = [
   {
     icon: PhoneForwarded,
     title: "Transfer calls",
-    body: <>Need certain callers routed straight to you or a teammate? <span className="text-accent font-semibold">Tarsha AI</span> sends the right person the right call, every time.</>,
+    body: <>Need certain callers routed straight to you or a teammate? <span className="text-accent font-semibold">Robyn AI</span> sends the right person the right call, every time.</>,
     side: "right",
     position: "bottom",
   },
@@ -71,7 +71,7 @@ export function Features() {
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <ScrollReveal y={12} duration={0.7} amount={0.4}>
             <Eyebrow asPill className="mb-6 !text-[#111111]">
-              What Tarsha AI does
+              What Robyn AI does
             </Eyebrow>
           </ScrollReveal>
           <ScrollReveal y={22} duration={0.95} delay={0.07} amount={0.3}>
@@ -217,7 +217,7 @@ function PhoneShowcase() {
 
       <Image
         src={assets.featurePhone}
-        alt="Tarsha AI receptionist answering a call in progress, displayed on a smartphone"
+        alt="Robyn AI receptionist answering a call in progress, displayed on a smartphone"
         width={868}
         height={1150}
         sizes="(min-width: 1024px) 360px, 320px"

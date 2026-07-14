@@ -70,13 +70,13 @@ const stories: Story[] = [
     company: "Premier Plumbing",
     location: "Austin, TX",
     photo: "https://i.pravatar.cc/400?img=57",
-    quote: "Before Tarsha, I was losing 6–8 calls every week while on job sites. Each one was $400–800 in potential work. Now I come home to a clean list of leads every evening. It paid for itself in week two.",
+    quote: "Before Robyn, I was losing 6–8 calls every week while on job sites. Each one was $400–800 in potential work. Now I come home to a clean list of leads every evening. It paid for itself in week two.",
     metrics: [
       { label: "Calls captured", value: "100%", delta: "↑ from ~60%" },
       { label: "Monthly revenue", value: "+$8,200", delta: "new bookings" },
       { label: "Setup time", value: "8 min", delta: "from scratch" },
     ],
-    description: "Marcus runs a 3-person plumbing crew in Austin. With job sites pulling him away from his phone all day, leads were slipping through the cracks. Tarsha AI now answers every call, captures the details, and texts Marcus a clean summary so he can call back during breaks.",
+    description: "Marcus runs a 3-person plumbing crew in Austin. With job sites pulling him away from his phone all day, leads were slipping through the cracks. Robyn AI now answers every call, captures the details, and texts Marcus a clean summary so he can call back during breaks.",
     featured: true,
   },
   {
@@ -87,13 +87,13 @@ const stories: Story[] = [
     company: "Lakewood Family Medicine",
     location: "Denver, CO",
     photo: "https://i.pravatar.cc/400?img=44",
-    quote: "Our front desk was drowning in calls. Tarsha answers, takes complete messages, and now our staff actually have time to focus on patients in the office. It's genuinely transformed how our practice runs.",
+    quote: "Our front desk was drowning in calls. Robyn answers, takes complete messages, and now our staff actually have time to focus on patients in the office. It's genuinely transformed how our practice runs.",
     metrics: [
       { label: "Front desk calls", value: "−62%", delta: "handled by AI" },
       { label: "Patient wait time", value: "−40%", delta: "on hold" },
       { label: "Staff satisfaction", value: "9.4/10", delta: "↑ from 6.1" },
     ],
-    description: "Lakewood Family Medicine sees 120+ patients per week. The front desk was perpetually overwhelmed. Tarsha now handles appointment confirmation, hours inquiries, and after-hours messages, letting staff focus on in-person care.",
+    description: "Lakewood Family Medicine sees 120+ patients per week. The front desk was perpetually overwhelmed. Robyn now handles appointment confirmation, hours inquiries, and after-hours messages, letting staff focus on in-person care.",
   },
   {
     id: "jennifer-harbor-real-estate",
@@ -103,13 +103,13 @@ const stories: Story[] = [
     company: "Harbor Real Estate Group",
     location: "San Diego, CA",
     photo: "https://i.pravatar.cc/400?img=48",
-    quote: "In real estate, speed-to-lead is everything. Tarsha catches every call while I'm showing homes and I'm back to prospects within 20 minutes. My close rate went up almost immediately.",
+    quote: "In real estate, speed-to-lead is everything. Robyn catches every call while I'm showing homes and I'm back to prospects within 20 minutes. My close rate went up almost immediately.",
     metrics: [
       { label: "Lead response time", value: "18 min", delta: "↓ from 3.2 hrs" },
       { label: "Leads captured", value: "+34%", delta: "more per month" },
       { label: "Commission revenue", value: "+$47K", delta: "attributed Q1" },
     ],
-    description: "Jennifer manages a 6-agent brokerage. Missed calls during showings were costing her deals. With Tarsha AI, every prospective buyer is greeted professionally and their details captured instantly.",
+    description: "Jennifer manages a 6-agent brokerage. Missed calls during showings were costing her deals. With Robyn AI, every prospective buyer is greeted professionally and their details captured instantly.",
   },
   {
     id: "carlos-buena-vista",
@@ -119,13 +119,13 @@ const stories: Story[] = [
     company: "Buena Vista Restaurant",
     location: "Chicago, IL",
     photo: "https://i.pravatar.cc/400?img=33",
-    quote: "During dinner rush, my staff can't be answering phones. Tarsha handles reservations, dietary questions, and hours calls, and we haven't missed a reservation inquiry since we set it up.",
+    quote: "During dinner rush, my staff can't be answering phones. Robyn handles reservations, dietary questions, and hours calls, and we haven't missed a reservation inquiry since we set it up.",
     metrics: [
       { label: "Reservations captured", value: "100%", delta: "zero missed" },
       { label: "Staff interruptions", value: "−78%", delta: "during service" },
       { label: "Online reviews", value: "+4.8★", delta: "avg from 4.2★" },
     ],
-    description: "Buena Vista is a 90-seat restaurant in Chicago's Wicker Park. During Friday and Saturday service, phones were ringing off the hook and staff couldn't keep up. Tarsha now handles all incoming reservation and inquiry calls, and relays detailed summaries after each shift.",
+    description: "Buena Vista is a 90-seat restaurant in Chicago's Wicker Park. During Friday and Saturday service, phones were ringing off the hook and staff couldn't keep up. Robyn now handles all incoming reservation and inquiry calls, and relays detailed summaries after each shift.",
   },
   {
     id: "david-sterling-law",
@@ -135,13 +135,13 @@ const stories: Story[] = [
     company: "Sterling Law Group",
     location: "Houston, TX",
     photo: "https://i.pravatar.cc/400?img=11",
-    quote: "New client intake is everything for a law firm. Tarsha handles our after-hours calls with professionalism, captures the right details, and we start every morning with a full intake queue. Incredible.",
+    quote: "New client intake is everything for a law firm. Robyn handles our after-hours calls with professionalism, captures the right details, and we start every morning with a full intake queue. Incredible.",
     metrics: [
       { label: "Intake calls captured", value: "100%", delta: "24/7 coverage" },
       { label: "New matters/month", value: "+22%", delta: "increase" },
       { label: "After-hours leads", value: "31%", delta: "of total intake" },
     ],
-    description: "Sterling Law Group handles personal injury and employment law. A significant portion of client inquiries happen outside business hours, evenings and weekends. Tarsha captures every call and delivers structured intake summaries each morning.",
+    description: "Sterling Law Group handles personal injury and employment law. A significant portion of client inquiries happen outside business hours, evenings and weekends. Robyn captures every call and delivers structured intake summaries each morning.",
   },
   {
     id: "rosa-sunrise",
@@ -151,13 +151,13 @@ const stories: Story[] = [
     company: "Sunrise Home Services",
     location: "Miami, FL",
     photo: "https://i.pravatar.cc/400?img=38",
-    quote: "Most of my clients speak Spanish. Tarsha handles both English and Spanish calls flawlessly. I've picked up three times more Spanish-speaking clients since switching, it's been a game changer.",
+    quote: "Most of my clients speak Spanish. Robyn handles both English and Spanish calls flawlessly. I've picked up three times more Spanish-speaking clients since switching, it's been a game changer.",
     metrics: [
       { label: "Spanish leads captured", value: "3×", delta: "more per month" },
       { label: "Bilingual coverage", value: "24/7", delta: "English & Spanish" },
       { label: "Revenue growth", value: "+68%", delta: "in 90 days" },
     ],
-    description: "Rosa runs a residential cleaning business in Miami's bilingual market. Before Tarsha, Spanish-speaking callers who couldn't get through in English often gave up. Now every caller is served in their preferred language.",
+    description: "Rosa runs a residential cleaning business in Miami's bilingual market. Before Robyn, Spanish-speaking callers who couldn't get through in English often gave up. Now every caller is served in their preferred language.",
   },
 ];
 
@@ -307,7 +307,7 @@ export default function CustomerStoriesPage() {
               transition={{ duration: 0.55, delay: 0.18, ease: EASE }}
               className="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-ink-muted"
             >
-              See how small businesses across the US are using Tarsha AI to stop missing calls, capture more leads, and grow without adding headcount.
+              See how small businesses across the US are using Robyn AI to stop missing calls, capture more leads, and grow without adding headcount.
             </motion.p>
           </div>
         </section>
@@ -317,7 +317,7 @@ export default function CustomerStoriesPage() {
           <div className="mx-auto max-w-[960px] px-6 md:px-10">
             <div className="grid grid-cols-3 gap-0 divide-x divide-border">
               <StatCounter value={50000} suffix="+" label="calls answered every month" />
-              <StatCounter value={1200} suffix="+" label="businesses using Tarsha AI" />
+              <StatCounter value={1200} suffix="+" label="businesses using Robyn AI" />
               <StatCounter value={49} suffix="/50" label="average customer rating" />
             </div>
           </div>
@@ -476,7 +476,7 @@ export default function CustomerStoriesPage() {
                 <span className="text-accent">next</span>.
               </h2>
               <p className="mx-auto mt-4 max-w-md text-[16px] leading-relaxed text-white/60">
-                Join 1,200+ small businesses that never miss a call. Try Tarsha AI free for 14 days, no credit card required.
+                Join 1,200+ small businesses that never miss a call. Try Robyn AI free for 14 days, no credit card required.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <a

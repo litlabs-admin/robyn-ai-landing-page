@@ -8,7 +8,7 @@ const lines = [
   { name: "Jessica Moore", title: "Receptionist", status: "Active", overflow: false },
   { name: "David Kim", title: "Front desk", status: "Active", overflow: false },
   { name: "Maria Santos", title: "Receptionist", status: "Active", overflow: false },
-  { name: "Tarsha AI", title: "Overflow · handling", status: "Overflow", overflow: true },
+  { name: "Robyn AI", title: "Overflow · handling", status: "Overflow", overflow: true },
 ];
 
 export function MockOverflowDashboard() {

@@ -121,7 +121,7 @@ export function Hero() {
             variants={itemVariants}
             className="mt-9 max-w-[42rem] text-balance text-[18px] leading-[1.7] text-ink-muted md:text-[19px]"
           >
-            <span className="text-[#B8960A] font-semibold">Tarsha AI</span> is the answering service that keeps your phone covered, so
+            <span className="text-[#B8960A] font-semibold">Robyn AI</span> is the answering service that keeps your phone covered, so
             you never miss a lead or leave a customer waiting.
           </motion.p>
 

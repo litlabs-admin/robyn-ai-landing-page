@@ -294,7 +294,7 @@ function MockConfirmation() {
 const testimonials: TestimonialItem[] = [
   {
     quote:
-      "We were losing 3–4 bookings every single week because no one could answer during appointments. Tarsha books them while we're with clients. We filled 11 extra appointments in the first month alone, I wish we'd switched sooner.",
+      "We were losing 3–4 bookings every single week because no one could answer during appointments. Robyn books them while we're with clients. We filled 11 extra appointments in the first month alone, I wish we'd switched sooner.",
     author: "Jessica M.",
     role: "Owner",
     company: "Revive Hair Studio",
@@ -302,7 +302,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "My front desk was spending 2 hours a day booking appointments by phone. Tarsha handles all of it automatically now. The calendar is full, my team is less stressed, and patients actually comment on how easy scheduling has become.",
+      "My front desk was spending 2 hours a day booking appointments by phone. Robyn handles all of it automatically now. The calendar is full, my team is less stressed, and patients actually comment on how easy scheduling has become.",
     author: "Dr. Sam L.",
     role: "Chiropractor",
     company: "Riverside Chiropractic",
@@ -310,7 +310,7 @@ const testimonials: TestimonialItem[] = [
   },
   {
     quote:
-      "Buyers call at all hours wanting to schedule showings. With Tarsha I wake up to a full schedule every morning, synced to my calendar, confirmation sent, reminder set. I've genuinely stopped worrying about missed opportunities.",
+      "Buyers call at all hours wanting to schedule showings. With Robyn I wake up to a full schedule every morning, synced to my calendar, confirmation sent, reminder set. I've genuinely stopped worrying about missed opportunities.",
     author: "Sarah K.",
     role: "Real Estate Agent",
     company: "Green Valley Properties",
@@ -322,13 +322,13 @@ const steps = [
   {
     title: "Connect your calendar",
     description:
-      "Link Google Calendar, Outlook, Acuity, or any major scheduling tool in under 5 minutes. Tarsha reads your real-time availability from that moment on.",
+      "Link Google Calendar, Outlook, Acuity, or any major scheduling tool in under 5 minutes. Robyn reads your real-time availability from that moment on.",
     Illustration: IllusCalendarConnect,
   },
   {
     title: "A caller asks for an appointment",
     description:
-      "Tarsha AI checks your live availability, offers the right time slots, qualifies the booking, and handles the entire conversation, all within the call.",
+      "Robyn AI checks your live availability, offers the right time slots, qualifies the booking, and handles the entire conversation, all within the call.",
     Illustration: IllusSlotSelection,
   },
   {
@@ -344,7 +344,7 @@ const benefits: Benefit[] = [
     icon: CalendarCheck,
     title: "Real-time availability",
     description:
-      "Tarsha reads your live calendar, no outdated slots, no double-bookings, ever.",
+      "Robyn reads your live calendar, no outdated slots, no double-bookings, ever.",
     MockUI: MockAvailability,
     wide: true,
   },
@@ -398,7 +398,7 @@ export default function AppointmentBookingPage() {
           eyebrow="Appointment Booking"
           titleBefore="Book appointments "
           titleHighlight="while they're on the phone"
-          subtitle="Tarsha AI syncs with your calendar and locks in bookings in real time, no follow-up emails, no double-bookings, no missed opportunities."
+          subtitle="Robyn AI syncs with your calendar and locks in bookings in real time, no follow-up emails, no double-bookings, no missed opportunities."
           MockUI={MockBookingCalendar}
         />
         <SolutionTestimonials
@@ -410,7 +410,7 @@ export default function AppointmentBookingPage() {
           heading="Every missed call is a missed booking"
           paragraphs={[
             "When a potential client calls to book and nobody answers, they don't call back, they find someone else. For appointment-based businesses, that's not just a missed call, it's lost revenue that compounds week after week.",
-            "Tarsha AI connects to your calendar and handles the entire booking conversation in real time, checking your availability, offering the right slots, confirming the appointment, and sending reminders that reduce no-shows by up to 60%. All without your staff picking up the phone.",
+            "Robyn AI connects to your calendar and handles the entire booking conversation in real time, checking your availability, offering the right slots, confirming the appointment, and sending reminders that reduce no-shows by up to 60%. All without your staff picking up the phone.",
           ]}
           Illustration={IllusIntroMissedBookings}
         />
