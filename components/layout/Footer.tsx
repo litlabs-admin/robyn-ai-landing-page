@@ -3,11 +3,12 @@
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { RobynLogo } from "@/components/ui/RobynLogo";
+import { RobynWordmark } from "@/components/ui/RobynWordmark";
 import { brand } from "@/lib/assets";
 import { cn } from "@/lib/cn";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, Github, Linkedin, Twitter, Youtube } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 
@@ -78,12 +79,17 @@ export function Footer() {
                 className="inline-block focus-ring rounded-md"
                 aria-label={`${brand.name} home`}
               >
-                <RobynLogo
-                  variant="wordmark"
-                  wordmarkStyle="robyn-brodine"
-                  theme="dark"
-                  size="lg"
-                />
+                <span className="flex items-center gap-2.5">
+                  <Image
+                    src="/assets/logo-mark.png"
+                    alt=""
+                    aria-hidden
+                    width={96}
+                    height={96}
+                    className="h-12 w-auto"
+                  />
+                  <RobynWordmark theme="dark" size="lg" />
+                </span>
               </Link>
 
               <p className="mt-5 max-w-[34ch] text-[14px] leading-[1.6] text-white/60">

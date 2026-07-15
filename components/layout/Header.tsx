@@ -3,8 +3,9 @@
 import { ResourcesMenu } from "@/components/nav/ResourcesMenu";
 import { SolutionsMenu } from "@/components/nav/SolutionsMenu";
 import { Button } from "@/components/ui/Button";
-import { RobynLogo } from "@/components/ui/RobynLogo";
+import { RobynWordmark } from "@/components/ui/RobynWordmark";
 import { brand } from "@/lib/assets";
+import Image from "next/image";
 import { cn } from "@/lib/cn";
 import {
   AnimatePresence,
@@ -277,16 +278,28 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="focus-ring rounded-md"
+          className="focus-ring origin-left scale-110 rounded-md transition-transform duration-300 md:scale-100"
           aria-label={`${brand.name} home`}
         >
-          <RobynLogo
-            variant="wordmark"
-            wordmarkStyle="robyn-brodine"
-            theme="light"
-            size={scrolled ? "md" : "lg"}
-            className="transition-all duration-300"
-          />
+          <span className="flex items-center gap-2 transition-all duration-300">
+            <Image
+              src="/assets/logo-mark.png"
+              alt=""
+              aria-hidden
+              width={96}
+              height={96}
+              priority
+              className={cn(
+                "w-auto transition-all duration-300",
+                scrolled ? "h-10" : "h-12",
+              )}
+            />
+            <RobynWordmark
+              theme="light"
+              size={scrolled ? "md" : "lg"}
+              className="transition-all duration-300"
+            />
+          </span>
         </Link>
 
         {/* Desktop nav, dock magnification applied here */}
@@ -320,14 +333,14 @@ export function Header() {
 
         {/* Mobile: Book a demo + hamburger */}
         <div className="md:hidden flex items-center gap-2">
-          <Button size="sm" variant="primary" href={brand.bookDemoUrl}>
+          <Button size="md" variant="primary" href={brand.bookDemoUrl}>
             Book a demo
           </Button>
           <button
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface/80 backdrop-blur-md focus-ring"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-surface/80 backdrop-blur-md focus-ring"
           >
             {mobileOpen ? (
               <X className="h-5 w-5" strokeWidth={2} />

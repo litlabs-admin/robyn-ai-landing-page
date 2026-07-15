@@ -6,7 +6,7 @@ import { Features } from "@/components/sections/Features";
 import { Hero } from "@/components/sections/Hero";
 import { LiveDemo } from "@/components/sections/LiveDemo";
 import { ProblemVsSolution } from "@/components/sections/ProblemVsSolution";
-// import { Testimonials } from "@/components/sections/Testimonials";
+import { Testimonials } from "@/components/sections/Testimonials";
 
 export default function HomePage() {
   return (
@@ -15,8 +15,8 @@ export default function HomePage() {
       <main>
         <Hero />
         <Features />
+        <Testimonials />
         <LiveDemo />
-        {/* <Testimonials /> */}
         <ProblemVsSolution />
         <FAQ />
         <About />

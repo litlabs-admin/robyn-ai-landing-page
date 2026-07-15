@@ -2,7 +2,6 @@
 
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { assets } from "@/lib/assets";
 import { cn } from "@/lib/cn";
 import { AnimatePresence, motion } from "framer-motion";
@@ -137,10 +136,7 @@ export function LiveDemo() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
           {/* Left: heading column */}
           <div className="text-center lg:text-left">
-            <ScrollReveal y={16} duration={0.7}>
-              <Eyebrow className="mb-5">Hear our AI receptionist in action</Eyebrow>
-            </ScrollReveal>
-            <ScrollReveal y={20} duration={0.9} delay={0.05}>
+            <ScrollReveal y={20} duration={0.9}>
               <h2
                 id="live-demo-heading"
                 className="font-display font-semibold tracking-[-0.025em] text-ink text-[clamp(1.875rem,3.6vw,3rem)] leading-[1.08]"
@@ -225,7 +221,7 @@ function IndustryCard({
         "transition-all duration-300 ease-out focus-ring",
         isActive
           ? "border-accent shadow-[0_0_0_3px_rgba(255,208,0,0.18),0_8px_24px_rgba(24,19,10,0.08)]"
-          : "border-border shadow-soft hover:border-ink/20 hover:shadow-lift",
+          : "border-transparent shadow-soft hover:border-ink/10 hover:shadow-lift",
       )}
     >
       {/* Soft lime aura when active */}

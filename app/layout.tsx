@@ -19,9 +19,12 @@ import type { Metadata, Viewport } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://robyn.ai"),
   icons: {
-    icon: { url: "/assets/favicon.svg", type: "image/svg+xml" },
-    shortcut: "/assets/favicon.svg",
-    apple: "/assets/favicon.svg",
+    icon: [
+      { url: "/assets/favicon.ico", sizes: "any" },
+      { url: "/assets/favicon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/assets/favicon.ico",
+    apple: "/apple-icon.png",
   },
   title: {
     default: "Robyn AI, AI receptionist that answers calls 24/7",

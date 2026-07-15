@@ -93,7 +93,7 @@ export function Features() {
         {/* Grid: left cards | phone | right cards */}
         <div className="relative mt-16 grid grid-cols-1 gap-10 md:mt-20 lg:grid-cols-[1fr_minmax(280px,360px)_1fr] lg:gap-x-12 lg:gap-y-16">
           {/* Left column (desktop), top & bottom features */}
-          <div className="order-2 flex flex-col gap-12 lg:order-1 lg:gap-20 lg:pt-8">
+          <div className="order-2 flex flex-col divide-y divide-border lg:order-1 lg:gap-20 lg:divide-y-0 lg:pt-8">
             {features
               .filter((f) => f.side === "left")
               .map((f, i) => (
@@ -112,7 +112,7 @@ export function Features() {
           </div>
 
           {/* Right column (desktop), top & bottom features */}
-          <div className="order-3 flex flex-col gap-12 lg:gap-20 lg:pt-8">
+          <div className="order-3 flex flex-col divide-y divide-border border-t border-border pt-6 lg:gap-20 lg:divide-y-0 lg:border-t-0 lg:pt-8">
             {features
               .filter((f) => f.side === "right")
               .map((f, i) => (
@@ -157,7 +157,7 @@ function FeatureCard({
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
       className={cn(
-        "group flex flex-col items-center text-center lg:text-left",
+        "group flex flex-col items-center py-6 text-center first:pt-0 last:pb-0 lg:py-0 lg:text-left",
         align === "right" && "lg:items-end lg:text-right",
         align === "left" && "lg:items-start",
       )}

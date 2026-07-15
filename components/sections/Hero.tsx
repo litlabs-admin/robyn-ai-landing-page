@@ -130,11 +130,11 @@ export function Hero() {
             className="mt-10 flex flex-row items-center justify-center gap-3"
           >
             <Button
-              size="md"
+              size="lg"
               variant="primary"
               icon="arrow"
               href={brand.bookDemoUrl}
-              className="sm:h-12 sm:px-6 sm:text-[15px]"
+              className="px-7 text-[15px] sm:px-8 sm:text-[16px]"
             >
               Book a demo
             </Button>
