@@ -23,7 +23,7 @@ export function SolutionIndustries({
           <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-muted">
             {eyebrow}
           </p>
-          <h2 className="mt-3 font-display text-[1.75rem] font-bold text-ink md:text-[2.25rem]">
+          <h2 className="mt-3 font-display text-[1.75rem] font-extrabold text-ink md:text-[2.25rem]">
             {heading}
           </h2>
         </ScrollReveal>

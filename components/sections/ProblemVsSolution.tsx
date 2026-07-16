@@ -43,8 +43,13 @@ export function ProblemVsSolution() {
       <Backdrop />
 
       <Container>
-        {/* Editorial heading */}
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+        {/* Editorial heading. Left-aligned as a whole — eyebrow, heading and
+            body together — rather than centred like the hero and Features. The
+            page alternates between fully-centred and fully-left sections; a
+            centred heading over left-aligned body is the one combination that
+            reads as a mistake. No mx-auto, so the block sits flush with the
+            container's left edge instead of floating mid-column. */}
+        <div className="flex max-w-3xl flex-col items-start text-left">
           <ScrollReveal y={12} duration={0.7} amount={0.4}>
             <Eyebrow asPill className="mb-6">
               <span className="text-ink-muted">The cost of a missed call</span>
@@ -203,7 +208,7 @@ function ComparisonCard({
       <div className="px-4 pb-5 pt-5 md:px-5 md:pb-6 md:pt-6">
         <h3
           className={cn(
-            "font-display text-[22px] font-bold tracking-[-0.015em] md:text-[26px]",
+            "font-display text-[22px] font-extrabold tracking-[-0.015em] md:text-[26px]",
             isNew ? "text-ink" : "text-ink-muted",
           )}
         >

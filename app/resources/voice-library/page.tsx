@@ -286,7 +286,7 @@ function VoiceCard({
         <div className="flex items-start justify-between gap-3">
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="font-display text-[18px] font-bold text-ink">{voice.name}</h3>
+              <h3 className="font-display text-[18px] font-extrabold text-ink">{voice.name}</h3>
               <span
                 className="rounded-full px-2 py-0.5 text-[10px] font-semibold"
                 style={{ backgroundColor: colors.bg, color: colors.text }}
@@ -608,7 +608,7 @@ export default function VoiceLibraryPage() {
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-bg text-[22px] shadow-soft">
                     {item.icon}
                   </span>
-                  <h3 className="font-display text-[17px] font-bold text-ink">{item.title}</h3>
+                  <h3 className="font-display text-[17px] font-extrabold text-ink">{item.title}</h3>
                   <p className="text-[14px] leading-relaxed text-ink-muted">{item.body}</p>
                 </motion.div>
               ))}
@@ -625,7 +625,7 @@ export default function VoiceLibraryPage() {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, ease: EASE }}
             >
-              <h2 className="font-display text-[2rem] font-bold tracking-tighter2 text-white md:text-[2.5rem]">
+              <h2 className="font-display text-[2rem] font-extrabold tracking-tighter2 text-white md:text-[2.5rem]">
                 Give your business a voice it&apos;s{" "}
                 <span className="text-accent">proud of</span>.
               </h2>

@@ -425,7 +425,7 @@ export default function CustomerStoriesPage() {
         {/* Filter + grid */}
         <section className="mx-auto max-w-[1240px] px-6 pb-20 md:px-10">
           <div className="mb-8 flex items-center justify-between gap-4">
-            <h2 className="font-display text-[1.4rem] font-bold tracking-tight text-ink">
+            <h2 className="font-display text-[1.4rem] font-extrabold tracking-tight text-ink">
               More stories
             </h2>
             <div className="flex flex-wrap gap-2">
@@ -471,7 +471,7 @@ export default function CustomerStoriesPage() {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, ease: EASE }}
             >
-              <h2 className="font-display text-[2rem] font-bold tracking-tighter2 text-white md:text-[2.75rem]">
+              <h2 className="font-display text-[2rem] font-extrabold tracking-tighter2 text-white md:text-[2.75rem]">
                 Your business could be{" "}
                 <span className="text-accent">next</span>.
               </h2>

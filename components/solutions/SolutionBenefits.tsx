@@ -51,7 +51,7 @@ function BentoCard({
       <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-border bg-surface shadow-sm transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-3">
         <Icon className="h-4 w-4 text-ink/60" strokeWidth={1.5} />
       </div>
-      <h3 className="mt-3 font-display text-[17px] font-bold text-ink">{title}</h3>
+      <h3 className="mt-3 font-display text-[17px] font-extrabold text-ink">{title}</h3>
       <p className="mt-1.5 text-[13px] leading-relaxed text-ink-muted">{description}</p>
       <MockUI />
     </motion.div>
@@ -71,7 +71,7 @@ export function SolutionBenefits({
             {eyebrow}
           </p>
           {heading && (
-            <h2 className="mt-3 font-display text-[2rem] font-bold text-ink md:text-[2.5rem]">
+            <h2 className="mt-3 font-display text-[2rem] font-extrabold text-ink md:text-[2.5rem]">
               {heading}
             </h2>
           )}

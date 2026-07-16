@@ -61,7 +61,7 @@ export function ResourceCard({ article, index = 0 }: { article: ArticleCardData;
           {/* Content */}
           <div className="flex flex-1 flex-col p-5">
             <p className="text-[11px] text-ink-faint">{article.date}</p>
-            <h3 className="mt-2 font-display text-[16px] font-bold leading-snug tracking-tight text-ink group-hover:text-ink/80 transition-colors">
+            <h3 className="mt-2 font-display text-[16px] font-extrabold leading-snug tracking-tight text-ink group-hover:text-ink/80 transition-colors">
               {article.title}
             </h3>
             <p className="mt-2 flex-1 text-[13px] leading-relaxed text-ink-muted line-clamp-3">
@@ -110,7 +110,7 @@ export function FeaturedCard({ article }: { article: ArticleCardData }) {
               </span>
               <span className="text-[12px] text-ink-faint">{article.date}</span>
             </div>
-            <h2 className="mt-4 font-display text-[1.6rem] font-bold leading-tight tracking-tighter2 text-ink md:text-[2rem] group-hover:text-ink/80 transition-colors">
+            <h2 className="mt-4 font-display text-[1.6rem] font-extrabold leading-tight tracking-tighter2 text-ink md:text-[2rem] group-hover:text-ink/80 transition-colors">
               {article.title}
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-ink-muted">

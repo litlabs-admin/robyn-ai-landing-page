@@ -28,7 +28,7 @@ export function SolutionIntro({ eyebrow, heading, paragraphs, Illustration }: So
               </ScrollReveal>
             )}
             <ScrollReveal y={20} duration={0.9} amount={0.3} once>
-              <h2 className="font-display text-[2rem] font-bold leading-tight text-ink md:text-[2.5rem]">
+              <h2 className="font-display text-[2rem] font-extrabold leading-tight text-ink md:text-[2.5rem]">
                 {heading}
               </h2>
             </ScrollReveal>

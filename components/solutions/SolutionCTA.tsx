@@ -31,7 +31,7 @@ export function SolutionCTA({
 
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <ScrollReveal y={18} amount={0.3} once>
-          <h2 className="font-display text-[2.25rem] font-bold leading-tight text-ink md:text-[3rem]">
+          <h2 className="font-display text-[2.25rem] font-extrabold leading-tight text-ink md:text-[3rem]">
             {heading}
           </h2>
           {subheading && (

@@ -107,19 +107,23 @@ export function About() {
       <Backdrop />
 
       <Container>
-        <div className="mx-auto max-w-[860px]">
-          {/* Section heading, centered */}
+        {/* No mx-auto: the column sits flush with the container's left edge, so
+            the heading and body share one left margin. This section is fully
+            left-aligned like ProblemVsSolution — the page alternates between
+            fully-centred and fully-left sections. */}
+        <div className="max-w-[860px]">
+          {/* Section heading */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="mb-16 flex flex-col items-center text-center md:mb-24"
+            className="mb-16 flex flex-col items-start text-left md:mb-24"
           >
             
             <h2
               id="about-heading"
-              className="font-display font-bold tracking-[-0.025em] text-ink text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05]"
+              className="font-display font-extrabold tracking-[-0.025em] text-ink text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05]"
             >
               Why we built <span className="text-accent">Robyn AI</span>.
             </h2>
@@ -133,7 +137,7 @@ export function About() {
                 className={cn(
                   "font-display font-semibold tracking-[-0.022em]",
                   "text-[clamp(1.625rem,3.2vw,2.625rem)] leading-[1.35]",
-                  "text-center",
+                  "text-left",
                 )}
               >
                 {paragraph.map((seg, segIdx) => {

@@ -139,7 +139,7 @@ export function LiveDemo() {
             <ScrollReveal y={20} duration={0.9}>
               <h2
                 id="live-demo-heading"
-                className="font-display font-bold tracking-[-0.025em] text-ink text-[clamp(1.875rem,3.6vw,3rem)] leading-[1.08]"
+                className="font-display font-extrabold tracking-[-0.025em] text-ink text-[clamp(1.875rem,3.6vw,3rem)] leading-[1.08]"
               >
                 If people call your business, you need an AI answering service.
               </h2>
@@ -306,7 +306,7 @@ function IndustryCard({
         <div className="flex items-center gap-2">
           <span
             className={cn(
-              "font-display text-[16px] font-semibold tracking-[-0.01em] transition-colors duration-300",
+              "font-display text-[18px] font-bold tracking-[-0.01em] transition-colors duration-300",
               "text-ink",
             )}
           >
@@ -336,7 +336,7 @@ function IndustryCard({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -4 }}
               transition={{ duration: 0.25, ease: EASE }}
-              className="mt-0.5 block text-[12.5px] text-ink-muted"
+              className="mt-0.5 block text-[14px] font-medium text-ink-muted"
             >
               {industry.scenario}
             </motion.span>

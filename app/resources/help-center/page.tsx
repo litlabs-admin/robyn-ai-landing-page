@@ -237,7 +237,7 @@ function CategoryCard({ cat, index }: { cat: typeof categories[0]; index: number
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between gap-2">
-            <h3 className="font-display text-[16px] font-bold text-ink">{cat.title}</h3>
+            <h3 className="font-display text-[16px] font-extrabold text-ink">{cat.title}</h3>
             <span className="shrink-0 text-[11px] text-ink-faint">{cat.articleCount} articles</span>
           </div>
           <p className="mt-0.5 text-[13px] text-ink-muted">{cat.description}</p>
@@ -404,7 +404,7 @@ export default function HelpCenterPage() {
               className="mb-10"
             >
               <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-muted">Browse by topic</p>
-              <h2 className="font-display text-[1.75rem] font-bold tracking-tighter2 text-ink">
+              <h2 className="font-display text-[1.75rem] font-extrabold tracking-tighter2 text-ink">
                 Find answers fast
               </h2>
             </motion.div>
@@ -428,7 +428,7 @@ export default function HelpCenterPage() {
               className="mb-10 text-center"
             >
               <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-muted">FAQ</p>
-              <h2 className="font-display text-[1.75rem] font-bold tracking-tighter2 text-ink">
+              <h2 className="font-display text-[1.75rem] font-extrabold tracking-tighter2 text-ink">
                 Frequently asked questions
               </h2>
             </motion.div>
@@ -518,7 +518,7 @@ export default function HelpCenterPage() {
                   className="rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:bg-white/8"
                 >
                   <span className="text-3xl">{card.icon}</span>
-                  <h3 className="mt-4 font-display text-[18px] font-bold text-white">{card.title}</h3>
+                  <h3 className="mt-4 font-display text-[18px] font-extrabold text-white">{card.title}</h3>
                   <p className="mt-2 text-[14px] leading-relaxed text-white/60">{card.desc}</p>
                   <Link
                     href={card.href}

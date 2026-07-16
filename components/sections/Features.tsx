@@ -189,7 +189,7 @@ function FeatureCard({
       >
         <Icon className="h-5 w-5 text-ink" strokeWidth={1.75} />
       </div>
-      <h3 className="mt-5 font-display text-[20px] font-bold tracking-[-0.01em] text-ink md:text-[22px]">
+      <h3 className="mt-5 font-display text-[20px] font-extrabold tracking-[-0.01em] text-ink md:text-[22px]">
         {feature.title}
       </h3>
       <p className="mt-2.5 max-w-sm text-[15px] leading-[1.65] text-ink-muted md:text-[16px]">

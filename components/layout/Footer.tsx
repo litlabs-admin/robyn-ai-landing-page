@@ -173,7 +173,7 @@ function FinalCTA() {
               <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,208,0,0.28)]" />
               Ready when you are
             </span>
-            <h2 className="font-display font-bold tracking-[-0.025em] text-white text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.05]">
+            <h2 className="font-display font-extrabold tracking-[-0.025em] text-white text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.05]">
               Never miss another <br className="hidden sm:block" />
               <span className="relative inline-block">
                 customer call

@@ -53,11 +53,11 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     ref,
   ) {
     const classes = cn(
-      // Jakarta 700, matching headings. font-display carries -0.035em, which is
+      // Jakarta 800, matching headings. font-display carries -0.035em, which is
       // tuned for display sizes and reads cramped on a 13px label — hence the
       // explicit, lighter tracking here.
       "group/btn inline-flex items-center justify-center gap-2 rounded-xl",
-      "font-display font-bold tracking-[-0.01em]",
+      "font-display font-extrabold tracking-[-0.01em]",
       "transition-colors duration-200 ease-out focus-ring",
       variantStyles[variant],
       sizeStyles[size],

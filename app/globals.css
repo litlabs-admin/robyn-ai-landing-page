@@ -46,24 +46,45 @@ body {
    .section-heading below.
    NOTE: the root font-size is 17px, not 16 — every rem here is ~6% larger than
    it looks.
-   This ramp is bounded at BOTH ends by the headline's line-breaks (see
-   Hero.tsx), not by taste: ~36px at 390 keeps "that answers calls" on one line,
-   and the 4.15rem cap keeps "AI receptionist that answers calls" on one line
-   inside the 1160px content column. Raising either end silently adds a line. */
+   This ramp governs 640px and up only — phones are overridden in the block
+   below, so the two can be tuned independently.
+   The 4.15rem cap is bounded by the headline's line-breaks (see Hero.tsx), not
+   by taste: it keeps "AI receptionist that answers calls" on one line inside the
+   1160px content column, and lets the two-line form start at lg. Raising it
+   silently adds a line and pushes that breakpoint out. */
 .hero-display {
   font-family: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   font-size: clamp(2.05rem, 1.375rem + 3.24vw, 4.15rem);
-  line-height: 1.1;
-  letter-spacing: -0.04em;
+  line-height: 1.05;
+  letter-spacing: -0.042em;
 }
 
+/* Phones only, so the phone size can be raised without dragging the desktop ramp
+   up with it.
+   Near-pure vw by design: the ceiling here is the column, not taste. The
+   headline's longest phone line ("that answers calls") needs ~8.2px of width per
+   1px of font-size, against the viewport minus ~51px of Container padding — so
+   the limit is a fixed fraction of viewport width, and a rem-heavy ramp that
+   fits a 390px phone overflows a 360px one. 10vw holds 4 clean lines from 320 to
+   the 640 boundary with ~5% to spare. Going bigger strands "calls" on its own
+   line — that is what 1.2rem + 6vw (43.8px at 390) did. The rem floor/cap are
+   only backstops; the 1.9rem floor is itself bounded by the 320px column. */
+@media (max-width: 639px) {
+  .hero-display {
+    font-size: clamp(1.9rem, 10vw, 2.8rem);
+  }
+}
+
+/* The 2.7rem floor is the *mobile* size (45.9px — it governs up to ~882px); the
+   vw term and cap are the desktop end. They're independent, so desktop can be
+   retuned without touching phones. */
 .section-heading {
   font-family: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 700;
-  font-size: clamp(2.6rem, 5.2vw, 5rem);
-  line-height: 1.05;
-  letter-spacing: -0.038em;
+  font-weight: 800;
+  font-size: clamp(2.7rem, 5.2vw, 5rem);
+  line-height: 1.03;
+  letter-spacing: -0.04em;
 }
 
 .eyebrow {

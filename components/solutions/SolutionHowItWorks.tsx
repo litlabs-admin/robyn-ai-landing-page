@@ -30,7 +30,7 @@ export function SolutionHowItWorks({
           <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-muted">
             {eyebrow}
           </p>
-          <h2 className="mt-3 font-display text-[2rem] font-bold text-ink md:text-[2.5rem]">
+          <h2 className="mt-3 font-display text-[2rem] font-extrabold text-ink md:text-[2.5rem]">
             {heading}
           </h2>
         </ScrollReveal>
@@ -64,7 +64,7 @@ export function SolutionHowItWorks({
                 {i + 1}
               </div>
 
-              <h3 className="relative font-display text-[17px] font-bold text-ink">{title}</h3>
+              <h3 className="relative font-display text-[17px] font-extrabold text-ink">{title}</h3>
               <p className="relative mt-2 text-[13px] leading-relaxed text-ink-muted">
                 {description}
               </p>

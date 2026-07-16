@@ -16,11 +16,13 @@ const REVEAL_EASE = [0.22, 1, 0.36, 1] as const;
 //   lg and up  AI receptionist that answers calls / while you run your business
 //   below lg   AI receptionist / that answers calls / while you run your / business
 //
-// Only the first break is breakpoint-specific, and it holds until lg rather
-// than md: the one-line form needs ~860px of column, which md (688px at that
-// font size) can't give — it strands "calls" alone. Tablets keep the stack.
-// The last line needs no break at all — it's simply too long for a phone, so it
-// wraps itself before "business".
+// Only the first break is breakpoint-specific, and it holds until lg — the
+// one-line form needs the column to out-grow the headline, which given this font
+// ramp happens from 1024 (~855px of headline in a 944px column). Below that it
+// would strand "calls" alone, so tablets keep the stack. This breakpoint is
+// coupled to the .hero-display ramp in globals.css: make the type bigger and the
+// break has to move out with it. The last line needs no break at all — it's
+// simply too long for a phone, so it wraps itself before "business".
 //
 // Words stay individually wrapped for the stagger. The accent phrase nests its
 // words inside one *inline* span: that span can break between them (an
@@ -146,12 +148,22 @@ export function Hero() {
                   </span>
                 );
               }
+              // A trailing margin on the last word of a line is not just
+              // invisible — it still counts toward line-breaking, so it shrinks
+              // the usable column by 0.25em. On "calls" (which an unconditional
+              // <br> always follows) that phantom width is what tipped "that
+              // answers calls" into wrapping on phones. Only skip it for an
+              // "always" break: before a "stacked" one the next word rejoins
+              // this line at lg, where the margin is real.
+              const next = headlineTokens[i + 1];
+              const breaksAfter = !!next && "br" in next && next.br === "always";
               return (
                 <motion.span
                   key={i}
                   variants={headlineWord}
                   className={cn(
-                    "mr-[0.25em] inline-block",
+                    "inline-block",
+                    !breaksAfter && "mr-[0.25em]",
                     token.muted && "text-ink-muted",
                   )}
                 >
@@ -163,7 +175,7 @@ export function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="mt-8 max-w-[42rem] text-balance text-[17px] leading-[1.65] text-ink-muted md:mt-9 md:text-[19px]"
+            className="mt-8 max-w-[42rem] text-balance text-[18px] leading-[1.6] text-ink-muted md:mt-9 md:text-[19px]"
           >
             <span className="text-[#B8960A] font-semibold">Robyn AI</span> is the answering service that keeps your phone covered, so
             you never miss a lead or leave a customer waiting.
@@ -188,7 +200,7 @@ export function Hero() {
                 size="lg"
                 variant="primary"
                 href={brand.bookDemoUrl}
-                className="h-14 whitespace-nowrap text-[16px] max-sm:px-4 sm:h-12 sm:px-8"
+                className="h-16 whitespace-nowrap text-[17px] max-sm:px-6 sm:h-12 sm:px-8 sm:text-[16px]"
               >
                 Try for free
               </Button>
@@ -200,7 +212,7 @@ export function Hero() {
               size="lg"
               variant="outline"
               href={brand.bookDemoUrl}
-              className="h-14 whitespace-nowrap text-[16px] max-sm:px-4 sm:h-12 sm:px-8"
+              className="h-16 whitespace-nowrap text-[17px] max-sm:px-6 sm:h-12 sm:px-8 sm:text-[16px]"
             >
               Book a demo
             </Button>

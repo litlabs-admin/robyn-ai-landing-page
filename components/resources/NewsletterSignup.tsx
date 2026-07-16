@@ -35,7 +35,7 @@ export function NewsletterSignup() {
               Weekly insights
             </span>
 
-            <h2 className="font-display text-[1.75rem] font-bold tracking-tighter2 text-ink md:text-[2.25rem]">
+            <h2 className="font-display text-[1.75rem] font-extrabold tracking-tighter2 text-ink md:text-[2.25rem]">
               Tips for businesses that live and die{" "}
               <span className="relative inline-block">
                 by the phone

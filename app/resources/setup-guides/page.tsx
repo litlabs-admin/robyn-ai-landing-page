@@ -487,7 +487,7 @@ function QuickStartStep({ step, index }: { step: typeof quickStartSteps[0]; inde
           </div>
           <div>
             <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-accent">Step {step.step}</span>
-            <h3 className="font-display text-[18px] font-bold text-ink">{step.title}</h3>
+            <h3 className="font-display text-[18px] font-extrabold text-ink">{step.title}</h3>
           </div>
         </div>
         <p className="mt-4 text-[14px] leading-relaxed text-ink-muted">{step.description}</p>
@@ -540,7 +540,7 @@ function CategoryCard({ cat, index }: { cat: typeof categories[0]; index: number
             {cat.guideCount} guides
           </span>
         </div>
-        <h3 className="mt-3 font-display text-[17px] font-bold text-ink">{cat.title}</h3>
+        <h3 className="mt-3 font-display text-[17px] font-extrabold text-ink">{cat.title}</h3>
         <p className="mt-1 text-[13px] text-ink-muted">{cat.description}</p>
       </div>
 
@@ -673,7 +673,7 @@ export default function SetupGuidesPage() {
               className="mb-12 text-center"
             >
               <p className="eyebrow mb-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-muted">Quick start</p>
-              <h2 className="font-display text-[1.75rem] font-bold tracking-tighter2 text-ink md:text-[2.25rem]">
+              <h2 className="font-display text-[1.75rem] font-extrabold tracking-tighter2 text-ink md:text-[2.25rem]">
                 Three steps to your first answered call
               </h2>
             </motion.div>
@@ -700,7 +700,7 @@ export default function SetupGuidesPage() {
               </div>
               <div className="relative">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-accent">Video walkthrough</p>
-                <h3 className="mt-2 font-display text-[1.4rem] font-bold text-white md:text-[1.75rem]">
+                <h3 className="mt-2 font-display text-[1.4rem] font-extrabold text-white md:text-[1.75rem]">
                   Watch: Setup from zero to live in 8 minutes
                 </h3>
                 <p className="mt-2 text-[14px] text-white/60">
@@ -778,7 +778,7 @@ export default function SetupGuidesPage() {
               className="mb-10 text-center"
             >
               <p className="eyebrow mb-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink-muted">Browse by topic</p>
-              <h2 className="font-display text-[1.75rem] font-bold tracking-tighter2 text-ink md:text-[2.25rem]">
+              <h2 className="font-display text-[1.75rem] font-extrabold tracking-tighter2 text-ink md:text-[2.25rem]">
                 All guides, organized
               </h2>
             </motion.div>
@@ -801,7 +801,7 @@ export default function SetupGuidesPage() {
               transition={{ duration: 0.6, ease: EASE }}
             >
               <span className="mb-4 inline-block text-4xl">🤝</span>
-              <h2 className="font-display text-[1.75rem] font-bold tracking-tighter2 text-ink">
+              <h2 className="font-display text-[1.75rem] font-extrabold tracking-tighter2 text-ink">
                 Still have questions?
               </h2>
               <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-ink-muted">
