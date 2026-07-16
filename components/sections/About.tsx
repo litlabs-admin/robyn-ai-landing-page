@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/cn";
+import { useIsTouch } from "@/lib/useIsTouch";
 import {
   motion,
   useReducedMotion,
@@ -60,6 +61,7 @@ function tokenize(text: string) {
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const reducedMotion = useReducedMotion();
+  const isTouch = useIsTouch();
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -117,7 +119,7 @@ export function About() {
             
             <h2
               id="about-heading"
-              className="font-display font-semibold tracking-[-0.025em] text-ink text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05]"
+              className="font-display font-bold tracking-[-0.025em] text-ink text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05]"
             >
               Why we built <span className="text-accent">Robyn AI</span>.
             </h2>
@@ -157,6 +159,7 @@ export function About() {
                         end={end}
                         accent={seg.accent}
                         reducedMotion={!!reducedMotion}
+                        simplified={isTouch}
                       />
                     );
                   });
@@ -199,6 +202,7 @@ function Word({
   end,
   accent,
   reducedMotion,
+  simplified,
 }: {
   text: string;
   scrollProgress: MotionValue<number>;
@@ -206,6 +210,7 @@ function Word({
   end: number;
   accent: boolean;
   reducedMotion: boolean;
+  simplified: boolean;
 }) {
   const color = useTransform(
     scrollProgress,
@@ -215,19 +220,28 @@ function Word({
   const opacity = useTransform(scrollProgress, [start, end], [0.38, 1]);
   const y = useTransform(scrollProgress, [start, end], [10, 0]);
 
+  // Every branch keeps display:inline-block so the box model — and therefore
+  // line breaking — is identical across them. The server renders the animated
+  // branch, so a bare inline span here would reflow the paragraph at hydration.
   if (reducedMotion) {
-    return <span>{text}</span>;
+    return <span style={{ display: "inline-block" }}>{text}</span>;
   }
 
+  // Touch devices fade in on opacity alone. `color` is a paint property, so
+  // animating it across every word repaints the whole paragraph on each scroll
+  // frame — the most expensive thing on the page, and phones can't absorb it.
+  //
+  // `color` must stay in the style object on both paths, as a static value
+  // here. Framer applies MotionValues imperatively, so React never diffs them:
+  // dropping the key entirely would leave the last colour framer wrote to the
+  // element stranded as a stale inline style after the branch swaps.
   return (
     <motion.span
-      style={{
-        color,
-        opacity,
-        y,
-        display: "inline-block",
-        willChange: "color, opacity, transform",
-      }}
+      style={
+        simplified
+          ? { color: COLOR_REVEALED, opacity, display: "inline-block" }
+          : { color, opacity, y, display: "inline-block" }
+      }
     >
       {text}
     </motion.span>

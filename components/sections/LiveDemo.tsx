@@ -139,7 +139,7 @@ export function LiveDemo() {
             <ScrollReveal y={20} duration={0.9}>
               <h2
                 id="live-demo-heading"
-                className="font-display font-semibold tracking-[-0.025em] text-ink text-[clamp(1.875rem,3.6vw,3rem)] leading-[1.08]"
+                className="font-display font-bold tracking-[-0.025em] text-ink text-[clamp(1.875rem,3.6vw,3rem)] leading-[1.08]"
               >
                 If people call your business, you need an AI answering service.
               </h2>
@@ -154,7 +154,7 @@ export function LiveDemo() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.3, ease: EASE }}
-                  className="mt-8 flex items-center gap-3 rounded-full border border-border bg-surface/90 px-4 py-2.5 shadow-soft backdrop-blur-md"
+                  className="mt-8 flex items-center gap-3 rounded-full border border-border bg-surface/90 px-4 py-2.5 shadow-soft"
                 >
                   <NowPlayingPulse />
                   <span className="text-[13px] font-medium text-ink">
@@ -218,7 +218,10 @@ function IndustryCard({
       whileTap={{ y: 0, scale: 0.99 }}
       className={cn(
         "group/card relative flex items-center gap-4 overflow-hidden rounded-2xl border bg-surface px-5 py-5 text-left",
-        "transition-all duration-300 ease-out focus-ring",
+        // Never transition opacity/transform here — framer-motion writes those
+        // inline every frame, and a CSS transition on them would re-ease each
+        // written value and smear the scroll-in animation.
+        "transition-[box-shadow,border-color] duration-300 ease-out focus-ring",
         isActive
           ? "border-accent shadow-[0_0_0_3px_rgba(255,208,0,0.18),0_8px_24px_rgba(24,19,10,0.08)]"
           : "border-transparent shadow-soft hover:border-ink/10 hover:shadow-lift",
@@ -246,7 +249,6 @@ function IndustryCard({
       <motion.span
         animate={{
           backgroundColor: isActive ? "var(--accent)" : "var(--surface-muted)",
-          scale: isActive ? 1 : 1,
         }}
         transition={{ duration: 0.3, ease: EASE }}
         className={cn(

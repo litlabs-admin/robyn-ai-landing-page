@@ -65,7 +65,7 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface"
     >
       {/* Compact landscape portrait with name overlay */}
-      <div className="relative w-full aspect-[4/5] flex-shrink-0 overflow-hidden">
+      <div className="relative w-full aspect-[5/6] flex-shrink-0 overflow-hidden">
         <motion.div
           variants={{ rest: { scale: 1 }, hovered: { scale: 1.05 } }}
           transition={{ duration: 0.55, ease: "easeOut" }}
@@ -82,20 +82,20 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
         </motion.div>
 
         <div
-          className="absolute inset-x-0 bottom-0 px-5 pb-3.5 pt-12"
+          className="absolute inset-x-0 bottom-0 px-4 pb-3 pt-10"
           style={{
             background:
               "linear-gradient(to top, rgba(15,12,3,0.85) 0%, rgba(15,12,3,0.30) 55%, transparent 100%)",
           }}
         >
           <p
-            className="font-display text-[17px] font-bold leading-tight text-white"
+            className="font-display text-[15px] font-bold leading-tight text-white"
             style={{ textShadow: "0 1px 6px rgba(0,0,0,0.4)" }}
           >
             {t.name}
           </p>
           <p
-            className="mt-0.5 text-[12px] font-medium leading-snug text-white/85"
+            className="mt-0.5 text-[11px] font-medium leading-snug text-white/85"
             style={{ textShadow: "0 1px 6px rgba(0,0,0,0.4)" }}
           >
             {t.role} · {t.company}
@@ -104,10 +104,10 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
       </div>
 
       {/* Quote — flex-1 keeps every card the same height */}
-      <div className="relative flex flex-1 flex-col px-5 pb-5 pt-4">
+      <div className="relative flex flex-1 flex-col px-4 pb-4 pt-3.5">
         <span
           aria-hidden
-          className="pointer-events-none absolute right-4 top-0 select-none font-display text-[52px] leading-none"
+          className="pointer-events-none absolute right-3.5 top-0 select-none font-display text-[42px] leading-none"
           style={{ color: "rgba(255,208,0,0.30)" }}
         >
           &rdquo;
@@ -131,7 +131,7 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
           ))}
         </div>
 
-        <p className="relative text-[14px] leading-[1.6] text-ink/90">
+        <p className="relative text-[13px] leading-[1.6] text-ink/90">
           {t.quote}
         </p>
       </div>
@@ -167,7 +167,7 @@ export function Testimonials() {
           <span className="text-accent">around the world</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <TestimonialCard key={t.name} t={t} index={i} />
           ))}

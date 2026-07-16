@@ -230,7 +230,7 @@ function FAQRow({
         {/* Question, h3 for SEO + outline structure */}
         <h3
           className={cn(
-            "flex-1 font-display text-[17px] font-semibold tracking-[-0.01em] leading-snug transition-colors duration-300 md:text-[19px]",
+            "flex-1 font-display text-[17px] font-bold tracking-[-0.01em] leading-snug transition-colors duration-300 md:text-[19px]",
             open ? "text-ink" : "text-ink-muted group-hover/row:text-ink",
           )}
         >

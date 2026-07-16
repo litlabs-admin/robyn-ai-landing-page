@@ -20,7 +20,7 @@ const config: Config = {
         border: "var(--border)",
       },
       fontFamily: {
-        display: ["var(--font-satoshi)", "ui-sans-serif", "system-ui"],
+        display: ["var(--font-jakarta)", "ui-sans-serif", "system-ui"],
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
         allura: ["var(--font-allura)", "cursive"],
         "space-grotesk": ["var(--font-space-grotesk)", "ui-sans-serif", "system-ui"],

@@ -24,6 +24,12 @@ interface ScrollRevealProps {
   /** Apply a blur-to-sharp transition */
   blur?: boolean;
   as?: "div" | "section" | "li" | "span";
+  /**
+   * Render children in place, with no animation at all. Note this does not
+   * propagate variants, so don't disable a parent whose children use
+   * `revealItem` — they'd have no `show` state to reach and stay hidden.
+   */
+  disabled?: boolean;
 }
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -37,9 +43,10 @@ export function ScrollReveal({
   stagger,
   className,
   amount = 0.25,
-  once = false,
+  once = true,
   blur = false,
   as = "div",
+  disabled = false,
 }: ScrollRevealProps) {
   const variants: Variants = {
     hidden: {
@@ -65,6 +72,11 @@ export function ScrollReveal({
       },
     },
   };
+
+  if (disabled) {
+    const Tag = as;
+    return <Tag className={className}>{children}</Tag>;
+  }
 
   const MotionTag = motion[as] as typeof motion.div;
 

@@ -24,7 +24,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-accent text-accent-ink hover:brightness-[0.92] font-semibold shadow-[0_1px_0_rgba(255,255,255,0.5)_inset,0_4px_18px_rgba(255,208,0,0.45)]",
+    "bg-accent text-accent-ink hover:brightness-[0.92] shadow-[0_1px_0_rgba(255,255,255,0.5)_inset,0_4px_18px_rgba(255,208,0,0.45)]",
   ghost:
     "bg-transparent text-ink hover:bg-surface-muted",
   outline:
@@ -53,7 +53,11 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     ref,
   ) {
     const classes = cn(
-      "group/btn inline-flex items-center justify-center gap-2 rounded-xl font-medium",
+      // Jakarta 700, matching headings. font-display carries -0.035em, which is
+      // tuned for display sizes and reads cramped on a 13px label — hence the
+      // explicit, lighter tracking here.
+      "group/btn inline-flex items-center justify-center gap-2 rounded-xl",
+      "font-display font-bold tracking-[-0.01em]",
       "transition-colors duration-200 ease-out focus-ring",
       variantStyles[variant],
       sizeStyles[size],

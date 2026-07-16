@@ -6,13 +6,9 @@ import { Container } from "@/components/ui/Container";
 import { RobynWordmark } from "@/components/ui/RobynWordmark";
 import { brand } from "@/lib/assets";
 import { cn } from "@/lib/cn";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, Github, Linkedin, Twitter, Youtube } from "lucide-react";
+import { ArrowUpRight, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
-
-const EASE = [0.22, 1, 0.36, 1] as const;
 
 const columns = [
   {
@@ -55,10 +51,7 @@ const columns = [
 ];
 
 const socials = [
-  { Icon: Twitter, href: "#", label: "Twitter" },
   { Icon: Linkedin, href: "#", label: "LinkedIn" },
-  { Icon: Youtube, href: "#", label: "YouTube" },
-  { Icon: Github, href: "#", label: "GitHub" },
 ];
 
 export function Footer() {
@@ -70,7 +63,7 @@ export function Footer() {
       <FinalCTA />
 
       <Container className="relative">
-        <div className="grid grid-cols-2 gap-10 border-t border-white/10 pt-16 md:grid-cols-12 md:gap-12 md:pt-20">
+        <div className="grid grid-cols-2 gap-10 border-t border-white/10 pt-16 pb-14 md:grid-cols-12 md:gap-12 md:pt-20 md:pb-16">
           {/* Brand block */}
           <div className="col-span-2 md:col-span-4">
             <ScrollReveal y={16} duration={0.7}>
@@ -149,9 +142,6 @@ export function Footer() {
         </div>
       </Container>
 
-      {/* Oversized brand wordmark, "Feather-style" */}
-      <BrandWordmark />
-
       {/* Bottom legal bar */}
       <Container>
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-7 text-[12.5px] text-white/45 md:flex-row">
@@ -166,6 +156,9 @@ export function Footer() {
           </div>
         </div>
       </Container>
+
+      {/* Oversized brand wordmark, cropped by the page edge */}
+      <BrandWordmark />
     </footer>
   );
 }
@@ -180,7 +173,7 @@ function FinalCTA() {
               <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,208,0,0.28)]" />
               Ready when you are
             </span>
-            <h2 className="font-display font-semibold tracking-[-0.025em] text-white text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.05]">
+            <h2 className="font-display font-bold tracking-[-0.025em] text-white text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.05]">
               Never miss another <br className="hidden sm:block" />
               <span className="relative inline-block">
                 customer call
@@ -205,83 +198,24 @@ function FinalCTA() {
 }
 
 function BrandWordmark() {
-  const ref = useRef<HTMLDivElement>(null);
-  const reducedMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 100%", "end start"],
-  });
-
-  // Parallax shift for the wordmark on scroll (gentle so it doesn't fight Lenis).
-  const wordmarkY = useTransform(scrollYProgress, [0, 1], [80, -40]);
-  const stripeShift = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
-
+  // The wordmark is sized off viewport width so it always spans edge to edge; the
+  // wrapper is deliberately shorter than the glyphs so the page edge crops the
+  // bottom ~45% of the letterforms.
   return (
     <div
-      ref={ref}
       aria-hidden
-      className="relative mt-20 overflow-hidden md:mt-28"
+      className="relative select-none overflow-hidden h-[calc(clamp(5rem,23vw,20rem)*0.55)]"
     >
-      {/* Vertical lime stripes, slowly drift on scroll, give the Feather-style ribbon feel */}
-      <motion.div
-        style={
-          reducedMotion ? undefined : { backgroundPositionX: stripeShift }
-        }
-        className="pointer-events-none absolute inset-0"
-        // 6 vertical lime "ribbons" at strategic positions
-        // Using gradient stops to create discrete bars over the dark bg.
-        // Mask the gradient with a vertical fade so the stripes look like beams.
+      <span
+        className={cn(
+          "absolute inset-x-0 top-0 block whitespace-nowrap text-center",
+          "font-display font-bold lowercase text-white/[0.07]",
+          "leading-[0.8] tracking-[-0.05em]",
+          "text-[clamp(5rem,23vw,20rem)]",
+        )}
       >
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(17,17,17,0) 18%, rgba(17,17,17,0) 82%, rgba(17,17,17,1) 100%),
-              repeating-linear-gradient(
-                90deg,
-                rgba(255,208,0,0) 0px,
-                rgba(255,208,0,0) 96px,
-                rgba(255,208,0,0.55) 96px,
-                rgba(255,208,0,0.55) 104px,
-                rgba(255,208,0,0) 104px,
-                rgba(255,208,0,0) 220px,
-                rgba(255,208,0,0.25) 220px,
-                rgba(255,208,0,0.25) 232px,
-                rgba(255,208,0,0) 232px,
-                rgba(255,208,0,0) 360px
-              )
-            `,
-          }}
-        />
-      </motion.div>
-
-      {/* The wordmark itself, sits ON TOP of the stripe band, with the bar
-          revealed only WITHIN the letterforms via mix-blend modes. */}
-      <motion.div
-        style={reducedMotion ? undefined : { y: wordmarkY }}
-        className="relative flex select-none items-center justify-center"
-      >
-        <span
-          className={cn(
-            "block w-full text-center font-display font-semibold uppercase",
-            "leading-[0.78] tracking-[-0.055em]",
-            "text-[clamp(5rem,19vw,16rem)]",
-          )}
-          style={{
-            color: "rgba(255,255,255,0.92)",
-            WebkitTextStroke: "0",
-            mixBlendMode: "difference",
-          }}
-        >
-          robyn ai
-        </span>
-      </motion.div>
-
-      {/* Soft bottom edge fade so the wordmark melts into the bottom bar */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink to-transparent"
-      />
+        robyn ai
+      </span>
     </div>
   );
 }

@@ -10,13 +10,43 @@ import { useEffect, useState } from "react";
 
 const REVEAL_EASE = [0.22, 1, 0.36, 1] as const;
 
-const headlineParts = [
-  { text: "AI receptionist that", accent: false },
-  { text: "answers calls", accent: false },
+// One flat word list with explicit break points, so the headline breaks where
+// it's meant to at every width instead of reflowing raggedly:
+//
+//   lg and up  AI receptionist that answers calls / while you run your business
+//   below lg   AI receptionist / that answers calls / while you run your / business
+//
+// Only the first break is breakpoint-specific, and it holds until lg rather
+// than md: the one-line form needs ~860px of column, which md (688px at that
+// font size) can't give — it strands "calls" alone. Tablets keep the stack.
+// The last line needs no break at all — it's simply too long for a phone, so it
+// wraps itself before "business".
+//
+// Words stay individually wrapped for the stagger. The accent phrase nests its
+// words inside one *inline* span: that span can break between them (an
+// inline-block could not, and would jump the whole phrase to its own line),
+// while its underline still paints per line box via box-decoration-break.
+type HeadlineToken =
+  | { word: string; muted?: boolean }
+  | { accent: string[] }
+  | { br: "always" | "stacked" };
+
+const headlineTokens: HeadlineToken[] = [
+  { word: "AI" },
+  { word: "receptionist" },
+  { br: "stacked" },
+  { word: "that" },
+  { word: "answers" },
+  { word: "calls" },
+  { br: "always" },
+  { word: "while", muted: true },
+  { word: "you", muted: true },
+  { accent: ["run", "your", "business"] },
 ];
-const accentLine = {
-  prefix: "while you",
-  highlight: "run your business",
+
+const BREAK_CLASS: Record<"always" | "stacked", string> = {
+  always: "",
+  stacked: "lg:hidden",
 };
 
 export function Hero() {
@@ -58,11 +88,15 @@ export function Hero() {
     },
   };
 
+  // min-h-svh, not min-h-screen: 100vh is the *large* viewport on mobile, so the
+  // section would overflow behind the URL bar and push the next section back into
+  // the fold. pt-28 stays alongside justify-center — the fixed header overlays the
+  // top, so the asymmetric padding centres the block optically.
   return (
     <section
       id="top"
       aria-labelledby="hero-heading"
-      className="relative isolate overflow-hidden bg-surface-muted pt-20 md:pt-24 lg:pt-28 pb-10 md:pb-12"
+      className="relative isolate flex min-h-svh flex-col justify-center overflow-hidden bg-surface-muted pt-28 md:pt-24 lg:pt-28 pb-14 md:pb-12"
     >
       {/* Ambient backdrop, soft conic gradient + grid */}
       <BackdropOrnaments />
@@ -85,62 +119,92 @@ export function Hero() {
 
           <motion.h1
             id="hero-heading"
-            className="hero-display mt-10 max-w-[22ch] font-display text-ink"
+            className="hero-display max-w-[32ch] font-display text-ink"
           >
-            <span className="block">
-              {headlineParts.map((p, i) => (
+            {headlineTokens.map((token, i) => {
+              if ("br" in token) {
+                return <br key={i} className={BREAK_CLASS[token.br]} />;
+              }
+              if ("accent" in token) {
+                return (
+                  <span
+                    key={i}
+                    className={cn("accent-underline", revealed && "is-revealed")}
+                  >
+                    {token.accent.map((word, w) => (
+                      <motion.span
+                        key={word}
+                        variants={headlineWord}
+                        className={cn(
+                          "inline-block",
+                          w < token.accent.length - 1 && "mr-[0.25em]",
+                        )}
+                      >
+                        {word}
+                      </motion.span>
+                    ))}
+                  </span>
+                );
+              }
+              return (
                 <motion.span
                   key={i}
                   variants={headlineWord}
-                  className="mr-[0.25em] inline-block"
+                  className={cn(
+                    "mr-[0.25em] inline-block",
+                    token.muted && "text-ink-muted",
+                  )}
                 >
-                  {p.text}
+                  {token.word}
                 </motion.span>
-              ))}
-            </span>
-            <span className="block">
-              <motion.span
-                variants={headlineWord}
-                className="mr-[0.25em] inline-block text-ink-muted"
-              >
-                {accentLine.prefix}
-              </motion.span>
-              <motion.span
-                variants={headlineWord}
-                className={cn(
-                  "inline-block accent-underline",
-                  revealed && "is-revealed",
-                )}
-              >
-                {accentLine.highlight}
-              </motion.span>
-            </span>
+              );
+            })}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="mt-9 max-w-[42rem] text-balance text-[18px] leading-[1.7] text-ink-muted md:text-[19px]"
+            className="mt-8 max-w-[42rem] text-balance text-[17px] leading-[1.65] text-ink-muted md:mt-9 md:text-[19px]"
           >
             <span className="text-[#B8960A] font-semibold">Robyn AI</span> is the answering service that keeps your phone covered, so
             you never miss a lead or leave a customer waiting.
           </motion.p>
 
+          {/* items-start so the demo button aligns to the top of the primary
+              column rather than centring against it + its caption. */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 flex flex-row items-center justify-center gap-3"
+            className="mt-10 flex flex-row items-start justify-center gap-4"
           >
+            {/* The caption belongs to the free trial, not to both CTAs, so it
+                sits under that button and tracks its width.
+                Padding is set via max-sm:/sm: rather than a bare px-*, because
+                cn() is clsx — it can't beat size="lg"'s own px-6, it just emits
+                both and lets stylesheet order decide. The pair has to fit a
+                360px phone side by side. */}
+            <div className="flex flex-col items-center">
+              {/* TODO: point at a real signup route once one exists — until then
+                  both CTAs share the demo booking link. */}
+              <Button
+                size="lg"
+                variant="primary"
+                href={brand.bookDemoUrl}
+                className="h-14 whitespace-nowrap text-[16px] max-sm:px-4 sm:h-12 sm:px-8"
+              >
+                Try for free
+              </Button>
+              <p className="mt-3.5 text-[13px] text-ink-faint">
+                No credit card required
+              </p>
+            </div>
             <Button
               size="lg"
-              variant="primary"
-              icon="arrow"
+              variant="outline"
               href={brand.bookDemoUrl}
-              className="px-7 text-[15px] sm:px-8 sm:text-[16px]"
+              className="h-14 whitespace-nowrap text-[16px] max-sm:px-4 sm:h-12 sm:px-8"
             >
               Book a demo
             </Button>
           </motion.div>
-
-          
         </motion.div>
 
       </Container>

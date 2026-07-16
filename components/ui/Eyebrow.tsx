@@ -19,7 +19,7 @@ export function Eyebrow({
       <div
         className={cn(
           "inline-flex items-center gap-2 rounded-full border border-border bg-surface/80 px-3.5 py-1.5",
-          "text-[12px] font-medium tracking-[0.04em] text-ink-muted backdrop-blur-md",
+          "text-[12px] font-medium tracking-[0.04em] text-ink-muted",
           "shadow-[0_1px_2px_rgba(17,17,17,0.04)]",
           className,
         )}

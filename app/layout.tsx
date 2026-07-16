@@ -8,7 +8,7 @@ import {
   inter,
   manrope,
   outfit,
-  satoshi,
+  jakarta,
   sora,
   spaceGrotesk,
   syne,
@@ -77,7 +77,7 @@ export default function RootLayout({
       lang="en"
       className={[
         inter.variable,
-        satoshi.variable,
+        jakarta.variable,
         allura.variable,
         spaceGrotesk.variable,
         sora.variable,

@@ -64,7 +64,7 @@ export function SolutionHowItWorks({
                 {i + 1}
               </div>
 
-              <h3 className="relative text-[17px] font-semibold text-ink">{title}</h3>
+              <h3 className="relative font-display text-[17px] font-bold text-ink">{title}</h3>
               <p className="relative mt-2 text-[13px] leading-relaxed text-ink-muted">
                 {description}
               </p>

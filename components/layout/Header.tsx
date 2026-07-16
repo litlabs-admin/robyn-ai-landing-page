@@ -262,92 +262,108 @@ export function Header() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className={cn(
-        "fixed inset-x-0 z-50 transition-all duration-400 ease-out",
-        scrolled ? "top-3 md:top-5" : "top-0",
-      )}
+      className="fixed inset-x-0 top-0 z-50"
     >
+      {/* Background layer is separate from the content row so the bar can paint
+          edge-to-edge while the row stays within the page's max width. Height is
+          constant across scroll states — the mobile overlay below is offset by
+          the same 72px and any morph here would desync the two. */}
       <div
         className={cn(
-          "flex items-center justify-between transition-all duration-400 ease-out",
+          "w-full border-b transition-colors duration-300 ease-out",
           scrolled
-            ? "mx-3 h-[60px] max-w-[1180px] rounded-xl border border-[rgba(234,216,112,0.5)] bg-[rgba(255,254,245,0.96)] px-5 shadow-[0_1px_2px_rgba(24,19,10,0.06),0_18px_44px_rgba(24,19,10,0.14),inset_0_1px_0_rgba(255,255,255,0.7),inset_0_0_0_1px_rgba(255,253,240,0.5)] backdrop-blur-2xl md:mx-auto md:px-6"
-            : "mx-auto h-[72px] max-w-[1240px] border border-transparent bg-transparent px-6 md:px-10",
+            ? "border-[rgba(24,19,10,0.07)] bg-[rgba(255,255,255,0.97)] shadow-[0_1px_3px_rgba(24,19,10,0.05)]"
+            : "border-transparent bg-transparent",
         )}
       >
-        {/* Logo */}
-        <Link
-          href="/"
-          className="focus-ring origin-left scale-110 rounded-md transition-transform duration-300 md:scale-100"
-          aria-label={`${brand.name} home`}
-        >
-          <span className="flex items-center gap-2 transition-all duration-300">
-            <Image
-              src="/assets/logo-mark.png"
-              alt=""
-              aria-hidden
-              width={96}
-              height={96}
-              priority
-              className={cn(
-                "w-auto transition-all duration-300",
-                scrolled ? "h-10" : "h-12",
-              )}
-            />
-            <RobynWordmark
-              theme="light"
-              size={scrolled ? "md" : "lg"}
-              className="transition-all duration-300"
-            />
-          </span>
-        </Link>
-
-        {/* Desktop nav, dock magnification applied here */}
-        <nav
-          className="hidden md:flex items-center gap-1"
-          onMouseMove={(e) => mouseX.set(e.clientX)}
-          onMouseLeave={() => mouseX.set(Infinity)}
-        >
-          {navItems.map((item) =>
-            item.menuId ? (
-              <MenuNavItem
-                key={item.label}
-                item={item}
-                mouseX={mouseX}
-                activeMenu={activeMenu}
-                openMenu={openMenu}
-                scheduleClose={scheduleClose}
-              />
-            ) : (
-              <PlainNavItem key={item.label} item={item} mouseX={mouseX} />
-            ),
-          )}
-        </nav>
-
-        {/* CTA button, desktop */}
-        <div className="hidden md:flex items-center gap-2">
-          <Button size="sm" variant="primary" href={brand.bookDemoUrl}>
-            Book a demo
-          </Button>
-        </div>
-
-        {/* Mobile: Book a demo + hamburger */}
-        <div className="md:hidden flex items-center gap-2">
-          <Button size="md" variant="primary" href={brand.bookDemoUrl}>
-            Book a demo
-          </Button>
-          <button
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-surface/80 backdrop-blur-md focus-ring"
+        <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between px-4 md:px-10">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="focus-ring shrink-0 origin-left rounded-md"
+            aria-label={`${brand.name} home`}
           >
-            {mobileOpen ? (
-              <X className="h-5 w-5" strokeWidth={2} />
-            ) : (
-              <Menu className="h-5 w-5" strokeWidth={2} />
+            <span className="flex items-center gap-1.5 md:gap-2">
+              <Image
+                src="/assets/logo-mark.png"
+                alt=""
+                aria-hidden
+                width={96}
+                height={96}
+                priority
+                className="h-9 w-auto md:h-11"
+              />
+              {/* Wordmark stays a step smaller on mobile so the CTA + hamburger always fit */}
+              <span className="md:hidden">
+                <RobynWordmark theme="light" size="sm" />
+              </span>
+              <span className="hidden md:block">
+                <RobynWordmark theme="light" size="md" />
+              </span>
+            </span>
+          </Link>
+
+          {/* Desktop nav, dock magnification applied here */}
+          <nav
+            className="hidden md:flex items-center gap-1"
+            onMouseMove={(e) => mouseX.set(e.clientX)}
+            onMouseLeave={() => mouseX.set(Infinity)}
+          >
+            {navItems.map((item) =>
+              item.menuId ? (
+                <MenuNavItem
+                  key={item.label}
+                  item={item}
+                  mouseX={mouseX}
+                  activeMenu={activeMenu}
+                  openMenu={openMenu}
+                  scheduleClose={scheduleClose}
+                />
+              ) : (
+                <PlainNavItem key={item.label} item={item} mouseX={mouseX} />
+              ),
             )}
-          </button>
+          </nav>
+
+          {/* CTA buttons, desktop */}
+          <div className="hidden md:flex items-center gap-2">
+            <Button size="sm" variant="ghost" href={brand.bookDemoUrl}>
+              Book a demo
+            </Button>
+            <Button size="sm" variant="primary" href={brand.bookDemoUrl}>
+              Try for free
+            </Button>
+          </div>
+
+          {/* Mobile: Try for free + hamburger. Only the primary CTA fits here —
+              Book a demo lives in the menu footer. */}
+          <div className="md:hidden flex shrink-0 items-center gap-2">
+            <Button
+              size="md"
+              variant="primary"
+              href={brand.bookDemoUrl}
+              className="hidden whitespace-nowrap px-4 min-[360px]:inline-flex"
+            >
+              Try for free
+            </Button>
+            <button
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              className={cn(
+                "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border focus-ring",
+                scrolled
+                  ? "border-[rgba(24,19,10,0.1)] bg-white"
+                  : "border-border bg-surface/80",
+              )}
+            >
+              {mobileOpen ? (
+                <X className="h-5 w-5" strokeWidth={2} />
+              ) : (
+                <Menu className="h-5 w-5" strokeWidth={2} />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -359,7 +375,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-x-0 top-[64px] bottom-0 z-40 overflow-y-auto overscroll-contain bg-[rgba(255,254,245,0.98)] backdrop-blur-xl"
+            className="md:hidden fixed inset-x-0 top-[72px] bottom-0 z-40 overflow-y-auto overscroll-contain bg-[rgba(255,254,245,0.98)]"
           >
             <div className="flex flex-col gap-0.5 px-4 py-4 pb-safe">
 

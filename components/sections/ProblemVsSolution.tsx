@@ -4,7 +4,8 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { cn } from "@/lib/cn";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import {
   BadgeCheck,
   CalendarCheck,
@@ -24,6 +25,14 @@ const RIGHT_LIVE_BARS = [0, 1, 2, 3, 4];
 const FIELDS = ["Name", "Service", "Timeframe"];
 
 export function ProblemVsSolution() {
+  const illoRef = useRef<HTMLDivElement>(null);
+  // Deliberately not `once` — these are ~25 infinite loops, and the whole point
+  // is that they stop again once you've scrolled past. Pre-start them slightly
+  // before the cards land so the 6s story is already underway when seen. Keep
+  // the lead-in tight: every extra pixel here is scroll distance spent running
+  // the loops before anything is visible.
+  const illoInView = useInView(illoRef, { amount: 0.2, margin: "100px" });
+
   return (
     <section
       id="problem-solution"
@@ -62,7 +71,13 @@ export function ProblemVsSolution() {
         </div>
 
         {/* Side-by-side comparison */}
-        <div className="mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-2 md:gap-8">
+        <div
+          ref={illoRef}
+          className={cn(
+            "mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-2 md:gap-8",
+            illoInView && "pvs-active",
+          )}
+        >
           <ComparisonCard
             variant="old"
             label="The old way"
@@ -119,7 +134,8 @@ function ComparisonCard({
       }}
       className={cn(
         "group relative flex flex-col overflow-hidden rounded-3xl border p-2",
-        "transition-all duration-500 ease-out",
+        // Framer owns opacity/transform on this element — see LiveDemo.tsx.
+        "transition-[box-shadow,border-color] duration-500 ease-out",
         isNew
           ? "border-border bg-surface shadow-card hover:shadow-lift"
           : "border-border/60 bg-surface/60 shadow-soft",
@@ -176,7 +192,7 @@ function ComparisonCard({
 
         {/* Live indicator (only "new" card) */}
         {isNew && (
-          <div className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-border/60 bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-ink shadow-soft backdrop-blur-md">
+          <div className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-border/60 bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-ink shadow-soft">
             <span className="pvs-live-dot" />
             LIVE
           </div>
@@ -187,7 +203,7 @@ function ComparisonCard({
       <div className="px-4 pb-5 pt-5 md:px-5 md:pb-6 md:pt-6">
         <h3
           className={cn(
-            "font-display text-[22px] font-semibold tracking-[-0.015em] md:text-[26px]",
+            "font-display text-[22px] font-bold tracking-[-0.015em] md:text-[26px]",
             isNew ? "text-ink" : "text-ink-muted",
           )}
         >
@@ -402,8 +418,12 @@ const ILLUSTRATION_CSS = `
   background: var(--surface);
   border: 1px solid rgba(234,216,112,0.6);
   box-shadow: 0 1px 2px rgba(24,19,10,0.04), 0 10px 26px rgba(24,19,10,0.08);
-  will-change: transform, opacity;
 }
+
+/* Only hint the compositor while the loops are actually running — an always-on
+   will-change holds these layers in memory for the life of the page. */
+.pvs-active .pvs-caller,
+.pvs-active .pvs-card { will-change: transform, opacity; }
 
 /* ============================ LEFT: decay ============================ */
 .pvs-field {
@@ -540,41 +560,48 @@ const ILLUSTRATION_CSS = `
 
 .pvs-live-dot { display: block; width: 6px; height: 6px; border-radius: 9999px; background: rgb(239,68,68); }
 
-/* ===================== MOTION (disabled when reduced) ===================== */
+/* ===================== MOTION (disabled when reduced) =====================
+   Everything below is scoped to .pvs-active, a class the component adds only
+   while the cards are near the viewport. Without it these ~25 infinite loops
+   ran from page load and never stopped — burning CPU the entire time you
+   scrolled the rest of the page. Dropping the 'animation' property (rather
+   than pausing it) reverts each element to its base style, which is already
+   the designed static "aftermath" / "resolved" frame.
+   ======================================================================== */
 @media (prefers-reduced-motion: no-preference) {
   /* LEFT */
-  .pvs-field span { animation: pvsBreathe 6s ease-in-out infinite; }
-  .pvs-caller { animation: pvsCaller 6s cubic-bezier(0.4,0,0.2,1) infinite; }
-  .pvs-rings { animation: pvsRingEnv 6s linear infinite; }
-  .pvs-ring { animation: pvsRing 1.8s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-ring:nth-child(2) { animation-delay: 0.55s; }
-  .pvs-ring:nth-child(3) { animation-delay: 1.1s; }
-  .pvs-status-label { animation: pvsLabel 6s ease infinite; }
-  .pvs-wave { animation: pvsWave 6s ease infinite; }
-  .pvs-wave-bar { animation: pvsBar 0.7s ease-in-out infinite; animation-delay: calc(var(--i) * -0.09s); }
-  .pvs-deadline { animation: pvsDeadline 6s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-cue { animation: pvsCue 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-field span { animation: pvsBreathe 6s ease-in-out infinite; }
+  .pvs-active .pvs-caller { animation: pvsCaller 6s cubic-bezier(0.4,0,0.2,1) infinite; }
+  .pvs-active .pvs-rings { animation: pvsRingEnv 6s linear infinite; }
+  .pvs-active .pvs-ring { animation: pvsRing 1.8s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-ring:nth-child(2) { animation-delay: 0.55s; }
+  .pvs-active .pvs-ring:nth-child(3) { animation-delay: 1.1s; }
+  .pvs-active .pvs-status-label { animation: pvsLabel 6s ease infinite; }
+  .pvs-active .pvs-wave { animation: pvsWave 6s ease infinite; }
+  .pvs-active .pvs-wave-bar { animation: pvsBar 0.7s ease-in-out infinite; animation-delay: calc(var(--i) * -0.09s); }
+  .pvs-active .pvs-deadline { animation: pvsDeadline 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-cue { animation: pvsCue 6s cubic-bezier(0.22,1,0.36,1) infinite; }
 
   /* RIGHT */
-  .pvs-card { animation: pvsCard 6s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-warm { animation: pvsWarm 6s ease infinite; }
-  .pvs-answer-ring { animation: pvsAnswerRing 6s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-livebar { animation: pvsLive 0.8s ease-in-out infinite; animation-delay: calc(var(--i) * -0.12s); }
-  .pvs-row-1 { animation: pvsRow1 6s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-row-2 { animation: pvsRow2 6s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-row-3 { animation: pvsRow3 6s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-fill-1 { animation: pvsFill1 6s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-fill-2 { animation: pvsFill2 6s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-fill-3 { animation: pvsFill3 6s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-cb-1 { animation: pvsCb1 6s cubic-bezier(0.34,1.56,0.64,1) infinite; }
-  .pvs-cb-2 { animation: pvsCb2 6s cubic-bezier(0.34,1.56,0.64,1) infinite; }
-  .pvs-cb-3 { animation: pvsCb3 6s cubic-bezier(0.34,1.56,0.64,1) infinite; }
-  .pvs-check-1 path { animation: pvsDraw1 6s ease infinite; }
-  .pvs-check-2 path { animation: pvsDraw2 6s ease infinite; }
-  .pvs-check-3 path { animation: pvsDraw3 6s ease infinite; }
-  .pvs-booked { animation: pvsBooked 6s cubic-bezier(0.34,1.56,0.64,1) infinite; }
-  .pvs-burst { animation: pvsBurst 6s cubic-bezier(0.22,1,0.36,1) infinite; }
-  .pvs-live-dot { animation: pvsBlink 1.6s ease-in-out infinite; }
+  .pvs-active .pvs-card { animation: pvsCard 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-warm { animation: pvsWarm 6s ease infinite; }
+  .pvs-active .pvs-answer-ring { animation: pvsAnswerRing 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-livebar { animation: pvsLive 0.8s ease-in-out infinite; animation-delay: calc(var(--i) * -0.12s); }
+  .pvs-active .pvs-row-1 { animation: pvsRow1 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-row-2 { animation: pvsRow2 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-row-3 { animation: pvsRow3 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-fill-1 { animation: pvsFill1 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-fill-2 { animation: pvsFill2 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-fill-3 { animation: pvsFill3 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-cb-1 { animation: pvsCb1 6s cubic-bezier(0.34,1.56,0.64,1) infinite; }
+  .pvs-active .pvs-cb-2 { animation: pvsCb2 6s cubic-bezier(0.34,1.56,0.64,1) infinite; }
+  .pvs-active .pvs-cb-3 { animation: pvsCb3 6s cubic-bezier(0.34,1.56,0.64,1) infinite; }
+  .pvs-active .pvs-check-1 path { animation: pvsDraw1 6s ease infinite; }
+  .pvs-active .pvs-check-2 path { animation: pvsDraw2 6s ease infinite; }
+  .pvs-active .pvs-check-3 path { animation: pvsDraw3 6s ease infinite; }
+  .pvs-active .pvs-booked { animation: pvsBooked 6s cubic-bezier(0.34,1.56,0.64,1) infinite; }
+  .pvs-active .pvs-burst { animation: pvsBurst 6s cubic-bezier(0.22,1,0.36,1) infinite; }
+  .pvs-active .pvs-live-dot { animation: pvsBlink 1.6s ease-in-out infinite; }
 }
 
 /* ---- LEFT keyframes ---- */

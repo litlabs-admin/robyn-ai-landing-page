@@ -14,18 +14,19 @@
   --border: #EAD870;
 }
 
-* {
+html,
+body {
+  /* These all inherit, so scoping them here is equivalent to the universal
+     selector that used to carry them — minus matching every element on the
+     page and forcing optimizeLegibility's kerning pass over all of them. */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-}
-
-html,
-body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
   font-size: 17px;
+  font-weight: 400;
   font-feature-settings: "ss01", "cv11";
   word-spacing: 0.05em;
 }
@@ -36,24 +37,33 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-satoshi), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -0.03em;
+  font-family: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.035em;
 }
 
+/* Weight and tracking move together: the heavier the cut, the tighter the
+   tracking has to be or the line reads loose. Same pairing applies to
+   .section-heading below.
+   NOTE: the root font-size is 17px, not 16 — every rem here is ~6% larger than
+   it looks.
+   This ramp is bounded at BOTH ends by the headline's line-breaks (see
+   Hero.tsx), not by taste: ~36px at 390 keeps "that answers calls" on one line,
+   and the 4.15rem cap keeps "AI receptionist that answers calls" on one line
+   inside the 1160px content column. Raising either end silently adds a line. */
 .hero-display {
-  font-family: var(--font-satoshi), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 600;
-  font-size: clamp(2rem, 7vw, 5rem);
-  line-height: 1.12;
-  letter-spacing: -0.032em;
+  font-family: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.05rem, 1.375rem + 3.24vw, 4.15rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
 }
 
 .section-heading {
-  font-family: var(--font-satoshi), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 600;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-family: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 5.2vw, 5rem);
   line-height: 1.05;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.038em;
 }
 
 .eyebrow {
@@ -65,30 +75,27 @@ body {
   color: var(--ink-muted);
 }
 
+/* Painted as a background rather than an absolute ::after bar so the highlight
+   tracks each line box when the phrase wraps on narrow screens. */
 .accent-underline {
-  position: relative;
-  display: inline-block;
   color: var(--ink);
-  isolation: isolate;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 92%;
+  background-size: 0% 0.32em;
+  transition: background-size 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
-.accent-underline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.06em;
-  height: 0.32em;
-  background: var(--accent);
-  z-index: -1;
-  transform-origin: left center;
-  transform: scaleX(0);
-  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
-  border-radius: 2px;
+.accent-underline.is-revealed {
+  background-size: 100% 0.32em;
 }
 
-.accent-underline.is-revealed::after {
-  transform: scaleX(1);
+@media (prefers-reduced-motion: reduce) {
+  .accent-underline {
+    transition: none;
+  }
 }
 
 .grain {
