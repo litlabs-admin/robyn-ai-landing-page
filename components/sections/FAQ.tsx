@@ -73,7 +73,7 @@ export function FAQ() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="relative isolate overflow-hidden bg-surface-muted/60 py-16 md:py-20"
+      className="relative isolate overflow-hidden bg-surface-muted/60 py-12 md:py-16"
     >
       {/* Structured data, picked up by search engines + AI summarizers */}
       <script

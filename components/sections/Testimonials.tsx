@@ -143,7 +143,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="overflow-hidden bg-surface-muted py-16 md:py-20"
+      className="overflow-hidden bg-surface-muted py-12 md:py-16"
     >
       <Container>
         <motion.div

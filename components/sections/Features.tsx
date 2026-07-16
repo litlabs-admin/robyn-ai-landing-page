@@ -69,7 +69,7 @@ export function Features() {
     <section
       id="features"
       aria-labelledby="features-heading"
-      className="relative isolate overflow-hidden bg-bg py-20 md:py-28"
+      className="relative isolate overflow-hidden bg-bg py-16 md:py-20"
     >
       <SectionBackdrop />
 

@@ -37,7 +37,7 @@ export function ProblemVsSolution() {
     <section
       id="problem-solution"
       aria-labelledby="comparison-heading"
-      className="relative isolate overflow-hidden bg-bg py-16 md:py-20"
+      className="relative isolate overflow-hidden bg-bg py-12 md:py-16"
     >
       <style dangerouslySetInnerHTML={{ __html: ILLUSTRATION_CSS }} />
       <Backdrop />

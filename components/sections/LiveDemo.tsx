@@ -128,7 +128,7 @@ export function LiveDemo() {
     <section
       id="live-demo"
       aria-labelledby="live-demo-heading"
-      className="relative isolate overflow-hidden bg-surface-muted/60 py-16 md:py-20"
+      className="relative isolate overflow-hidden bg-surface-muted/60 py-12 md:py-16"
     >
       <Backdrop />
 
