@@ -65,7 +65,7 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface"
     >
       {/* Compact landscape portrait with name overlay */}
-      <div className="relative w-full aspect-[6/7] flex-shrink-0 overflow-hidden sm:aspect-[5/6]">
+      <div className="relative w-full aspect-[23/20] flex-shrink-0 overflow-hidden sm:aspect-[5/6]">
         <motion.div
           variants={{ rest: { scale: 1 }, hovered: { scale: 1.05 } }}
           transition={{ duration: 0.55, ease: "easeOut" }}
@@ -77,12 +77,12 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             quality={90}
-            className="object-cover object-top"
+            className="object-cover object-center sm:object-top"
           />
         </motion.div>
 
         <div
-          className="absolute inset-x-0 bottom-0 px-3.5 pb-2.5 pt-8"
+          className="absolute inset-x-0 bottom-0 px-3.5 pb-2.5 pt-6"
           style={{
             background:
               "linear-gradient(to top, rgba(15,12,3,0.85) 0%, rgba(15,12,3,0.30) 55%, transparent 100%)",
