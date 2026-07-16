@@ -400,7 +400,7 @@ export default function AnswerQuestionsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
         <SolutionHero
           eyebrow="Answer Questions"
           titleBefore="Train once. Answer "

@@ -364,7 +364,7 @@ export default function FeaturesPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
         {/* Page hero */}
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6 text-center">

@@ -49,12 +49,27 @@ function useDockScale(mouseX: MotionValue<number>, ref: RefObject<HTMLElement | 
 
 // ─── Individual nav item wrappers ─────────────────────────────────────────────
 
+// Nav link colours per surface. `onDark` uses white/xx rather than a brand-* token
+// at opacity on purpose: white is a real Tailwind colour, whereas the brand tokens
+// are var()-backed hex and silently compile to nothing under an /opacity modifier.
+const navLinkTheme = {
+  light: "text-ink/80 hover:bg-ink/5 hover:text-ink",
+  dark: "text-white/85 hover:bg-white/10 hover:text-white",
+};
+
+const navLinkOpenTheme = {
+  light: "bg-ink/5 text-ink",
+  dark: "bg-white/10 text-white",
+};
+
 function PlainNavItem({
   item,
   mouseX,
+  onDark,
 }: {
   item: NavItem;
   mouseX: MotionValue<number>;
+  onDark: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const scale = useDockScale(mouseX, ref as RefObject<HTMLElement | null>);
@@ -63,7 +78,10 @@ function PlainNavItem({
     <motion.div ref={ref} style={{ scale }}>
       <Link
         href={item.href}
-        className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[14px] font-medium text-ink/80 transition-colors duration-200 hover:bg-ink/5 hover:text-ink"
+        className={cn(
+          "flex items-center gap-1 rounded-lg px-4 py-2.5 text-[15px] font-medium transition-colors duration-200",
+          navLinkTheme[onDark ? "dark" : "light"],
+        )}
       >
         {item.label}
       </Link>
@@ -77,12 +95,14 @@ function MenuNavItem({
   activeMenu,
   openMenu,
   scheduleClose,
+  onDark,
 }: {
   item: NavItem;
   mouseX: MotionValue<number>;
   activeMenu: string | null;
   openMenu: (id: string) => void;
   scheduleClose: () => void;
+  onDark: boolean;
 }) {
   const outerRef = useRef<HTMLDivElement>(null);
   const scale = useDockScale(mouseX, outerRef as RefObject<HTMLElement | null>);
@@ -100,16 +120,16 @@ function MenuNavItem({
         <Link
           href={item.href}
           className={cn(
-            "flex items-center gap-1 rounded-lg px-3.5 py-2",
-            "text-[14px] font-medium text-ink/80 transition-colors duration-200",
-            "hover:bg-ink/5 hover:text-ink",
-            isOpen && "bg-ink/5 text-ink",
+            "flex items-center gap-1 rounded-lg px-4 py-2.5",
+            "text-[15px] font-medium transition-colors duration-200",
+            navLinkTheme[onDark ? "dark" : "light"],
+            isOpen && navLinkOpenTheme[onDark ? "dark" : "light"],
           )}
         >
           {item.label}
           <ChevronDown
             className={cn(
-              "h-3.5 w-3.5 opacity-50 transition-transform duration-200",
+              "h-4 w-4 opacity-50 transition-transform duration-200",
               isOpen && "rotate-180 opacity-80",
             )}
             strokeWidth={2}
@@ -190,7 +210,17 @@ function MobileAccordion({
 
 // ─── Header ───────────────────────────────────────────────────────────────────
 
-export function Header() {
+interface HeaderProps {
+  /**
+   * "dark" renders the bar white-on-transparent, for pages whose hero is the
+   * brand blue. It only applies while the bar is *over* that hero: once scrolled
+   * past it the header flips to the solid light bar either way, so this is the
+   * at-rest appearance rather than a page-wide theme. Defaults to "light".
+   */
+  theme?: "light" | "dark";
+}
+
+export function Header({ theme = "light" }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -257,6 +287,13 @@ export function Header() {
     { label: "Help Center", href: "/resources/help-center" },
   ];
 
+  // Dark styling only survives while the bar is transparent over the blue hero;
+  // scrolling swaps in the solid white bar, where white-on-white would vanish.
+  // Deliberately NOT gated on mobileOpen: the overlay is offset to top-[84px], so
+  // it starts *below* this row — the row itself is still over the hero, and
+  // forcing it light there put an ink wordmark on blue.
+  const onDark = theme === "dark" && !scrolled;
+
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
@@ -267,7 +304,7 @@ export function Header() {
       {/* Background layer is separate from the content row so the bar can paint
           edge-to-edge while the row stays within the page's max width. Height is
           constant across scroll states — the mobile overlay below is offset by
-          the same 72px and any morph here would desync the two. */}
+          the same 84px and any morph here would desync the two. */}
       <div
         className={cn(
           "w-full border-b transition-colors duration-300 ease-out",
@@ -276,7 +313,7 @@ export function Header() {
             : "border-transparent bg-transparent",
         )}
       >
-        <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between px-4 md:px-10">
+        <div className="mx-auto flex h-[84px] max-w-[1240px] items-center justify-between px-4 md:px-10">
           {/* Logo */}
           <Link
             href="/"
@@ -284,6 +321,10 @@ export function Header() {
             aria-label={`${brand.name} home`}
           >
             <span className="flex items-center gap-1.5 md:gap-2">
+              {/* The mark ships as a flat yellow silhouette on transparent, and
+                  the reference shows it white over the blue. It's a raster, so
+                  there's no fill to swap — brightness(0) crushes the artwork to
+                  black and invert(1) lifts it to white, alpha untouched. */}
               <Image
                 src="/assets/logo-mark.png"
                 alt=""
@@ -291,14 +332,17 @@ export function Header() {
                 width={96}
                 height={96}
                 priority
-                className="h-9 w-auto md:h-11"
+                className={cn(
+                  "h-10 w-auto transition-[filter] duration-300 ease-out md:h-12",
+                  onDark && "[filter:brightness(0)_invert(1)]",
+                )}
               />
               {/* Wordmark stays a step smaller on mobile so the CTA + hamburger always fit */}
               <span className="md:hidden">
-                <RobynWordmark theme="light" size="sm" />
+                <RobynWordmark theme={onDark ? "dark" : "light"} size="sm" />
               </span>
               <span className="hidden md:block">
-                <RobynWordmark theme="light" size="md" />
+                <RobynWordmark theme={onDark ? "dark" : "light"} size="md" />
               </span>
             </span>
           </Link>
@@ -318,20 +362,34 @@ export function Header() {
                   activeMenu={activeMenu}
                   openMenu={openMenu}
                   scheduleClose={scheduleClose}
+                  onDark={onDark}
                 />
               ) : (
-                <PlainNavItem key={item.label} item={item} mouseX={mouseX} />
+                <PlainNavItem
+                  key={item.label}
+                  item={item}
+                  mouseX={mouseX}
+                  onDark={onDark}
+                />
               ),
             )}
           </nav>
 
           {/* CTA buttons, desktop */}
           <div className="hidden md:flex items-center gap-2">
-            <Button size="sm" variant="ghost" href={brand.bookDemoUrl}>
-              Book a demo
+            <Button
+              size="md"
+              variant={onDark ? "ghost-light" : "ghost"}
+              href={brand.bookDemoUrl}
+            >
+              Book a Demo
             </Button>
-            <Button size="sm" variant="primary" href={brand.bookDemoUrl}>
-              Try for free
+            <Button
+              size="md"
+              variant={onDark ? "brand" : "primary"}
+              href={brand.bookDemoUrl}
+            >
+              Try For Free
             </Button>
           </div>
 
@@ -340,11 +398,11 @@ export function Header() {
           <div className="md:hidden flex shrink-0 items-center gap-2">
             <Button
               size="md"
-              variant="primary"
+              variant={onDark ? "brand" : "primary"}
               href={brand.bookDemoUrl}
               className="hidden whitespace-nowrap px-4 min-[360px]:inline-flex"
             >
-              Try for free
+              Try For Free
             </Button>
             <button
               onClick={() => setMobileOpen((v) => !v)}
@@ -352,9 +410,11 @@ export function Header() {
               aria-expanded={mobileOpen}
               className={cn(
                 "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border focus-ring",
-                scrolled
-                  ? "border-[rgba(24,19,10,0.1)] bg-white"
-                  : "border-border bg-surface/80",
+                onDark
+                  ? "border-white/30 bg-white/10 text-white"
+                  : scrolled
+                    ? "border-[rgba(24,19,10,0.1)] bg-white"
+                    : "border-border bg-surface/80",
               )}
             >
               {mobileOpen ? (
@@ -375,7 +435,9 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-x-0 top-[72px] bottom-0 z-40 overflow-y-auto overscroll-contain bg-[rgba(255,254,245,0.98)]"
+            // Opaque, not the old 0.98 cream: the hero behind it is now blue with
+            // white type, and 2% was enough to ghost the headline through.
+            className="md:hidden fixed inset-x-0 top-[84px] bottom-0 z-40 overflow-y-auto overscroll-contain bg-bg"
           >
             <div className="flex flex-col gap-0.5 px-4 py-4 pb-safe">
 

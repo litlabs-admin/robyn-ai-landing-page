@@ -389,7 +389,7 @@ export default function OverflowReceptionPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
         <SolutionHero
           eyebrow="Overflow Reception"
           titleBefore="Never put a caller "

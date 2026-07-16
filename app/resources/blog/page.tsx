@@ -185,7 +185,7 @@ export default function BlogPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
         {/* Hero */}
         <section className="relative overflow-hidden py-20 md:py-28">
           <div className="pointer-events-none absolute inset-0">

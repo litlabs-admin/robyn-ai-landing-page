@@ -355,7 +355,7 @@ export default function ClientIntakePage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
         <SolutionHero
           eyebrow="Client Intake"
           titleBefore="First meetings start "

@@ -9,7 +9,18 @@ import {
   type ReactNode,
 } from "react";
 
-type Variant = "primary" | "ghost" | "outline" | "dark";
+// The three "-light" / brand variants are the on-dark set: they're the only ones
+// legible over --brand-blue, since primary/ghost/outline all bake in ink or a
+// light surface. `white` is a real Tailwind colour (not a var token), so the
+// /opacity modifiers below do compile — don't copy that pattern onto brand-*.
+type Variant =
+  | "primary"
+  | "ghost"
+  | "outline"
+  | "dark"
+  | "brand"
+  | "ghost-light"
+  | "outline-light";
 type Size = "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -31,6 +42,12 @@ const variantStyles: Record<Variant, string> = {
     "bg-surface text-ink border border-border hover:border-ink/30 hover:bg-surface-muted",
   dark:
     "bg-ink text-white hover:bg-ink/90",
+  brand:
+    "bg-brand-yellow text-brand-black hover:brightness-[0.94]",
+  "ghost-light":
+    "bg-transparent text-white hover:bg-white/10",
+  "outline-light":
+    "bg-transparent text-white border border-white/60 hover:border-white hover:bg-white/10",
 };
 
 const sizeStyles: Record<Size, string> = {

@@ -283,7 +283,7 @@ export default function HelpCenterPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
 
         {/* Hero with search */}
         <section className="relative overflow-hidden py-20 md:py-28">

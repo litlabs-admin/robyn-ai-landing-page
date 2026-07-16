@@ -18,6 +18,11 @@ const config: Config = {
         accent: "var(--accent)",
         "accent-ink": "var(--accent-ink)",
         border: "var(--border)",
+        "brand-blue": "var(--brand-blue)",
+        "brand-blue-bright": "var(--brand-blue-bright)",
+        "brand-yellow": "var(--brand-yellow)",
+        "brand-black": "var(--brand-black)",
+        "brand-gray": "var(--brand-gray)",
       },
       fontFamily: {
         display: ["var(--font-jakarta)", "ui-sans-serif", "system-ui"],

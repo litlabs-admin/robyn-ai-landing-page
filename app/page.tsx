@@ -11,7 +11,9 @@ import { Testimonials } from "@/components/sections/Testimonials";
 export default function HomePage() {
   return (
     <>
-      <Header />
+      {/* The homepage hero is the brand blue, so the bar starts white-on-transparent
+          over it and flips to the standard light bar once scrolled past. */}
+      <Header theme="dark" />
       <main>
         <Hero />
         <Features />

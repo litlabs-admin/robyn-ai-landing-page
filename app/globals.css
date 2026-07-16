@@ -12,6 +12,16 @@
   --accent: #FFD000;
   --accent-ink: #18130A;
   --border: #EAD870;
+
+  /* Brand blue palette — the hero and any future dark surfaces.
+     Like every token above these are literal hex, so `bg-brand-blue/50` and
+     friends compile to nothing. Write an explicit rgba() when you need one of
+     these at partial opacity. */
+  --brand-blue: #001A78;
+  --brand-blue-bright: #1EC3FF;
+  --brand-yellow: #FFCD61;
+  --brand-black: #010101;
+  --brand-gray: #D9D9D9;
 }
 
 html,

@@ -581,7 +581,7 @@ export default function SetupGuidesPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
 
         {/* Hero */}
         <section className="relative overflow-hidden py-20 md:py-28">

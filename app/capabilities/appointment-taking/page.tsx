@@ -398,7 +398,7 @@ export default function AppointmentTakingPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
         <SolutionHero
           eyebrow="Appointment Taking"
           titleBefore="Book appointments "

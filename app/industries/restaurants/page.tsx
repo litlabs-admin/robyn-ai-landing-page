@@ -397,7 +397,7 @@ export default function RestaurantsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
         <SolutionHero
           eyebrow="Restaurants & Cafes"
           titleBefore="Answer every table question "

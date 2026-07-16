@@ -376,7 +376,7 @@ export default function RealEstatePage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
         <SolutionHero
           eyebrow="Real Estate"
           titleBefore="Never miss a "

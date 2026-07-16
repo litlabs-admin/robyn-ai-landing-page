@@ -367,7 +367,7 @@ export default function InsurancePage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-bg pt-[72px]">
+      <main className="min-h-screen bg-bg pt-[84px]">
         <SolutionHero
           eyebrow="Insurance Agencies"
           titleBefore="Every claim call "
