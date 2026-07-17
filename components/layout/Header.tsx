@@ -281,7 +281,6 @@ export function Header({ theme = "light" }: HeaderProps) {
 
   const mobileResources = [
     { label: "Blog", href: "/resources/blog" },
-    { label: "Customer Stories", href: "/resources/customer-stories" },
     { label: "Voice Library", href: "/resources/voice-library" },
     { label: "Setup Guides", href: "/resources/setup-guides" },
     { label: "Help Center", href: "/resources/help-center" },

@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { RobynWordmark } from "@/components/ui/RobynWordmark";
 import { brand } from "@/lib/assets";
 import { cn } from "@/lib/cn";
-import { ArrowUpRight, Linkedin } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -52,7 +52,8 @@ const columns = [
 ];
 
 const socials = [
-  { Icon: Linkedin, href: "#", label: "LinkedIn" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/company/robyn-ai/", label: "LinkedIn" },
+  { Icon: Instagram, href: "https://www.instagram.com/robynn.ai", label: "Instagram" },
 ];
 
 export function Footer() {
@@ -98,6 +99,8 @@ export function Footer() {
                   <a
                     key={label}
                     href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={label}
                     className={cn(
                       "flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70",
