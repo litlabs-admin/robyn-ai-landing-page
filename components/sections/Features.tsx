@@ -150,7 +150,7 @@ export function Features() {
         {/* Bottom CTA */}
         <ScrollReveal y={16} duration={0.7} delay={0.2} disabled={still}>
           <div className="mt-16 flex justify-center md:mt-20">
-            <Button variant="primary" size="md" icon="arrow">
+            <Button variant="primary" size="md" icon="arrow" href="/features">
               See all features
             </Button>
           </div>

@@ -16,7 +16,6 @@ const columns = [
     title: "Product",
     links: [
       { label: "Features", href: "#features" },
-      { label: "Pricing", href: "#pricing" },
       { label: "Live demo", href: "#live-demo" },
       { label: "FAQ", href: "#faq" },
     ],
@@ -24,19 +23,18 @@ const columns = [
   {
     title: "Solutions",
     links: [
-      { label: "Law firms", href: "#live-demo" },
-      { label: "Restaurants", href: "#live-demo" },
-      { label: "Real estate", href: "#live-demo" },
-      { label: "Insurance", href: "#live-demo" },
-      { label: "Home services", href: "#live-demo" },
+      { label: "Law firms", href: "/industries/law-firms" },
+      { label: "Restaurants", href: "/industries/restaurants" },
+      { label: "Real estate", href: "/industries/real-estate" },
+      { label: "Insurance", href: "/industries/insurance" },
+      { label: "Home services", href: "/industries/home-services" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "#about" },
-      { label: "Careers", href: "#" },
-      { label: "Blog", href: "#" },
+      { label: "Blog", href: "/resources/blog" },
       { label: "Contact", href: "mailto:hello@robyn.ai" },
     ],
   },
