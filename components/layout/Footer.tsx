@@ -1,6 +1,7 @@
 "use client";
 
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { BrandBloom } from "@/components/ui/BrandBloom";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { RobynWordmark } from "@/components/ui/RobynWordmark";
@@ -58,8 +59,10 @@ export function Footer() {
   return (
     <footer
       id="footer"
-      className="relative isolate overflow-hidden bg-ink text-white"
+      className="relative isolate overflow-hidden bg-brand-blue text-white"
     >
+      <BrandBloom />
+
       <FinalCTA />
 
       <Container className="relative">
@@ -98,7 +101,7 @@ export function Footer() {
                     aria-label={label}
                     className={cn(
                       "flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70",
-                      "transition-all duration-200 hover:border-accent hover:text-accent",
+                      "transition-all duration-200 hover:border-brand-yellow hover:text-brand-yellow",
                     )}
                   >
                     <Icon className="h-4 w-4" strokeWidth={1.75} />
@@ -113,7 +116,7 @@ export function Footer() {
             {columns.map((col, ci) => (
               <ScrollReveal key={col.title} y={14} duration={0.6} delay={0.05 * ci}>
                 <div>
-                  <h4 className="text-[12px] font-semibold uppercase tracking-[0.16em] text-white/80">
+                  <h4 className="text-[12px] font-semibold uppercase tracking-[0.16em] text-brand-yellow">
                     {col.title}
                   </h4>
                   <ul className="mt-4 flex flex-col gap-2.5">
@@ -144,14 +147,16 @@ export function Footer() {
 
       {/* Bottom legal bar */}
       <Container>
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-7 text-[12.5px] text-white/45 md:flex-row">
-          <p>© {new Date().getFullYear()} <span className="text-accent font-semibold whitespace-nowrap">Robyn AI</span> · Voice AI for SMBs · All rights reserved.</p>
+        {/* /70 rather than the /45 this carried on the old flat surface: the
+            bloom is at full strength by this row, and /45 dissolves into it. */}
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-7 text-[12.5px] text-white/70 md:flex-row">
+          <p>© {new Date().getFullYear()} <span className="text-brand-yellow font-semibold whitespace-nowrap">Robyn AI</span> · Voice AI for SMBs · All rights reserved.</p>
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_0_3px_rgba(52,211,153,0.18)]" />
               All systems normal
             </span>
-            <span className="hidden md:inline text-white/25">·</span>
+            <span className="hidden md:inline text-white/40">·</span>
             <span>Made with calls covered</span>
           </div>
         </div>
@@ -170,23 +175,19 @@ function FinalCTA() {
         <ScrollReveal y={20} duration={0.9}>
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-3 py-1.5 text-[12px] tracking-[0.04em] text-white/70 backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_0_4px_rgba(255,208,0,0.28)]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-yellow shadow-[0_0_0_4px_rgba(255,208,0,0.28)]" />
               Ready when you are
             </span>
             <h2 className="font-display font-extrabold tracking-[-0.025em] text-white text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.05]">
               Never miss another <br className="hidden sm:block" />
-              <span className="relative inline-block">
-                customer call
-                <span className="absolute inset-x-0 bottom-[0.06em] -z-10 h-[0.32em] rounded-[2px] bg-accent" />
-              </span>
-              .
+              <span className="text-brand-yellow">customer call.</span>
             </h2>
             <p className="mt-6 max-w-xl text-[17px] leading-[1.7] text-white/65 md:text-[18px]">
-              Spin up <span className="text-accent font-semibold">Robyn AI</span> in under a day. Live phone coverage, 24/7, with a
+              Spin up <span className="text-brand-yellow font-semibold">Robyn AI</span> in under a day. Live phone coverage, 24/7, with a
               voice your customers will actually thank you for.
             </p>
             <div className="mt-9 flex flex-row flex-wrap items-center justify-center gap-3">
-              <Button size="lg" variant="primary" icon="arrow" href={brand.bookDemoUrl}>
+              <Button size="lg" variant="brand" icon="arrow" href={brand.bookDemoUrl}>
                 Book a demo
               </Button>
             </div>
@@ -209,7 +210,7 @@ function BrandWordmark() {
       <span
         className={cn(
           "absolute inset-x-0 top-0 block whitespace-nowrap text-center",
-          "font-display font-bold lowercase text-white/[0.07]",
+          "font-display font-bold lowercase text-white/[0.22]",
           "leading-[0.8] tracking-[-0.05em]",
           "text-[clamp(5rem,23vw,20rem)]",
         )}

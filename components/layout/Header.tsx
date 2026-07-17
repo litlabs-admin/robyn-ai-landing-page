@@ -384,9 +384,13 @@ export function Header({ theme = "light" }: HeaderProps) {
             >
               Book a Demo
             </Button>
+            {/* `brand` in both scroll states, unlike the Book a Demo ghost beside
+                it: this is the one element that stays gold on every surface, so
+                flipping it to `primary` once scrolled put the legacy #FFD000
+                directly above the footer's brand gold. */}
             <Button
               size="md"
-              variant={onDark ? "brand" : "primary"}
+              variant="brand"
               href={brand.bookDemoUrl}
             >
               Try For Free
@@ -398,7 +402,7 @@ export function Header({ theme = "light" }: HeaderProps) {
           <div className="md:hidden flex shrink-0 items-center gap-2">
             <Button
               size="md"
-              variant={onDark ? "brand" : "primary"}
+              variant="brand"
               href={brand.bookDemoUrl}
               className="hidden whitespace-nowrap px-4 min-[360px]:inline-flex"
             >

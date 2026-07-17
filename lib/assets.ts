@@ -1,6 +1,6 @@
 export const assets = {
   heroProduct: "/assets/hero-product.webp",
-  featurePhone: "/assets/feature-phone.webp",
+  featurePhone: "/assets/feature-phone-robyn.webp",
   oldWayVideo: "/assets/old-way.mp4",
   newWayVideo: "/assets/new-way.mp4",
   lawFirmAudio: "/assets/law-firm-conversation.mp3",

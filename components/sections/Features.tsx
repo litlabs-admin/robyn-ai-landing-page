@@ -38,7 +38,7 @@ const features: Feature[] = [
   {
     icon: CalendarCheck,
     title: "Book appointments",
-    body: <>Send callers a one-tap link to your calendar, or let <span className="text-accent font-semibold">Robyn AI</span> confirm a time directly. Bookings show up on autopilot.</>,
+    body: <>Send callers a one-tap link to your calendar, or let <span className="text-brand-blue font-semibold">Robyn AI</span> confirm a time directly. Bookings show up on autopilot.</>,
     side: "right",
     position: "top",
   },
@@ -52,7 +52,7 @@ const features: Feature[] = [
   {
     icon: PhoneForwarded,
     title: "Transfer calls",
-    body: <>Need certain callers routed straight to you or a teammate? <span className="text-accent font-semibold">Robyn AI</span> sends the right person the right call, every time.</>,
+    body: <>Need certain callers routed straight to you or a teammate? <span className="text-brand-blue font-semibold">Robyn AI</span> sends the right person the right call, every time.</>,
     side: "right",
     position: "bottom",
   },
@@ -276,8 +276,8 @@ function PhoneShowcase({ still }: { still: boolean }) {
       <Image
         src={assets.featurePhone}
         alt="Robyn AI receptionist answering a call in progress, displayed on a smartphone"
-        width={868}
-        height={1150}
+        width={1122}
+        height={1402}
         sizes="(min-width: 1024px) 360px, 320px"
         className={cn(
           "relative h-auto w-full select-none",

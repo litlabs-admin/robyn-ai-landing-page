@@ -103,7 +103,7 @@ export function FAQ() {
             <ScrollReveal y={16} duration={0.7} delay={0.1}>
               <p className="mt-5 mx-auto max-w-md text-[17px] leading-[1.7] text-ink-muted md:text-[18px] lg:mx-0">
                 Quick answers to the questions teams ask before going live with{" "}
-                <span className="text-accent font-semibold">Robyn AI</span>.
+                <span className="text-brand-blue font-semibold">Robyn AI</span>.
                 Can&apos;t find what you&apos;re looking for?
               </p>
             </ScrollReveal>

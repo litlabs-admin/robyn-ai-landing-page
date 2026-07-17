@@ -1,5 +1,6 @@
 "use client";
 
+import { BrandBloom } from "@/components/ui/BrandBloom";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { brand } from "@/lib/assets";
@@ -94,7 +95,7 @@ export function Hero() {
       aria-labelledby="hero-heading"
       className="relative isolate flex min-h-svh flex-col justify-center overflow-hidden bg-brand-blue pt-28 md:pt-24 lg:pt-28 pb-14 md:pb-12"
     >
-      <HeroBackdrop />
+      <BrandBloom />
 
       <Container className="relative">
         <motion.div
@@ -197,32 +198,5 @@ export function Hero() {
         </motion.div>
       </Container>
     </section>
-  );
-}
-
-// Navy field with a bright-blue bloom rising from the bottom centre, per the
-// reference: near-solid --brand-blue-bright along the bottom edge, washing out to
-// bare --brand-blue by roughly the vertical midpoint.
-//
-// Two layers rather than one. The radial alone can't do it — pushing its core
-// bright enough to read at the bottom edge also makes it read as a distinct
-// circle, since the corners fall off much faster than the centre. So a linear
-// lifts the whole bottom band evenly (that's what carries the edge colour into
-// the corners) and the radial only adds the centre hotspot on top of it.
-//
-// The section's own bg-brand-blue is the base, so both layers only ever add
-// light — the stops fade to fully transparent, never to a colour.
-function HeroBackdrop() {
-  return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-0 -z-10"
-      style={{
-        backgroundImage: [
-          "radial-gradient(ellipse 75% 45% at 50% 104%, rgba(30,195,255,0.85) 0%, rgba(30,150,255,0.45) 45%, rgba(30,150,255,0) 75%)",
-          "linear-gradient(to top, rgba(23,120,240,0.95) 0%, rgba(18,80,205,0.55) 22%, rgba(10,50,165,0.22) 42%, rgba(0,26,120,0) 62%)",
-        ].join(", "),
-      }}
-    />
   );
 }

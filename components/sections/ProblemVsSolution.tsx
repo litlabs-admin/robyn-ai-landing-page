@@ -1,6 +1,7 @@
 "use client";
 
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { BrandBloom } from "@/components/ui/BrandBloom";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { cn } from "@/lib/cn";
@@ -37,12 +38,12 @@ export function ProblemVsSolution() {
     <section
       id="problem-solution"
       aria-labelledby="comparison-heading"
-      className="relative isolate overflow-hidden bg-bg py-12 md:py-16"
+      className="relative isolate overflow-hidden bg-brand-blue py-12 md:py-16"
     >
       <style dangerouslySetInnerHTML={{ __html: ILLUSTRATION_CSS }} />
-      <Backdrop />
+      <BrandBloom />
 
-      <Container>
+      <Container className="relative">
         {/* Editorial heading. Left-aligned as a whole — eyebrow, heading and
             body together — rather than centred like the hero and Features. The
             page alternates between fully-centred and fully-left sections; a
@@ -51,23 +52,22 @@ export function ProblemVsSolution() {
             container's left edge instead of floating mid-column. */}
         <div className="flex max-w-3xl flex-col items-start text-left">
           <ScrollReveal y={12} duration={0.7} amount={0.4}>
-            <Eyebrow asPill className="mb-6">
-              <span className="text-ink-muted">The cost of a missed call</span>
+            <Eyebrow asPill theme="dark" className="mb-6">
+              The cost of a missed call
             </Eyebrow>
           </ScrollReveal>
           <ScrollReveal y={22} duration={0.95} delay={0.07} amount={0.3}>
             <h2
               id="comparison-heading"
-              className="section-heading font-display text-ink"
+              className="section-heading font-display text-white"
             >
               Missed calls cost you.
               <br />
-              <span className="text-accent">Robyn AI</span>{" "}
-              <span className="text-ink-muted">pays you back.</span>
+              <span className="text-brand-yellow">Robyn AI</span> pays you back.
             </h2>
           </ScrollReveal>
           <ScrollReveal y={16} duration={0.8} delay={0.15} amount={0.3}>
-            <p className="mt-5 max-w-xl text-balance text-[16px] leading-[1.65] text-ink-muted md:text-[17px]">
+            <p className="mt-5 max-w-xl text-balance text-[16px] leading-[1.65] text-white/70 md:text-[17px]">
               Every unanswered ring is a customer choosing the next business
               that picks up. Here&apos;s the difference one AI receptionist
               makes.
@@ -97,7 +97,7 @@ export function ProblemVsSolution() {
             variant="new"
             label="The Robyn AI way"
             title="Answered, qualified, and booked."
-            description={<><span className="text-accent font-semibold">Robyn AI</span> picks up on the first ring, captures the details that matter, and books the next step before the caller is off the phone.</>}
+            description={<><span className="text-brand-blue font-semibold">Robyn AI</span> picks up on the first ring, captures the details that matter, and books the next step before the caller is off the phone.</>}
             stats={[
               { icon: Zap, text: "Answers in under 0.4 seconds" },
               { icon: BadgeCheck, text: "Up to 38% lift in booked calls" },
@@ -138,12 +138,22 @@ function ComparisonCard({
         delay: isNew ? 0.15 : 0.05,
       }}
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-3xl border p-2",
+        "group relative flex flex-col overflow-hidden rounded-3xl p-2",
         // Framer owns opacity/transform on this element — see LiveDemo.tsx.
-        "transition-[box-shadow,border-color] duration-500 ease-out",
+        "transition-[box-shadow] duration-500 ease-out",
+        // Both cards are opaque and borderless on the navy. Previously the old
+        // card was `bg-surface/60` + `border-border/60`, neither of which ever
+        // compiled (--surface/--border are literal hex, so the /opacity modifier
+        // drops the utility) — it rendered fully transparent with Tailwind's
+        // default grey border, and only looked right because the section behind
+        // it was cream. On navy that same card would have been navy with ink
+        // text on it. --brand-gray now carries the "dead" read that the fake
+        // translucency was standing in for, against the live card's white.
+        // Shadows are neutral: the old shadow-card/soft/lift are brown-tinted
+        // (rgba(24,19,10)) and shadow-card also bakes in a tan ring.
         isNew
-          ? "border-border bg-surface shadow-card hover:shadow-lift"
-          : "border-border/60 bg-surface/60 shadow-soft",
+          ? "bg-surface shadow-[0_1px_3px_rgba(0,0,0,0.10),0_10px_30px_rgba(0,0,0,0.16)] hover:shadow-[0_18px_44px_rgba(0,0,0,0.30)]"
+          : "bg-brand-gray shadow-[0_1px_3px_rgba(0,0,0,0.08),0_6px_18px_rgba(0,0,0,0.10)]",
       )}
     >
       {/* Yellow aura on the "new" card */}
@@ -161,12 +171,16 @@ function ComparisonCard({
       {/* Header strip */}
       <div className="flex items-center justify-between px-3 pb-2.5 pt-2">
         <div className="flex items-center gap-2">
+          {/* Explicit rgba, not accent/30 + ink-muted/40: those tokens are
+              literal hex, so every /opacity here silently produced no rule —
+              the old card's dot had no fill at all and rendered as a hollow
+              ring. */}
           <span
             className={cn(
               "h-2 w-2 rounded-full",
               isNew
-                ? "bg-accent ring-2 ring-accent/30"
-                : "bg-ink-muted/40 ring-2 ring-ink-muted/15",
+                ? "bg-accent ring-2 ring-[rgba(255,208,0,0.30)]"
+                : "bg-[rgba(54,43,10,0.40)] ring-2 ring-[rgba(54,43,10,0.15)]",
             )}
           />
           <span
@@ -187,17 +201,17 @@ function ComparisonCard({
       </div>
 
       {/* Illustration frame */}
-      <div
-        className={cn(
-          "relative aspect-[16/10] w-full overflow-hidden rounded-2xl",
-          isNew ? "bg-surface-muted" : "bg-surface",
-        )}
-      >
+      {/* Same frame colour on both cards, so the card surface alone carries the
+          dead/live contrast. The old card used to be bg-surface (white) against a
+          cream section; on the --brand-gray card that white frame became the
+          brightest thing in the section and out-shouted the live card it's
+          supposed to lose to. */}
+      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-surface-muted">
         {isNew ? <NewWayIllo /> : <OldWayIllo />}
 
         {/* Live indicator (only "new" card) */}
         {isNew && (
-          <div className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-border/60 bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-ink shadow-soft">
+          <div className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-[rgba(24,19,10,0.10)] bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-ink shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
             <span className="pvs-live-dot" />
             LIVE
           </div>
@@ -218,10 +232,13 @@ function ComparisonCard({
           {description}
         </p>
 
-        <div className="mt-5 border-t border-border/70 pt-4">
+        <div className="mt-5 border-t border-[rgba(24,19,10,0.12)] pt-4">
           <p className={cn(
             "mb-2.5 text-[10.5px] font-semibold uppercase tracking-[0.1em]",
-            isNew ? "text-accent" : "text-red-500/80",
+            // accent-ink, not accent: #FFD000 on white is ~1.4:1 and was barely
+            // legible even on cream. The label carries its meaning from position
+            // and the gold discs beside it, not from being gold itself.
+            isNew ? "text-accent-ink" : "text-red-500/80",
           )}>
             {isNew ? "What changes" : "The problem"}
           </p>
@@ -236,8 +253,11 @@ function ComparisonCard({
                   <span
                     className={cn(
                       "flex h-6 w-6 shrink-0 items-center justify-center rounded-full",
+                      // bg-accent, not bg-accent/80 — the /80 never compiled, so
+                      // these icons had no disc behind them at all while the red
+                      // ones opposite (a real Tailwind colour) did.
                       isNew
-                        ? "bg-accent/80 text-accent-ink"
+                        ? "bg-accent text-accent-ink"
                         : "bg-red-500/10 text-red-500",
                     )}
                   >
@@ -384,21 +404,6 @@ function NewWayIllo() {
         </div>
       </div>
     </div>
-  );
-}
-
-function Backdrop() {
-  return (
-    <>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-surface-muted/60 to-transparent"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-bg to-transparent"
-      />
-    </>
   );
 }
 

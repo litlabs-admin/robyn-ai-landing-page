@@ -1,5 +1,6 @@
 "use client";
 
+import { BrandBloom } from "@/components/ui/BrandBloom";
 import { Button } from "@/components/ui/Button";
 import { Calendar, Check, Clock } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -76,7 +77,7 @@ export function ThankYouContent() {
 
   return (
     <main className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-hidden bg-brand-blue px-6 py-20 md:py-28">
-      <HeroBackdrop />
+      <BrandBloom />
 
       {/* Conversion tracking pixel — drop a next/script snippet here once IDs
           are available, e.g.:
@@ -152,22 +153,5 @@ export function ThankYouContent() {
         </motion.div>
       </motion.div>
     </main>
-  );
-}
-
-// Same navy-to-bloom treatment as the homepage Hero, so the confirmation page
-// reads as a continuation of it rather than a different surface.
-function HeroBackdrop() {
-  return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-0 -z-10"
-      style={{
-        backgroundImage: [
-          "radial-gradient(ellipse 75% 45% at 50% 104%, rgba(30,195,255,0.85) 0%, rgba(30,150,255,0.45) 45%, rgba(30,150,255,0) 75%)",
-          "linear-gradient(to top, rgba(23,120,240,0.95) 0%, rgba(18,80,205,0.55) 22%, rgba(10,50,165,0.22) 42%, rgba(0,26,120,0) 62%)",
-        ].join(", "),
-      }}
-    />
   );
 }

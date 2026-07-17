@@ -1,5 +1,6 @@
 "use client";
 
+import { BrandBloom } from "@/components/ui/BrandBloom";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { motion } from "framer-motion";
@@ -52,20 +53,27 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
       transition={{ duration: 0.6, ease: EASE, delay: 0.08 * index }}
       whileHover="hovered"
       animate="rest"
+      // No border and no hover ring: both were yellow (the tan --border #EAD870
+      // and a rgba(255,208,0) ring), and the card now sits on navy rather than
+      // cream. Depth comes from a neutral shadow instead — the old brown-tinted
+      // rgba(24,19,10) shadows are invisible against --brand-blue.
       variants={{
         rest: {
-          boxShadow:
-            "0 1px 3px rgba(24,19,10,0.05), 0 6px 20px rgba(24,19,10,0.05)",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.10), 0 6px 20px rgba(0,0,0,0.12)",
         },
         hovered: {
-          boxShadow:
-            "0 0 0 1px rgba(255,208,0,0.55), 0 16px 34px rgba(24,19,10,0.13)",
+          boxShadow: "0 18px 38px rgba(0,0,0,0.30)",
         },
       }}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-surface"
     >
-      {/* Compact landscape portrait with name overlay */}
-      <div className="relative w-full aspect-[23/20] flex-shrink-0 overflow-hidden sm:aspect-[5/6]">
+      {/* 23/20 at every width, matching the source photos' own landscape ratio
+          (callum 1.15, william 1.28, jim 1.73). The old sm:aspect-[5/6] forced
+          a 0.833 portrait box, so object-cover cropped the sides and zoomed —
+          which on callum.png, already a tight face crop with no headroom in the
+          file, read as badly over-cropped. Every crop here is now horizontal
+          only, so object-center keeps the (centred) faces. */}
+      <div className="relative w-full aspect-[23/20] flex-shrink-0 overflow-hidden">
         <motion.div
           variants={{ rest: { scale: 1 }, hovered: { scale: 1.05 } }}
           transition={{ duration: 0.55, ease: "easeOut" }}
@@ -77,7 +85,7 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             quality={90}
-            className="object-cover object-center sm:object-top"
+            className="object-cover object-center"
           />
         </motion.div>
 
@@ -131,7 +139,12 @@ function TestimonialCard({ t, index }: { t: Testimonial; index: number }) {
           ))}
         </div>
 
-        <p className="relative text-[13px] leading-[1.5] text-ink/90">
+        {/* text-ink, not text-ink/90: the /90 generated no rule at all (--ink is
+            a literal hex, so the opacity modifier silently drops the utility) and
+            the quote was only ever dark by inheriting body's colour. Stating it
+            outright matters now the card sits on navy — an inherited colour here
+            is one `text-white` on the section away from white-on-white. */}
+        <p className="relative text-[13px] leading-[1.5] text-ink">
           {t.quote}
         </p>
       </div>
@@ -143,9 +156,11 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="overflow-hidden bg-surface-muted py-10 md:py-16"
+      className="relative isolate overflow-hidden bg-brand-blue py-10 md:py-16"
     >
-      <Container>
+      <BrandBloom />
+
+      <Container className="relative">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -153,7 +168,7 @@ export function Testimonials() {
           transition={{ duration: 0.5, ease: EASE }}
           className="mb-3 flex justify-center md:mb-4"
         >
-          <Eyebrow asPill>Testimonials</Eyebrow>
+          <Eyebrow asPill theme="dark">Testimonials</Eyebrow>
         </motion.div>
 
         <motion.h2
@@ -161,10 +176,10 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.07, ease: EASE }}
-          className="mx-auto mb-7 max-w-[18ch] text-center font-display text-3xl font-semibold leading-[1.08] tracking-[-0.02em] text-ink md:mb-12 md:text-[42px]"
+          className="mx-auto mb-7 max-w-[18ch] text-center font-display text-3xl font-extrabold leading-[1.08] tracking-[-0.025em] text-white md:mb-12 md:text-[42px]"
         >
           Loved by businesses{" "}
-          <span className="text-accent">around the world</span>
+          <span className="text-brand-yellow">around the world</span>
         </motion.h2>
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">

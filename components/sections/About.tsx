@@ -13,8 +13,7 @@ import {
 import { Fragment, useMemo, useRef } from "react";
 
 const PARAGRAPHS: string[] = [
-  "Robyn AI helps businesses **never miss another customer call**. Powered by real-time Voice AI, Robyn AI answers instantly, qualifies leads, and books appointments, all with a **natural, human-like voice**.",
-  "Built for SMBs that can't justify full-time reception staff, Robyn AI replaces voicemail dead ends with **intelligent conversations** that scale customer support **without scaling headcount**.",
+  "Most SMBs lose business to a voicemail greeting. Robyn AI is real-time Voice AI that picks up on the first ring, holds a **natural, human-like conversation**, qualifies the caller, and books the appointment straight into your calendar. No hold music, no callback queue, no extra headcount — just a real answer, **every time someone calls**.",
 ];
 
 // Scroll progress window for the reveal.
@@ -125,11 +124,11 @@ export function About() {
               id="about-heading"
               className="font-display font-extrabold tracking-[-0.025em] text-ink text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05]"
             >
-              Why we built <span className="text-accent">Robyn AI</span>.
+              Why we built <span className="text-brand-blue">Robyn AI</span>.
             </h2>
           </motion.div>
 
-          {/* Body, two large editorial paragraphs with per-word scroll reveal */}
+          {/* Body, large editorial paragraphs with per-word scroll reveal */}
           <div className="flex flex-col gap-14 md:gap-18">
             {parsed.map((paragraph, pIdx) => (
               <p
@@ -168,21 +167,6 @@ export function About() {
                     );
                   });
 
-                  if (seg.accent) {
-                    return (
-                      <span
-                        key={segIdx}
-                        style={{
-                          backgroundImage:
-                            "linear-gradient(180deg, transparent 0%, transparent 62%, var(--accent) 62%, var(--accent) 92%, transparent 92%)",
-                          boxDecorationBreak: "clone",
-                          WebkitBoxDecorationBreak: "clone",
-                        }}
-                      >
-                        {content}
-                      </span>
-                    );
-                  }
                   return <Fragment key={segIdx}>{content}</Fragment>;
                 })}
               </p>
@@ -198,6 +182,9 @@ export function About() {
 // inside useTransform which only accepts resolved values.
 const COLOR_UNREVEALED = "rgb(180, 155, 80)"; // warm golden tan, visible on --bg
 const COLOR_REVEALED = "rgb(24, 19, 10)";      // --ink
+// Emphasis lands on colour rather than a highlight bar, so accent words reveal
+// to brand blue instead of ink. --brand-blue, resolved for the same reason.
+const COLOR_REVEALED_ACCENT = "rgb(0, 26, 120)";
 
 function Word({
   text,
@@ -216,10 +203,11 @@ function Word({
   reducedMotion: boolean;
   simplified: boolean;
 }) {
+  const revealed = accent ? COLOR_REVEALED_ACCENT : COLOR_REVEALED;
   const color = useTransform(
     scrollProgress,
     [start, end],
-    [COLOR_UNREVEALED, COLOR_REVEALED],
+    [COLOR_UNREVEALED, revealed],
   );
   const opacity = useTransform(scrollProgress, [start, end], [0.38, 1]);
   const y = useTransform(scrollProgress, [start, end], [10, 0]);
@@ -228,7 +216,9 @@ function Word({
   // line breaking — is identical across them. The server renders the animated
   // branch, so a bare inline span here would reflow the paragraph at hydration.
   if (reducedMotion) {
-    return <span style={{ display: "inline-block" }}>{text}</span>;
+    return (
+      <span style={{ color: revealed, display: "inline-block" }}>{text}</span>
+    );
   }
 
   // Touch devices fade in on opacity alone. `color` is a paint property, so
@@ -243,7 +233,7 @@ function Word({
     <motion.span
       style={
         simplified
-          ? { color: COLOR_REVEALED, opacity, display: "inline-block" }
+          ? { color: revealed, opacity, display: "inline-block" }
           : { color, opacity, y, display: "inline-block" }
       }
     >
