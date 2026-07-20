@@ -1,6 +1,5 @@
 import "./globals.css";
 import { LenisProvider } from "@/components/animations/LenisProvider";
-import { PageLoader } from "@/components/layout/PageLoader";
 import {
   allura,
   bricolage,
@@ -141,7 +140,6 @@ fbq('track', 'PageView');`,
         </noscript>
       </head>
       <body className="font-sans antialiased">
-        <PageLoader />
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

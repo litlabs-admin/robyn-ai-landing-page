@@ -159,33 +159,20 @@ export function Hero() {
             you never miss a lead or leave a customer waiting.
           </motion.p>
 
-          {/* items-start so the demo button aligns to the top of the primary
-              column rather than centring against it + its caption. */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 flex flex-row items-start justify-center gap-4"
+            className="mt-10 flex flex-row items-center justify-center gap-4"
           >
-            {/* The caption belongs to the free trial, not to both CTAs, so it
-                sits under that button and tracks its width.
-                Padding is set via max-sm:/sm: rather than a bare px-*, because
-                cn() is clsx — it can't beat size="lg"'s own px-6, it just emits
-                both and lets stylesheet order decide. The pair has to fit a
-                360px phone side by side. */}
-            <div className="flex flex-col items-center">
-              {/* TODO: point at a real signup route once one exists — until then
-                  both CTAs share the demo booking link. */}
-              <Button
-                size="lg"
-                variant="brand"
-                href={brand.bookDemoUrl}
-                className="h-14 whitespace-nowrap rounded-[10px] text-[16px] max-sm:px-6 sm:h-[52px] sm:px-9"
-              >
-                Try For Free
-              </Button>
-              <p className="mt-3 text-[10px] text-white">
-                *No credit card required
-              </p>
-            </div>
+            {/* TODO: point at a real signup route once one exists — until then
+                both CTAs share the demo booking link. */}
+            <Button
+              size="lg"
+              variant="brand"
+              href={brand.bookDemoUrl}
+              className="h-14 whitespace-nowrap rounded-[10px] text-[16px] max-sm:px-6 sm:h-[52px] sm:px-9"
+            >
+              Try For Free
+            </Button>
             <Button
               size="lg"
               variant="outline-light"
