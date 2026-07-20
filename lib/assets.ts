@@ -18,5 +18,5 @@ export const brand = {
   tagline: "AI receptionist for small businesses",
   phone: "(833) 827-7421",
   phoneDisplay: "(833) ROBYN-AI",
-  bookDemoUrl: "https://calendly.com/robynai-info/20min",
+  bookDemoUrl: "/book-a-demo",
 } as const;
