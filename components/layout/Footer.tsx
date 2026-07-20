@@ -54,7 +54,14 @@ const socials = [
   { Icon: Instagram, href: "https://www.instagram.com/robynn.ai", label: "Instagram" },
 ];
 
-export function Footer() {
+interface FooterProps {
+  /** Hide the "Never miss another customer call" CTA banner — for pages whose
+   * entire purpose is already that CTA (e.g. the booking page itself), where
+   * repeating it above the footer would be redundant. */
+  showCta?: boolean;
+}
+
+export function Footer({ showCta = true }: FooterProps = {}) {
   return (
     <footer
       id="footer"
@@ -62,7 +69,7 @@ export function Footer() {
     >
       <BrandBloom />
 
-      <FinalCTA />
+      {showCta && <FinalCTA />}
 
       <Container className="relative">
         <div className="grid grid-cols-2 gap-10 border-t border-white/10 pt-16 pb-14 md:grid-cols-12 md:gap-12 md:pt-20 md:pb-16">

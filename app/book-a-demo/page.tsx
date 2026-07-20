@@ -88,11 +88,11 @@ export default function BookADemoPage() {
         </section>
 
         <section className="px-6 pb-24 md:pb-32">
-          <div className="mx-auto max-w-3xl">
-            <div className="relative overflow-hidden rounded-2xl bg-surface shadow-[0_1px_2px_rgba(17,17,17,0.04),0_24px_60px_-28px_rgba(0,26,120,0.22)]">
+          <div className="mx-auto max-w-6xl">
+            <div className="relative overflow-hidden rounded-2xl bg-surface p-3 shadow-[0_1px_2px_rgba(17,17,17,0.04),0_24px_60px_-28px_rgba(0,26,120,0.22)] md:p-5">
               {!isReady && (
                 <div
-                  className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-surface"
+                  className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 rounded-2xl bg-surface"
                   role="status"
                   aria-live="polite"
                 >
@@ -112,7 +112,7 @@ export default function BookADemoPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer showCta={false} />
     </>
   );
 }
