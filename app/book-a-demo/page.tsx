@@ -83,7 +83,7 @@ export default function BookADemoPage() {
       <main className="min-h-screen bg-bg pt-[84px]">
         <section className="px-6 pb-16 pt-10 md:pb-20 md:pt-14">
           <h1 className="mx-auto max-w-2xl text-center font-display text-[2rem] font-extrabold leading-tight text-ink md:text-[2.75rem]">
-            Book a demo call
+            Book a demo
           </h1>
         </section>
 
