@@ -6,7 +6,7 @@ import Cal, { getCalApi } from "@calcom/embed-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-const CAL_LINK = "vandan-mandloi/30min";
+const CAL_LINK = "robyn-demo/robyn-ai-demo";
 const CAL_NAMESPACE = "robyn-book-a-demo";
 
 // Mirrors the palette in globals.css so the embedded booker reads as part of
