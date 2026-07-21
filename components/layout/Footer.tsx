@@ -156,16 +156,8 @@ export function Footer({ showCta = true }: FooterProps = {}) {
       <Container>
         {/* /70 rather than the /45 this carried on the old flat surface: the
             bloom is at full strength by this row, and /45 dissolves into it. */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-7 text-[12.5px] text-white/70 md:flex-row">
+        <div className="flex flex-col items-center justify-center gap-4 border-t border-white/10 py-7 text-[12.5px] text-white/70 md:flex-row">
           <p>© {new Date().getFullYear()} <span className="text-brand-yellow font-semibold whitespace-nowrap">Robyn AI</span> · Voice AI for SMBs · All rights reserved.</p>
-          <div className="flex items-center gap-5">
-            <span className="flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_0_3px_rgba(52,211,153,0.18)]" />
-              All systems normal
-            </span>
-            <span className="hidden md:inline text-white/40">·</span>
-            <span>Made with calls covered</span>
-          </div>
         </div>
       </Container>
 
