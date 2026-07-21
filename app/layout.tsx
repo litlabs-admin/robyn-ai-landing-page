@@ -14,7 +14,6 @@ import {
   unbounded,
 } from "@/lib/fonts";
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.robynai.co.uk"),
@@ -142,11 +141,6 @@ fbq('track', 'PageView');`,
       </head>
       <body className="font-sans antialiased">
         <LenisProvider>{children}</LenisProvider>
-        <Script
-          src="https://platform.robynai.co.uk/widget.js"
-          data-bot="47c2facbe9564943a788b3814ece1424"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
