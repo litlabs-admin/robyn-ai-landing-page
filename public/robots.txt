@@ -1,0 +1,88 @@
+# Robyn AI — robots.txt
+# https://www.robynai.co.uk
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /logo-preview
+Disallow: /preview/
+Disallow: /thank-you
+Disallow: /*?*preview=
+Disallow: /*?*draft=
+
+# AI assistant / LLM crawlers — allowed, same exclusions as above
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /logo-preview
+Disallow: /preview/
+Disallow: /thank-you
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /logo-preview
+Disallow: /preview/
+Disallow: /thank-you
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /logo-preview
+Disallow: /preview/
+Disallow: /thank-you
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /logo-preview
+Disallow: /preview/
+Disallow: /thank-you
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /logo-preview
+Disallow: /preview/
+Disallow: /thank-you
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /logo-preview
+Disallow: /preview/
+Disallow: /thank-you
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /logo-preview
+Disallow: /preview/
+Disallow: /thank-you
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /logo-preview
+Disallow: /preview/
+Disallow: /thank-you
+
+Sitemap: https://www.robynai.co.uk/sitemap.xml

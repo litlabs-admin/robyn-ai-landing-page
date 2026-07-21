@@ -282,8 +282,6 @@ export function Header({ theme = "light" }: HeaderProps) {
   const mobileResources = [
     { label: "Blog", href: "/resources/blog" },
     { label: "Voice Library", href: "/resources/voice-library" },
-    { label: "Setup Guides", href: "/resources/setup-guides" },
-    { label: "Help Center", href: "/resources/help-center" },
   ];
 
   // Dark styling only survives while the bar is transparent over the blue hero;

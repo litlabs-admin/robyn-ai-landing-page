@@ -1,0 +1,50 @@
+# Robyn AI
+
+> Robyn AI is an AI voice receptionist for small and medium businesses. It answers business phone calls 24/7 with a natural, human-like conversation, qualifies leads, books appointments, and handles customer inquiries, so businesses never miss a call.
+
+Robyn AI answers in under 0.4 seconds, holds real two-way conversations instead of reading from a script or an IVR menu, and can lift booked calls by up to 38% compared to voicemail. It works over the phone and, via WhatsApp integration, in chat as well, in English, Spanish, and 30+ other languages. Setup takes under a day, with no developer required. Robyn AI is built for SMB service businesses: clinics, law firms, accountancy practices, restaurants, real estate agencies, insurance agencies, and home service trades (HVAC, plumbing, electricians) that receive frequent inbound calls and lose revenue every time one goes unanswered.
+
+Core capabilities: taking messages, answering FAQs from a trained knowledge base, booking appointments directly into a calendar, qualifying and scoring leads, structured new-client intake, transferring calls to the right team member, after-hours and weekend coverage, overflow reception when lines are full, call recording with full transcripts, voicemail transcription, and integration with CRMs, calendars, Slack, and Zapier via API and webhooks.
+
+## Product
+
+- [Homepage](https://www.robynai.co.uk/): Overview of Robyn AI, what it does, the cost of missed calls, customer testimonials, and FAQ.
+- [Features](https://www.robynai.co.uk/features): Full feature list, including take messages, book appointments, answer questions, bilingual answering, transfer calls, after-hours coverage, and call recording.
+- [Book a Demo](https://www.robynai.co.uk/book-a-demo): Request a live demo of Robyn AI.
+
+## Solutions
+
+- [Answering Service](https://www.robynai.co.uk/solutions/answering-service): Every call answered within seconds, day, night, weekend, or holiday, with a clean summary sent after each call.
+- [Appointment Booking](https://www.robynai.co.uk/solutions/appointment-booking): Robyn reads your live calendar and books appointments on the call, with instant email and SMS confirmations and reminders.
+- [After-Hours Calls](https://www.robynai.co.uk/solutions/after-hours-calls): Separate greeting, routing, and escalation rules for evenings, weekends, and holidays, with urgency detection and a morning summary.
+- [Answer Questions](https://www.robynai.co.uk/solutions/answer-questions): Robyn answers caller questions from your uploaded FAQ and knowledge base in natural speech, with no menus or hold music.
+- [Bilingual Answering](https://www.robynai.co.uk/solutions/bilingual-answering): Detects the caller's language from the first sentence and responds natively in English or Spanish, not machine-translated.
+- [Call Routing](https://www.robynai.co.uk/solutions/call-routing): Robyn qualifies the caller's need and transfers to the right person in under a second.
+- [WhatsApp Integration](https://www.robynai.co.uk/solutions/whatsapp-integration): Robyn AI handles customer conversations on WhatsApp Business, answering questions, booking appointments, and routing inquiries automatically, in English and Spanish.
+
+## Capabilities
+
+- [Appointment Taking](https://www.robynai.co.uk/capabilities/appointment-taking): Connects to Google Calendar, Outlook, Acuity, and Calendly to check live availability and prevent double-bookings.
+- [Lead Qualification](https://www.robynai.co.uk/capabilities/lead-qualification): Asks your own qualifying questions (budget, timeline, company size, decision authority) and scores each lead in real time.
+- [Client Intake](https://www.robynai.co.uk/capabilities/client-intake): Collects new-client details in a natural conversation and delivers a structured summary formatted for your CRM.
+- [Call Recording](https://www.robynai.co.uk/capabilities/call-recording): Every call recorded automatically and paired with a full transcript in a library organized by date, caller, and topic.
+- [Voicemail Transcription](https://www.robynai.co.uk/capabilities/voicemail-transcription): Messages transcribed instantly and delivered to your inbox.
+- [Overflow Reception](https://www.robynai.co.uk/capabilities/overflow-reception): When your lines are full, calls route to Robyn automatically, with no limit on concurrent calls.
+
+## Industries
+
+- [Law Firms](https://www.robynai.co.uk/industries/law-firms): Robyn AI for legal practices, handling new client intake and consultation booking.
+- [Accountants](https://www.robynai.co.uk/industries/accountants): Robyn AI for accountancy practices, booking consultations, answering deadline and FAQ questions, and absorbing tax-season overflow.
+- [Restaurants](https://www.robynai.co.uk/industries/restaurants): Robyn AI for restaurants, handling reservation requests and customer questions.
+- [Real Estate](https://www.robynai.co.uk/industries/real-estate): Robyn AI for real estate agencies, handling listing inquiries and viewing bookings.
+- [Insurance](https://www.robynai.co.uk/industries/insurance): Robyn AI for insurance agencies, handling policy questions and quote requests.
+- [Home Services](https://www.robynai.co.uk/industries/home-services): Robyn AI for trades such as electricians, plumbers, and HVAC companies, handling service booking calls.
+
+## Resources
+
+- [Blog](https://www.robynai.co.uk/resources/blog): Articles on the cost of missed calls, moving from voicemail to AI answering, and customer results.
+- [Voice Library](https://www.robynai.co.uk/resources/voice-library): The available Robyn AI voices, with samples, switchable at any time.
+
+## Company
+
+- Robyn AI is voice AI built for SMBs. Company social profiles: [LinkedIn](https://www.linkedin.com/company/robyn-ai/), [Instagram](https://www.instagram.com/robynn.ai).

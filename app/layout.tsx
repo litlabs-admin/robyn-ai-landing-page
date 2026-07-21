@@ -16,7 +16,7 @@ import {
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://robyn.ai"),
+  metadataBase: new URL("https://www.robynai.co.uk"),
   icons: {
     icon: [
       { url: "/assets/favicon.ico", sizes: "any" },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Robyn AI, AI receptionist that answers calls 24/7",
     description:
       "Never miss another customer call. Robyn AI answers instantly, qualifies leads, and books appointments, all with a natural, human-like voice.",
-    url: "https://robyn.ai",
+    url: "https://www.robynai.co.uk",
     siteName: "Robyn AI",
     type: "website",
   },
@@ -109,7 +109,7 @@ gtag('config', 'G-40RDTY9GD6');`,
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Robyn AI",
-              url: "https://robyn.ai",
+              url: "https://www.robynai.co.uk",
               description:
                 "AI voice receptionist for small businesses, answers calls 24/7, qualifies leads, books appointments.",
             }),

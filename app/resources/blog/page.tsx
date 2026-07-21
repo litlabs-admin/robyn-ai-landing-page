@@ -2,7 +2,6 @@
 
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { NewsletterSignup } from "@/components/resources/NewsletterSignup";
 import { FeaturedCard, ResourceCard, type ArticleCardData } from "@/components/resources/ResourceCard";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -286,9 +285,6 @@ export default function BlogPage() {
             </motion.p>
           )}
         </section>
-
-        {/* Newsletter */}
-        <NewsletterSignup />
       </main>
       <Footer />
     </>

@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { cn } from "@/lib/cn";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { useState } from "react";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -104,31 +104,7 @@ export function FAQ() {
               <p className="mt-5 mx-auto max-w-md text-[17px] leading-[1.7] text-ink-muted md:text-[18px] lg:mx-0">
                 Quick answers to the questions teams ask before going live with{" "}
                 <span className="text-brand-blue font-semibold">Robyn AI</span>.
-                Can&apos;t find what you&apos;re looking for?
               </p>
-            </ScrollReveal>
-
-            {/* Contact card */}
-            <ScrollReveal y={14} duration={0.7} delay={0.15}>
-              <a
-                href="mailto:hello@robyn.ai"
-                className="group/contact mt-7 inline-flex items-center gap-4 rounded-2xl border border-border bg-surface px-5 py-4 shadow-soft transition-shadow duration-300 hover:shadow-lift"
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-ink">
-                  <ArrowUpRight
-                    className="h-4.5 w-4.5 transition-transform duration-300 ease-out group-hover/contact:translate-x-0.5 group-hover/contact:-translate-y-0.5"
-                    strokeWidth={2.2}
-                  />
-                </span>
-                <span className="flex flex-col">
-                  <span className="font-display text-[15px] font-semibold text-ink">
-                    Talk to our team
-                  </span>
-                  <span className="text-[12.5px] text-ink-muted">
-                    We typically respond within an hour
-                  </span>
-                </span>
-              </a>
             </ScrollReveal>
           </div>
 

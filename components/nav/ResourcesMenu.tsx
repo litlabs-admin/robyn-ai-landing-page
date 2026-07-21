@@ -2,10 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  BookOpen,
   ChevronRight,
   FileText,
-  HelpCircle,
   Mic,
   type LucideIcon,
 } from "lucide-react";
@@ -20,9 +18,7 @@ interface Resource {
 
 const resources: Resource[] = [
   { icon: FileText, label: "Blog", desc: "Tips for small business owners", href: "/resources/blog" },
-  { icon: BookOpen, label: "Setup guides", desc: "Step-by-step call forwarding help", href: "/resources/setup-guides" },
   { icon: Mic, label: "Voice library", desc: "Browse realistic AI voices", href: "/resources/voice-library" },
-  { icon: HelpCircle, label: "Help center", desc: "Answers to common questions", href: "/resources/help-center" },
 ];
 
 export function ResourcesMenu({ visible }: { visible: boolean }) {

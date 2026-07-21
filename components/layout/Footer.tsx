@@ -35,7 +35,6 @@ const columns = [
     links: [
       { label: "About", href: "#about" },
       { label: "Blog", href: "/resources/blog" },
-      { label: "Contact", href: "mailto:hello@robyn.ai" },
     ],
   },
   {
