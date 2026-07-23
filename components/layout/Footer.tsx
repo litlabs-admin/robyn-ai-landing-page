@@ -40,7 +40,7 @@ const columns = [
   {
     title: "Legal",
     links: [
-      { label: "Privacy", href: "#" },
+      { label: "Privacy", href: "/privacy-policy" },
       { label: "Terms", href: "#" },
       { label: "Security", href: "#" },
       { label: "Cookies", href: "#" },
