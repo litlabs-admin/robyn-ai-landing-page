@@ -120,7 +120,7 @@ export function PrivacyPolicyContent() {
             />
             <P>
               If you have any questions about this policy, contact us at{" "}
-              <EmailLink>privacy@robynai.co.uk</EmailLink>.
+              <EmailLink>info@robynai.co.uk</EmailLink>.
             </P>
           </Section>
 
@@ -259,7 +259,7 @@ export function PrivacyPolicyContent() {
               ]}
             />
             <P>
-              To exercise these rights, contact us at <EmailLink>privacy@robynai.co.uk</EmailLink>.
+              To exercise these rights, contact us at <EmailLink>info@robynai.co.uk</EmailLink>.
               If you are not satisfied with our response, you have the right to complain to the UK
               Information Commissioner's Office (ICO) at <SiteLink>ico.org.uk</SiteLink>.
             </P>
@@ -309,7 +309,7 @@ export function PrivacyPolicyContent() {
             <div className="rounded-xl border border-border bg-surface p-5 text-ink">
               <p className="font-display text-[15px] font-bold">Robyn AI</p>
               <p className="mt-2 text-[14.5px]">
-                Email: <EmailLink>privacy@robynai.co.uk</EmailLink>
+                Email: <EmailLink>info@robynai.co.uk</EmailLink>
               </p>
               <p className="mt-1 text-[14.5px]">
                 Website: <SiteLink>robynai.co.uk</SiteLink>
