@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { LenisProvider } from "@/components/animations/LenisProvider";
 import {
   allura,
@@ -117,6 +118,7 @@ gtag('config', 'G-40RDTY9GD6');`,
       </head>
       <body className="font-sans antialiased">
         <LenisProvider>{children}</LenisProvider>
+        <Analytics />
       </body>
     </html>
   );
